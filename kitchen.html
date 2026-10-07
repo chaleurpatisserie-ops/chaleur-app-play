@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.18", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><title>PLAY · Chaleur Atelier · Kitchen HQ</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
+<html><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.18-board", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><title>PLAY · Chaleur Atelier · Kitchen HQ</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
 /* Chaleur API bridge: talks to the Google backend anonymously, so it works in any browser */
 (function(){var API="https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec";
 function call(fn,args,ok,fail){var ac=typeof AbortController!=="undefined"?new AbortController():null,tm=null,done=function(){if(tm)clearTimeout(tm);};
@@ -432,6 +432,7 @@ const PAGES=[
  ["Kitchen HQ","Prep list · what to make","What to make today for the HQ display and each outlet, what is left at each outlet, Made numbers","office.html#plan",["kitchen","deliv","doedit","reports","see_plan"],"prep list planned made delivery order do print sheet suggestion plan",["kitchen","office","outlets"]],
  ["Kitchen HQ","Morning to-do · decorate & deliver","Morning team: today's cakes, custom & Grab orders, finish & decorate, pack & deliver the DOs","kitchen.html?team=am#today",["kitchen","kapprove","todo","see_kitchen"],"morning decoration decorate delivery list to-do custom order grab pack deliver",["kitchen:am"]],
  ["Kitchen HQ","Noon to-do · production","Noon team: today's production list, prep reminders, and the plan for the next days","kitchen.html?team=pm#today",["kitchen","kapprove","todo","see_kitchen"],"noon production list plan mise en place photo next days to-do reminders",["kitchen:pm"]],
+ ["Kitchen HQ","Daily prep board","Prep jobs over the next days: who makes what, batch weights · tick To do → Doing → Done","kitchen.html#board",["kitchen","kapprove","todo","see_kitchen"],"prep board r&d plan compote insert sponge mousse batch jobs tick daily",[]],
  ["Kitchen HQ","Kitchen reports","Past reports, temperatures and photos · fridges, display cakes and reminders","kitchen.html#history",["kitchen","kapprove","view","see_khist"],"history temperature fridge freezer streak calendar setup display list reminder limit",[]],
  ["Kitchen HQ","Numbers · made & waste","To make, made, sent, sold, left and waste per cake · day, week or month","office.html#numbers",["reports","view","kapprove","see_numbers"],"numbers waste wastage made produced prepared sold left figures report",[]],
  ["Outlet Delivery","Delivery orders","Check colours, mark delivered, edit before it goes out","office.html#deliveries",["deliv","doedit","see_do"],"do delivery order colour dot",["kitchen","office"]],
@@ -483,7 +484,7 @@ const ICON={
       <div id="mres">${menuBody()}</div>
       <div class="mf"><button type="button" class="cb ink" data-help="ask">? Ask / Report</button><button type="button" class="cb ghost" data-ca-logout="1">Log out</button></div>
       <div class="mlinks">${/^index\.html/.test(here())?"":`<a class="lnk" href="index.html">‹ Home</a>`}${mc?`<button type="button" class="lnk" data-help="mine">My reports (${mc} open)</button>`:""}</div>
-      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.18</div></div></div>`; }
+      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.18-board</div></div></div>`; }
   function menuOpen(){ const s=get(); if(!s) return; MON=true; MQ=""; drawMenu(); if(!MINE){ run("feedbackMine",s.t).then(r=>{ MINE=r||[]; if(MON) drawMenu(); }).catch(()=>{ MINE=[]; }); } }
   function menuClose(){ if(!MON) return; MON=false; MQ=""; drawMenu(); }
   document.addEventListener("input",e=>{ if(e.target&&e.target.id==="msq"&&e.target.closest("#camenu")){ MQ=e.target.value; const r=document.querySelector("#camenu #mres"); if(r) r.innerHTML=menuBody(); } });
@@ -844,6 +845,52 @@ body.dark #bar .cb.ghost{background:transparent;color:#fff;border-color:rgba(255
 .hd .hbtn.pdf{padding:0 10px;margin-right:-2px}
 body.ro #main input:not([type=date]),body.ro #main select,body.ro #main textarea,body.ro #main label.cb,body.ro #main button.cb:not([data-tab]):not([data-part]):not([data-partback]):not([data-date]):not([data-team]):not([data-v2]):not([data-v2back]):not([data-plan]):not([data-eqstep]),body.ro #bar,body.ro .foot{pointer-events:none;opacity:.55}
 .hd .tt{flex:1;min-width:0}.hd .hbtn{height:44px;padding:0 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);font-weight:600;font-size:14px;color:var(--ink);box-shadow:0 3px 0 var(--line);flex:none;font-family:inherit}
+/* Daily prep board (playground 7 Oct 2026) */
+.pb-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:4px 0 10px}
+.pb-tile{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;text-align:left;font:inherit;color:var(--ink);display:flex;flex-direction:column;gap:5px;min-width:0;cursor:pointer}
+.pb-tile[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.pb-tile .k{font:700 11px var(--body);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.pb-tile .v{font:700 26px/1 var(--display);font-variant-numeric:tabular-nums}.pb-tile .v small{font:500 12.5px var(--body);color:var(--muted);margin-left:4px}
+.pb-bar{height:6px;border-radius:4px;background:var(--line);overflow:hidden}.pb-bar i{display:block;height:100%;background:var(--ok)}
+.pb-tile .nx{font-size:12.5px;color:var(--muted);line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.pb-tile .nx b{color:var(--ink);font-weight:600}
+.pb-day{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;margin-top:10px;overflow:hidden}
+.pb-day.today{border-color:var(--accent)}
+.pb-dh{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;background:none;border:0;text-align:left;font:inherit;color:var(--ink);cursor:pointer}
+.pb-dh .n{flex:1;min-width:0;font:700 18px/1.2 var(--display)}.pb-dh .n small{display:block;font:400 13px/1.35 var(--body);color:var(--muted);margin-top:2px}
+.pb-dh .w{font-size:12px;color:var(--muted);text-align:right;white-space:nowrap}.pb-dh .w b{display:block;color:var(--ink);font-variant-numeric:tabular-nums}
+.pb-dh .ch{color:var(--muted);transition:transform .2s}.pb-day.open .ch{transform:rotate(90deg)}
+.pb-list{display:none;border-top:1px solid var(--line)}.pb-day.open .pb-list{display:block}
+.pb-j{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px 14px;border-top:1px solid var(--line);align-items:start}
+.pb-j:first-child{border-top:0}.pb-j.done{opacity:.55}.pb-j.first{box-shadow:inset 4px 0 0 var(--bad)}.pb-j.ask{box-shadow:inset 4px 0 0 var(--warn)}
+.pb-st{grid-row:span 4;width:88px;min-height:60px;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font:700 13px var(--body);color:var(--muted);cursor:pointer;padding:6px 4px}
+.pb-st i{font-style:normal;font-size:19px;line-height:1}.pb-st small{font:500 10.5px var(--body);opacity:.85}
+.pb-st[data-s="doing"]{background:var(--warn-bg);border-color:var(--warn);color:var(--warn-tx)}
+.pb-st[data-s="done"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.pb-st:disabled{cursor:default}
+.pb-nm{font-weight:600;font-size:15.5px;line-height:1.3;min-width:0}.pb-nm .no{color:var(--muted);font-weight:500;margin-right:6px;font-variant-numeric:tabular-nums}
+.pb-mt{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--muted);align-items:center}
+.pb-mt .pic{font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:5px}.pb-mt .pic i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.pb-mt .g{font-family:var(--mono,ui-monospace,monospace);color:var(--ink);font-variant-numeric:tabular-nums}
+.pb-af{font-size:13.5px;min-width:0}
+.pb-mk{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0}
+.pb-m{display:inline-flex;align-items:center;gap:5px;border-radius:9px;padding:5px 9px;font:600 12.5px var(--body);border:0}
+.pb-m.first{background:var(--bad-bg);color:var(--bad-tx)}.pb-m.ask{background:var(--warn-bg);color:var(--warn-tx);cursor:pointer}.pb-m.ans{background:var(--ok-bg);color:var(--ok-tx)}
+.pb-m.from{background:var(--warn-bg);color:var(--warn-tx)}.pb-m.mv{background:var(--soft);color:var(--ink)}
+.pb-rm{font-size:12.5px;color:var(--muted)}
+.pb-an{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-radius:12px;background:var(--soft)}
+.pb-an .q{width:100%;font-size:13px;color:var(--muted)}
+.pb-an input{flex:1;min-width:140px;min-height:40px;border:1.5px solid var(--line);border-radius:10px;padding:0 10px;font:inherit;background:var(--paper);color:var(--ink)}
+.pb-rv{display:grid;gap:8px}
+.pb-rr{border:1.5px solid var(--line);border-radius:12px;padding:8px 10px;display:grid;grid-template-columns:52px 1fr 32px;gap:6px;align-items:center;background:var(--paper)}
+.pb-rr.q{border-color:var(--warn)}
+.pb-rr select,.pb-rr input{min-height:38px;border:1px solid var(--line);border-radius:8px;padding:0 8px;font:inherit;font-size:14px;background:var(--paper);color:var(--ink);min-width:0;width:100%}
+.pb-rr .r2{grid-column:2/4;display:grid;grid-template-columns:1fr 92px;gap:6px}
+.pb-rr .r3{grid-column:2/4}
+.pb-rr .x{border:0;background:none;font-size:18px;color:var(--muted);cursor:pointer;min-height:38px}
+.pb-rr .qn{grid-column:2/4;font-size:12.5px;color:var(--warn-tx)}
+.pb-in textarea{width:100%;min-height:140px;border:1.5px solid var(--line);border-radius:12px;padding:10px;font:inherit;font-size:14px;background:var(--paper);color:var(--ink)}
+.pb-thumbs{display:flex;gap:6px;flex-wrap:wrap}.pb-thumbs img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+@media print{.pb-st{border:1px solid #999!important;background:#fff!important;color:#000!important}.pb-day .pb-list{display:block!important}.pb-tiles,.pb-sw{display:none!important}}
 </style>
 </head><body>
 <div class="w" id="app">
@@ -889,7 +936,7 @@ function alert0(m){const s=$("#status");s.innerHTML=`<span class="err">${esc(m)}
 
 <script>
 /* v21.10 (Alfred): "Kitchen setup … can put inside kitchen history > kitchen report" → one Reports tab = past reports + fridges, display cakes, reminders */
-const TABS=[["today","To-do"],["opening","Opening"],["closing","Closing"],["plan","Plan"],["history","Reports"]];
+const TABS=[["today","To-do"],["board","Prep board"],["opening","Opening"],["closing","Closing"],["plan","Plan"],["history","Reports"]];
 const TAB_ALIAS={lists:"history",setup:"history"};
 const SEEN={}; const partOf=(k,p)=>(INFO&&INFO.day&&INFO.day[k]&&INFO.day[k].parts&&INFO.day[k].parts[p])||null;
 /* v21.11 (Alfred): the display photo is checked for tidiness the moment it is taken; a messy display pops up with the photo and asks for a re-do.
@@ -999,6 +1046,144 @@ function hdr(title,opt){ opt=opt||{}; return `<div class="hd">${opt.back?`<${opt
   <div class="tt">${opt.eb?`<div class="eb">${esc(opt.eb)}</div>`:""}<div class="ptitle">${esc(title)}</div></div>${opt.right||""}${opt.noMenu||inFlow()?"":`<button class="hbtn pdf" type="button" data-act="printList" title="Print, or save this page as a PDF" aria-label="Save as PDF">⤓ PDF</button><button class="hbtn" type="button" data-menu="1" aria-haspopup="dialog">☰ Menu</button>`}</div>`; }
 /* v22.7: ☰ Menu on the kitchen page too — the one shared menu (CA.menu), the same as Home and the office desk */
 function inFlow(){ return !!(V2||((TAB==="opening"||TAB==="closing")&&(PART||(RESULT&&RESULT.kind===TAB)))); }
+/* ---------- Daily prep board (playground 7 Oct 2026) ----------
+   BD = {plan,index,today,me} from boardGet/boardSave/boardSet/boardAnswer. Day n of a plan = plan.start + (n-1) days.
+   A job not done on its own day shows under today's day (or the last day) as "From Day n". */
+let BD=null, BD_AT=0, BDERR="", BF="all", BOPEN={}, BANS=null, BIMP=null, BBUSY=false;
+async function bdLoad(id){ try{ BD=await run("boardGet",id||((BD&&BD.plan&&BD.plan.id)||"")); BD_AT=Date.now(); BDERR=""; }catch(e){ BD=null; BDERR=e.message; } if(TAB==="board") render(); }
+const bdDayDate=(p,n)=>addD(p.start,n-1);
+function bdTodayN(p){ const a=new Date(p.start+"T00:00:00Z"), b=new Date((BD.today||INFO.today)+"T00:00:00Z"); return Math.round((b-a)/864e5)+1; }
+const bdLast=p=>Math.max(1,...(p.days||[]).map(d=>d.n));
+/* the day a job is shown under, and where it came from */
+const bdDayOf=(p,iso)=>{ const a=new Date(p.start+"T00:00:00Z"), b=new Date(iso+"T00:00:00Z"); return Math.round((b-a)/864e5)+1; };
+const bdKL=at=>{ try{ return new Date(at).toLocaleDateString("en-CA",{timeZone:"Asia/Kuala_Lumpur"}); }catch(e){ return ""; } };
+function bdWhere(p,j){ const last=bdLast(p);
+  /* finished late: stays under the day it was actually done, so it does not jump away from where it was ticked */
+  if(j.s==="done"){ const dn=j.at?bdDayOf(p,bdKL(j.at)):j.day, to=Math.min(dn,Math.max(bdTodayN(p),j.day),last); return to>j.day?{day:to,from:j.day}:{day:j.day,from:0}; }
+  const tn=bdTodayN(p); if(j.day<tn&&tn>=1){ const to=Math.min(tn,last); if(to>j.day) return {day:to,from:j.day}; } return {day:j.day,from:0}; }
+function bdPeople(p){ const k=Object.keys(p.people||{}); if(k.length) return k; const s=new Set(); (p.jobs||[]).forEach(j=>String(j.p||"").split(/[\/,&+]| and /i).map(x=>x.replace(/\(.*?\)/g,"").trim()).filter(x=>x&&x.length<20).forEach(x=>s.add(x))); return [...s].slice(0,6); }
+const bdMine=(j,who)=>new RegExp("\\b"+who.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b","i").test(String(j.p||""));
+const BST={todo:["○","To do"],doing:["◐","Doing"],done:["✓","Done"]};
+function bdShow(j){ if(BF==="open") return j.s!=="done"; if(BF==="all") return true; return bdMine(j,BF); }
+function vBoard(){
+  if(!BD){ if(BDERR) return `<div class="card"><p class="err">${esc(BDERR)}</p><button class="cb sm" type="button" data-bload="1">Try again</button></div>`; bdLoad(); return `<p class="hint">Loading the prep board…</p>`; }
+  if(Date.now()-BD_AT>90000&&!BBUSY) bdLoad();
+  const p=BD.plan, me=BD.me||{};
+  const sw=(BD.index||[]).length>1?`<div class="pb-sw" style="margin:2px 0 8px"><label class="hint" for="pb-plan">Plan</label> <select id="pb-plan" data-bplan="1" style="min-height:40px;border-radius:10px;border:1.5px solid var(--line);padding:0 8px;font:inherit;max-width:100%">${BD.index.slice().reverse().map(x=>`<option value="${esc(x.id)}" ${p&&p.id===x.id?"selected":""}>${esc(x.title)} · from ${esc(niceD(x.start))}</option>`).join("")}</select></div>`:"";
+  const add=me.canPlan?`<button class="cb sm" type="button" data-bimp="new">＋ Add a plan</button>`:"";
+  if(!p) return sw+`<div class="card stack"><b>No prep plan yet.</b><p class="hint" style="margin:0">A prep plan is a list of jobs over a few days (compotes, inserts, sponges, mousses…), each with a person and a batch weight. ${me.canPlan?"Paste it, or add a photo or PDF, and the AI turns it into the board.":"A supervisor adds it; then you tick your jobs here."}</p>${add}</div>`;
+  const all=p.jobs||[], people=bdPeople(p), tn=bdTodayN(p), last=bdLast(p), dn=all.filter(j=>j.s==="done").length;
+  const tile=(k,sub,list,who)=>{ const d=list.filter(j=>j.s==="done").length, nx=list.find(j=>j.s!=="done");
+    return `<button class="pb-tile" type="button" data-bf="${esc(who)}" aria-pressed="${BF===who}"><span class="k">${esc(k)}</span><span class="v">${d}<small>of ${list.length}</small></span><span class="pb-bar"><i style="width:${list.length?Math.round(100*d/list.length):0}%"></i></span>
+      <span class="nx">${who==="all"?`${all.filter(j=>j.s==="doing").length} doing now · ${all.filter(j=>j.s!=="done"&&bdWhere(p,j).day<=Math.max(1,Math.min(tn,last))).length} left today`:nx?`Next: <b>${esc(nx.c)}</b>`:"All done ✓"}</span></button>`; };
+  const tiles=`<div class="pb-tiles">${tile("Everyone","",all,"all")}${people.map(w=>tile(w,"",all.filter(j=>bdMine(j,w)),w)).join("")}</div>`;
+  const chips=`<div class="kchips" role="tablist" aria-label="Show">${[["all","Everyone"]].concat(people.map(w=>[w,w])).concat([["open","Not done only"]]).map(([k,l])=>`<button type="button" data-bf="${esc(k)}" aria-selected="${BF===k}">${esc(l)}</button>`).join("")}</div>`;
+  const dayOpen=n=>BOPEN[n]!=null?BOPEN[n]:(n===Math.max(1,Math.min(tn,last)));
+  const days=(p.days||[]).map(d=>{
+    const items=all.map(j=>({j,w:bdWhere(p,j)})).filter(x=>x.w.day===d.n);
+    const vis=items.filter(x=>bdShow(x.j)).sort((a,b)=>(a.j.s==="done")-(b.j.s==="done")||(b.w.from?1:0)-(a.w.from?1:0)||(b.j.first?1:0)-(a.j.first?1:0));
+    const done=items.filter(x=>x.j.s==="done").length, isToday=d.n===tn, open=dayOpen(d.n);
+    const outN=all.filter(j=>j.day===d.n&&bdWhere(p,j).from).length, inN=items.filter(x=>x.w.from).length, mvN=items.filter(x=>x.j.moved).length;
+    const tag=isToday?`<span class="pill" style="background:var(--accent);color:#fff">Today</span>`:done===items.length&&items.length?`<span class="pill ok">All done</span>`:d.n>tn?`<span class="pill">Planned</span>`:"";
+    return `<section class="pb-day ${isToday?"today":""} ${open?"open":""}"><button class="pb-dh" type="button" data-bday="${d.n}" aria-expanded="${open}"><span class="ch">›</span>
+      <span class="n">Day ${d.n} — ${esc(d.title||"")} ${tag} ${outN?`<span class="pill warn">${outN} carried on</span>`:""}<small>${esc(d.sub||"")}${inN?` · ${inN} carried in`:""}${mvN?` · ${mvN} moved up`:""}</small></span>
+      <span class="w"><b>${done} of ${items.length}</b>${esc(niceD(bdDayDate(p,d.n)))}</span></button>
+      <div class="pb-list">${vis.length?vis.map(x=>bdJob(p,x.j,x.w,me)).join(""):`<p class="hint" style="padding:12px 14px;margin:0">Nothing to show for this filter.</p>`}</div></section>`; }).join("");
+  const head=`<div class="card" style="padding:12px 14px"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start;flex-wrap:wrap"><div style="min-width:0"><b style="font:700 18px var(--display)">${esc(p.title)}</b>${p.sub?`<div class="hint">${esc(p.sub)}</div>`:""}<div class="hint">${dn} of ${all.length} done · Day 1 = ${esc(niceD(p.start))}${tn>last?` · plan ended ${esc(niceD(bdDayDate(p,last)))}`:tn<1?` · starts in ${1-tn} day${1-tn>1?"s":""}`:""}</div></div>
+    ${me.canPlan?`<div class="row" style="gap:6px;flex-wrap:wrap">${add}<button class="cb sm ghost" type="button" data-bimp="edit">Edit</button></div>`:""}</div></div>`;
+  return sw+head+tiles+chips+days+(me.canPlan?`<div style="margin-top:14px"><button class="cb sm ghost" type="button" data-barch="1">Hide this plan (finished)</button></div>`:"");
+}
+function bdJob(p,j,w,me){ const st=BST[j.s]||BST.todo, ask=j.ask&&!j.ask.ans&&j.s!=="done", first=(w.from||j.first)&&j.s!=="done";
+  const marks=[first?`<span class="pb-m first">⏫ Do first</span>`:"", w.from?`<span class="pb-m from">From Day ${w.from}</span>`:"", j.moved?`<span class="pb-m mv">Moved up from Day ${j.moved}</span>`:"",
+    j.ask?(j.ask.ans?`<span class="pb-m ans">✓ ${esc(j.ask.q)} ${esc(j.ask.ans)}</span>`:me.canAnswer?`<button class="pb-m ask" type="button" data-bask="${esc(j.id)}">❓ ${esc(j.ask.q)}</button>`:`<span class="pb-m ask">❓ Waiting for an answer: ${esc(j.ask.q)}</span>`):"",
+    j.r?`<span class="pb-rm">${esc(j.r)}</span>`:""].filter(Boolean).join("");
+  const ans=BANS&&BANS.id===j.id?`<div class="pb-an"><span class="q">${esc(j.ask.q)} — pick one, or type the answer.</span>${(j.ask.opts||[]).map((o,k)=>`<button class="cb sm ${k?"ghost":""}" type="button" data-bansv="${esc(o)}">${k?"":"✓ "}${esc(o)}</button>`).join("")}
+    <input id="pb-ans" placeholder="Other answer" value="${esc(BANS.v||"")}" aria-label="Other answer"><button class="cb sm ghost" type="button" data-bansv="__typed">Save</button></div>`:"";
+  const who=j.s!=="todo"&&j.by?`${esc(String(j.by).split(" ")[0])} ${esc(hmOf(j.at))}`:"";
+  return `<div class="pb-j ${j.s==="done"?"done":""} ${first?"first":ask?"ask":""}">
+    <button class="pb-st" type="button" data-s="${esc(j.s)}" data-bst="${esc(j.id)}" ${me.canTick?"":"disabled"} aria-label="${esc(j.c)}: ${st[1]}"><i>${st[0]}</i>${st[1]}${who?`<small>${who}</small>`:""}</button>
+    <div class="pb-nm">${esc(j.c)}${j.shared?` <span class="pill">shared</span>`:""}</div>
+    <div class="pb-mt"><span class="pic"><i></i>${esc(j.p||"—")}</span><span class="g">${j.g!=null?nf(j.g)+" g":""}</span></div>
+    ${j.a?`<div class="pb-af">${esc(j.a)}</div>`:""}${marks?`<div class="pb-mk">${marks}</div>`:""}${ans}</div>`; }
+/* ---------- add / edit a plan: paste, photos or PDF → AI → check → save ---------- */
+function bdImpOpen(mode){ const p=BD&&BD.plan;
+  BIMP={mode, id:mode==="edit"&&p?p.id:"", text:"", photos:[], step:mode==="edit"&&p?"check":"input", busy:false, err:"",
+    rows:mode==="edit"&&p?JSON.parse(JSON.stringify(p.jobs)).map(j=>({day:j.day,c:j.c,p:j.p,shared:j.shared,g:j.g,a:j.a,r:j.r,ask:j.ask?{q:j.ask.q,opts:j.ask.opts||[]}:null,moved:j.moved,first:j.first})):[],
+    title:mode==="edit"&&p?p.title:"", sub:mode==="edit"&&p?p.sub:"", start:mode==="edit"&&p?p.start:(INFO.today), people:mode==="edit"&&p?p.people:{}, days:mode==="edit"&&p?p.days:[]};
+  bdImpDraw(); }
+function bdImpDraw(){ const I=BIMP; if(!I){ $("#sheet").innerHTML=""; return; }
+  let body;
+  if(I.step==="input") body=`<p class="hint" style="margin:0">Paste the plan, or add photos or a PDF of it. The AI reads it into jobs; you check them before anything is saved.</p>
+    <div class="pb-in"><textarea id="pb-text" placeholder="Paste the prep plan here (Day 1 … component · PIC · batch g · after making · remarks)">${esc(I.text)}</textarea></div>
+    <div class="row" style="gap:8px;flex-wrap:wrap"><label class="cb sm ghost" style="display:inline-flex;align-items:center;cursor:pointer">📷 Photo<input type="file" accept="image/*" multiple data-bphoto="1" hidden></label><label class="cb sm ghost" style="display:inline-flex;align-items:center;cursor:pointer">📄 PDF<input type="file" accept="application/pdf" data-bpdf="1" hidden></label></div>
+    ${I.photos.length?`<div class="pb-thumbs">${I.photos.map((u,i)=>`<img src="${u}" alt="Plan photo ${i+1}">`).join("")}<button class="lnk" type="button" data-bphclear="1">Remove photos</button></div>`:""}
+    ${I.err?`<p class="err" style="margin:0">${esc(I.err)}</p>`:""}
+    <button class="cb big full" type="button" data-bread="1" ${I.busy?"disabled":""}>${I.busy?"Reading the plan… (up to a minute)":"Read the plan"}</button>`;
+  else { const qs=I.rows.filter(r=>r.ask).length;
+    body=`<div class="stack" style="gap:6px"><label class="hint" for="pb-t">Title</label><input id="pb-t" data-bimpf="title" value="${esc(I.title)}" style="min-height:42px;border:1.5px solid var(--line);border-radius:10px;padding:0 10px;font:inherit">
+      <label class="hint" for="pb-s">Day 1 is on</label><input id="pb-s" type="date" data-bimpf="start" value="${esc(I.start)}" style="min-height:42px;border:1.5px solid var(--line);border-radius:10px;padding:0 10px;font:inherit"></div>
+      <p class="hint" style="margin:0"><b>${I.rows.length} jobs</b> over ${new Set(I.rows.map(r=>r.day)).size} days${qs?` · <span style="color:var(--warn-tx)">${qs} with a question</span>`:""}. Fix anything wrong, then save.</p>
+      <div class="pb-rv">${I.rows.map((r,i)=>`<div class="pb-rr ${r.ask?"q":""}"><select data-bimpr="${i}|day" aria-label="Day">${Array.from({length:Math.max(7,...I.rows.map(x=>x.day))},(_,k)=>`<option value="${k+1}" ${r.day===k+1?"selected":""}>D${k+1}</option>`).join("")}</select>
+        <input data-bimpr="${i}|c" value="${esc(r.c)}" aria-label="Component"><button class="x" type="button" data-bimpdel="${i}" aria-label="Remove this job">✕</button>
+        <div class="r2"><input data-bimpr="${i}|p" value="${esc(r.p)}" placeholder="PIC" aria-label="Person in charge"><input data-bimpr="${i}|g" value="${r.g==null?"":esc(r.g)}" inputmode="decimal" placeholder="g" aria-label="Batch grams"></div>
+        <input class="r3" data-bimpr="${i}|a" value="${esc(r.a)}" placeholder="After making" aria-label="After making">
+        ${r.ask?`<div class="qn">❓ ${esc(r.ask.q)}${(r.ask.opts||[]).length?` (${esc(r.ask.opts.join(" / "))})`:""}</div>`:r.r?`<div class="qn" style="color:var(--muted)">${esc(r.r)}</div>`:""}</div>`).join("")}</div>
+      <button class="cb sm ghost" type="button" data-bimpaddrow="1">＋ Add a job</button>
+      ${I.err?`<p class="err" style="margin:0">${esc(I.err)}</p>`:""}
+      <button class="cb big full ok" type="button" data-bsave="1" ${I.busy||!I.rows.length?"disabled":""}>${I.busy?"Saving…":I.id?"Save changes (ticks are kept)":"Save "+I.rows.length+" jobs to the board"}</button>
+      ${I.id?"":`<button class="cb ghost full" type="button" data-bback="1">‹ Back to the text</button>`}`; }
+  $("#sheet").innerHTML=`<div class="sheet"><div class="box stack" role="dialog" aria-label="${I.id?"Edit the prep plan":"Add a prep plan"}" style="max-height:88vh;overflow:auto"><div class="ptitle">${I.id?"Edit the prep plan":"Add a prep plan"}</div>${body}<button class="cb ghost full" type="button" data-bimpclose="1">Cancel</button></div></div>`; }
+let PDFJS=null;
+function pdfjs(){ if(PDFJS) return PDFJS; PDFJS=new Promise((res,rej)=>{ const s=document.createElement("script"); s.src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+  s.onload=()=>{ try{ window.pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"; res(window.pdfjsLib); }catch(e){ rej(e); } }; s.onerror=()=>{ PDFJS=null; rej(new Error("The PDF reader could not load. Check the internet and try again.")); }; document.head.appendChild(s); }); return PDFJS; }
+/* PDF → text (lines rebuilt from positions); a scanned PDF without text → photos of the first 4 pages */
+async function pdfToInput(file){ const lib=await pdfjs(), doc=await lib.getDocument({data:await file.arrayBuffer()}).promise, out=[];
+  for(let n=1;n<=Math.min(doc.numPages,12);n++){ const pg=await doc.getPage(n), tc=await pg.getTextContent(), rows={};
+    tc.items.forEach(it=>{ if(!it.str||!it.str.trim()) return; const y=Math.round(it.transform[5]/3)*3; (rows[y]=rows[y]||[]).push([it.transform[4],it.str]); });
+    Object.keys(rows).map(Number).sort((a,b)=>b-a).forEach(y=>out.push(rows[y].sort((a,b)=>a[0]-b[0]).map(x=>x[1]).join("  ").replace(/\s{3,}/g,"  "))); out.push(""); }
+  const text=out.join("\n").trim(); if(text.length>60) return {text, photos:[]};
+  const photos=[]; for(let n=1;n<=Math.min(doc.numPages,4);n++){ const pg=await doc.getPage(n), vp=pg.getViewport({scale:1.6}), c=document.createElement("canvas"); c.width=vp.width; c.height=vp.height; await pg.render({canvasContext:c.getContext("2d"),viewport:vp}).promise; photos.push(c.toDataURL("image/jpeg",.8)); }
+  return {text:"", photos}; }
+async function bdClick(d,b){
+  if(d.bload){ BD=null; BDERR=""; render(); return true; }
+  if(d.bf!=null){ BF=(BF===d.bf&&b.classList.contains("pb-tile"))?"all":d.bf; render(); return true; }
+  if(d.bday){ const n=+d.bday, cur=b.getAttribute("aria-expanded")==="true"; BOPEN[n]=!cur; render(); return true; }
+  if(d.bst){ if(!BD||!BD.plan||BBUSY) return true; const j=BD.plan.jobs.find(x=>x.id===d.bst); if(!j) return true;
+    const nxt=j.s==="todo"?"doing":j.s==="doing"?"done":"todo", prev={s:j.s,by:j.by,at:j.at}; j.s=nxt; j.by=nxt==="todo"?"":(INFO.me&&INFO.me.name)||""; j.at=nxt==="todo"?"":new Date().toISOString(); render(); BBUSY=true;
+    try{ const r=await run("boardSet",BD.plan.id,j.id,nxt); BD=r; BD_AT=Date.now(); if(r.pts) xp(r.pts); toast(nxt==="done"?"Done ✓":nxt==="doing"?"Started — tap again when it's finished":"Back to To do"); }
+    catch(e){ Object.assign(j,prev); toast(e.message); } BBUSY=false; render(); return true; }
+  if(d.bask){ BANS=BANS&&BANS.id===d.bask?null:{id:d.bask,v:""}; render(); return true; }
+  if(d.bansv!=null&&BANS){ const v=d.bansv==="__typed"?((document.getElementById("pb-ans")||{}).value||"").trim():d.bansv; if(!v){ toast("Type the answer first."); return true; }
+    try{ BD=await run("boardAnswer",BD.plan.id,BANS.id,v); BANS=null; toast("Answered — the team sees it on the job."); }catch(e){ toast(e.message); } render(); return true; }
+  if(d.bimp){ bdImpOpen(d.bimp); return true; }
+  if(d.bimpclose){ BIMP=null; bdImpDraw(); return true; }
+  if(d.bphclear&&BIMP){ BIMP.photos=[]; bdImpDraw(); return true; }
+  if(d.bback&&BIMP){ BIMP.step="input"; BIMP.err=""; bdImpDraw(); return true; }
+  if(d.bimpdel!=null&&BIMP){ BIMP.rows.splice(+d.bimpdel,1); bdImpDraw(); return true; }
+  if(d.bimpaddrow&&BIMP){ const ld=BIMP.rows.length?BIMP.rows[BIMP.rows.length-1].day:1; BIMP.rows.push({day:ld,c:"",p:"",g:null,a:"",r:"",ask:null}); bdImpDraw(); return true; }
+  if(d.bread&&BIMP){ const t=document.getElementById("pb-text"); if(t) BIMP.text=t.value; BIMP.busy=true; BIMP.err=""; bdImpDraw();
+    try{ const r=await run("boardRead",{text:BIMP.text,photos:BIMP.photos}); Object.assign(BIMP,{rows:r.jobs,title:r.title||BIMP.title,sub:r.sub,start:r.start||BIMP.start,people:r.people,days:r.days,step:"check"});
+      if(!r.jobs.length) { BIMP.step="input"; BIMP.err="No jobs could be read. Paste the text, or take a sharper photo of the whole sheet."; } }
+    catch(e){ BIMP.err=e.message; } BIMP.busy=false; bdImpDraw(); return true; }
+  if(d.bsave&&BIMP){ const I=BIMP, rows=I.rows.filter(r=>String(r.c||"").trim()); if(!rows.length){ I.err="Add at least one job."; bdImpDraw(); return true; }
+    const days=[...new Set(rows.map(r=>r.day))].sort((a,b)=>a-b).map(n=>(I.days||[]).find(x=>x.n===n)||{n,title:"Day "+n,sub:""});
+    I.busy=true; I.err=""; bdImpDraw();
+    try{ BD=await run("boardSave",{title:I.title,sub:I.sub,start:I.start,people:I.people,days,jobs:rows.map(r=>Object.assign({},r,{remark:r.r,ask:r.ask?r.ask.q:"",opts:r.ask?r.ask.opts:[]}))},I.id||""); BD_AT=Date.now(); BIMP=null; bdImpDraw(); BOPEN={}; BF="all"; toast("Saved — the board is ready."); render(); }
+    catch(e){ I.busy=false; I.err=e.message; bdImpDraw(); } return true; }
+  if(d.barch){ if(!BD||!BD.plan) return true; if(b.dataset.armed!=="1"){ b.dataset.armed="1"; b.textContent="Tap again to hide this plan"; setTimeout(()=>{ if(b.isConnected){ b.dataset.armed=""; b.textContent="Hide this plan (finished)"; } },4000); return true; }
+    try{ BD=await run("boardArchive",BD.plan.id); await bdLoad(); toast("Hidden. It stays in the records."); }catch(e){ toast(e.message); } return true; }
+  return false; }
+async function bdChange(t,d){
+  if(d.bplan){ BD=null; render(); await bdLoad(t.value); return true; }
+  if(d.bphoto&&BIMP&&t.files){ for(const f of [...t.files].slice(0,4-BIMP.photos.length)){ try{ BIMP.photos.push(await shrink(f,1800)); }catch(e){} } t.value=""; bdImpDraw(); return true; }
+  if(d.bpdf&&BIMP&&t.files&&t.files[0]){ BIMP.busy=true; BIMP.err=""; bdImpDraw(); try{ const r=await pdfToInput(t.files[0]); if(r.text) BIMP.text=r.text; if(r.photos.length) BIMP.photos=r.photos; }catch(e){ BIMP.err=(e&&e.message)||"The PDF could not be read."; } t.value=""; BIMP.busy=false; bdImpDraw(); return true; }
+  if(d.bimpr!=null&&BIMP){ const [i,f]=d.bimpr.split("|"), r=BIMP.rows[+i]; if(r) r[f]=f==="day"?+t.value:f==="g"?(t.value===""||isNaN(+t.value)?null:+t.value):t.value; return true; }
+  if(d.bimpf&&BIMP){ BIMP[d.bimpf]=t.value; return true; }
+  return false; }
+function bdInput(t,d){ if(t.id==="pb-ans"&&BANS){ BANS.v=t.value; return true; } if(t.id==="pb-text"&&BIMP){ BIMP.text=t.value; return true; }
+  if(d.bimpr!=null&&BIMP){ const [i,f]=d.bimpr.split("|"), r=BIMP.rows[+i]; if(r&&f!=="day") r[f]=f==="g"?(t.value===""||isNaN(+t.value)?null:+t.value):t.value; return true; }
+  if(d.bimpf&&BIMP){ BIMP[d.bimpf]=t.value; return true; } return false; }
+
 function render(){
   if(!INFO) return;
   const flow=inFlow(), res=!!(RESULT&&RESULT.kind===TAB&&(TAB==="opening"||TAB==="closing")&&!V2);
@@ -1013,7 +1198,7 @@ function render(){
   $("#hdr").innerHTML=flow?"":tabHdr();
   let html;
   if(V2==="deco") html=vDeco(); else if(/^do:/.test(V2)) html=vDo(V2.slice(3)); else if(/^chk:/.test(V2)) html=vChk(V2.slice(4)); else if(/^rcv:/.test(V2)) html=vRcv(V2.slice(4));
-  else html={today:vToday,opening:()=>vReport("opening"),closing:()=>vReport("closing"),plan:vPlan,lists:vHistory,history:vHistory}[TAB]();
+  else html={today:vToday,opening:()=>vReport("opening"),closing:()=>vReport("closing"),plan:vPlan,board:vBoard,lists:vHistory,history:vHistory}[TAB]();
   $("#main").innerHTML=(document.body.classList.contains("ro")?`<div class="card" style="border-color:var(--warn);padding:10px 14px;margin-bottom:10px"><b>View only.</b> You can look at the kitchen pages; ticking, typing and sending need "Kitchen work" (ask Alfred or Joscelyn).</div>`:"")+(PHWARN?phWarn():"")+html;
   $("#bar").hidden=!(!V2&&(TAB==="opening"||TAB==="closing")&&PART&&!(RESULT&&RESULT.kind===TAB));
   if(!V2&&(TAB==="opening"||TAB==="closing")&&PART) refresh();
@@ -1024,6 +1209,7 @@ function tabHdr(){ const eb="Kitchen HQ · "+niceD(DATE);
   if(TAB==="today") return hdr("To-do",{back:{href:"index.html",label:"Home"},eb,right:INFO.game?`<a class="pill ink" href="index.html#me" style="text-decoration:none">${nf(INFO.game.mine)} pts</a>`:""});
   if(TAB==="opening"||TAB==="closing"){ const s0=INFO.state[TAB], due=TAB==="opening"?INFO.conf.openBy:INFO.conf.closeBy, late=!s0.done&&DATE===INFO.today&&INFO.now>due;
     return hdr(TAB==="opening"?"Opening report":"Closing report",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb,right:`<span class="duepill ${s0.done?"ok":late?"bad":""}">${s0.done?"✓ Complete":late?"Late · "+esc(due):"due "+esc(due)}</span>`}); }
+  if(TAB==="board") return hdr("Daily prep board",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb:"Kitchen HQ"});
   if(TAB==="plan") return hdr("Production plan",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb:"Kitchen HQ"});
   return hdr("Kitchen reports",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb:"Kitchen HQ · last 14 days, fridges, display cakes, reminders"}); }
 function go(t){ if(SENDING){ toast("Please wait until the report is sent."); return; } t=TAB_ALIAS[t]||t; TAB=t; RESULT=null; PART=null; V2=""; CK=null; RCV=null; history.replaceState(null,"","#"+t); render(); window.scrollTo(0,0); if((t==="opening"||t==="closing")&&Date.now()-INFO_AT>60000) reload(); }
@@ -1464,6 +1650,7 @@ function vHistory(){ if(!HIST){ if(HISTERR){ const m=HISTERR; HISTERR=""; return
 document.addEventListener("click",async e=>{
   const b=e.target.closest("button,[role=button]"); if(!b||b.closest(".ca-hp,.ca-login")||b.id==="ca-hbtn") return; const d=b.dataset;
   if(d.tab){ go(d.tab); return; }
+  if(await bdClick(d,b)) return;
   if(d.team){ teamSet(d.team); render(); window.scrollTo(0,0); return; }
   if(d.v2!=null){ if(/^chk:/.test(d.v2)) CK=null; if(/^rcv:/.test(d.v2)) RCV=null; V2=d.v2; PART=null; RESULT=null; render(); window.scrollTo(0,0); return; }
   if(d.v2back){ V2=""; CK=null; RCV=null; DECOED=""; render(); window.scrollTo(0,0); return; }
@@ -1551,6 +1738,7 @@ document.addEventListener("click",async e=>{
 });
 document.addEventListener("click",e=>{ if(e.target.classList&&e.target.classList.contains("sheet")){ const h=e.target.parentElement; if(h) h.innerHTML=""; if(h&&h.id==="tksheet") TK=null; if(h&&h.id==="sheet"&&EQE!=null){ EQE=null; render(); } } });
 document.addEventListener("input",e=>{ const t=e.target, d=t.dataset; if(t.closest&&t.closest(".ca-hp,.ca-login")) return;
+  if(bdInput(t,d)) return;
   if(d.temp){ const [k,id]=d.temp.split("|"); if(/[-−]/.test(t.value)){ st(k).equip[id].neg=true; document.querySelectorAll(`[data-sign^="${k}|${id}|"]`).forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.sign.endsWith("|1")))); } let v=t.value.replace(/[^0-9.,]/g,""); if(v!==t.value) t.value=v; st(k).equip[id].t=v; saveDraft(k); refresh(); return; }
   if(d.kv){ const a=d.kv.split("|"), f=a.pop(), k=a.shift(), key=a.join("|"), s=st(k), r=key.indexOf("ev")===0&&key.indexOf("|")<0?s.ev[+key.slice(2)]:s.rows[key]; if(!r) return; const v=t.value.replace(/[^0-9]/g,"").slice(0,3); if(v!==t.value) t.value=v; r[f]=v; saveDraft(k); if(f==="w") wasteBox(k); refresh(); return; }
   if(d.evn){ const [k,i]=d.evn.split("|"), s=st(k); if(s.ev[+i]){ s.ev[+i].name=t.value.slice(0,40); saveDraft(k); refresh(); } return; }
@@ -1565,6 +1753,7 @@ document.addEventListener("input",e=>{ const t=e.target, d=t.dataset; if(t.close
   if(d.rcvnote&&RCV){ RCV.note=t.value; return; }
 });
 document.addEventListener("change",async e=>{ const t=e.target, d=t.dataset; if(t.closest&&t.closest(".ca-hp,.ca-login")) return;
+  if(await bdChange(t,d)) return;
   if(d.kshot&&t.files&&t.files[0]){ const k=d.kshot, sp=document.getElementById("mi-"+k); if(sp) sp.insertAdjacentHTML("beforeend",' <span class="hint">processing…</span>'); if(TAB==="opening"||TAB==="closing"){ const b=$("#send"); b.disabled=true; }
     let bad=false; try{ P2[k]=await shrink(t.files[0],k==="plan_read"?1600:1200); savePh(k); }catch(err){ bad=true; }
     t.value=""; if(bad){ const el=document.getElementById("mi-"+k); if(el){ el.querySelectorAll(".hint").forEach(x=>x.remove()); el.insertAdjacentHTML("beforeend",' <span class="err">Photo not taken. Please try again.</span>'); } if(TAB==="opening"||TAB==="closing") refresh(); return; }
@@ -1609,4 +1798,4 @@ CA.tour.define({key:"kitchen",steps:tourSteps,ready:()=>!!INFO&&!V2&&!!TOK&&(TAB
   const qt=new URLSearchParams(location.search).get("team"); if(qt==="am"||qt==="pm") teamSet(qt);
   const s=CA.get(); if(!s) return signIn(); TOK=s.t; boot2(); })();
 </script>
-<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.18</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
+<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.18-board</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
