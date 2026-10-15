@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.18-board", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><title>PLAY · Chaleur · Outlet closing</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
+<html lang="en"><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.41-clear1", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><title>PLAY · Chaleur · Outlet closing</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
 /* Chaleur API bridge: talks to the Google backend anonymously, so it works in any browser */
 (function(){var API="https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec";
 function call(fn,args,ok,fail){var ac=typeof AbortController!=="undefined"?new AbortController():null,tm=null,done=function(){if(tm)clearTimeout(tm);};
@@ -16,6 +16,15 @@ function call(fn,args,ok,fail){var ac=typeof AbortController!=="undefined"?new A
 function mk(s,f){return new Proxy({},{get:function(_,k){if(k==="withSuccessHandler")return function(h){return mk(h,f)};if(k==="withFailureHandler")return function(h){return mk(s,h)};return function(){call(k,[].slice.call(arguments),s,f)};}});}
 window.google={script:{run:mk(null,null)}};})();
 </script><style>
+/* v22.24: one 📷 button → "Take a photo" or "Choose from album" (Alfred: "pop up option with icon, take photo or select from album") */
+.ca-pick{position:fixed;inset:0;z-index:10050;background:rgba(43,27,30,.45);display:flex;align-items:flex-end;justify-content:center;padding:12px;box-sizing:border-box}
+.ca-pick-box{width:100%;max-width:420px;background:var(--paper,#fff);color:var(--ink,#2b1b1e);border-radius:18px;padding:14px;box-shadow:0 10px 40px rgba(0,0,0,.25);box-sizing:border-box}
+.ca-pick-t{font-weight:700;font-size:15px;margin:2px 4px 10px}
+.ca-pick-b{display:flex;align-items:center;gap:14px;width:100%;min-height:62px;padding:10px 14px;border:1.5px solid var(--line,#e8dcd6);border-radius:14px;background:transparent;color:inherit;font:inherit;font-weight:700;font-size:16px;text-align:left;cursor:pointer;margin:0 0 8px;box-sizing:border-box}
+.ca-pick-b:active{background:var(--soft,var(--raise,#f6efe9))}
+.ca-pick-b .ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--soft,var(--raise,#f6efe9));display:inline-flex;align-items:center;justify-content:center;font-size:22px}
+.ca-pick-b span small{display:block;font-weight:400;font-size:12.5px;color:var(--muted,#6f5f62);margin-top:1px}
+.ca-pick-x{width:100%;min-height:44px;border:0;background:transparent;color:var(--muted,#6f5f62);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
 .ca-chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted,#6f5f62);flex-wrap:wrap}
 .ca-chip b{color:var(--ink,#2b1b1e);font-weight:600}
 @media (max-width:640px){.ca-chip .ca-si{display:none}.ca-chip{gap:6px;font-size:12.5px}.ca-chip button{min-height:40px;padding:4px 14px}}
@@ -116,7 +125,7 @@ body:has(.bar:not([hidden])) .ca-hbtn{bottom:calc(96px + env(safe-area-inset-bot
 @media print{.ca-hbtn,.ca-hp,.ca-chip button,.tourhi,.tourbub,.tourshow,.tourpill{display:none!important}}
 
 /* v22.7 the one menu (same on every page) */
-#camenu{--m-ground:var(--ground,#f7f2ec);--m-paper:var(--paper,#fff);--m-ink:var(--ink,#2b1b1e);--m-muted:var(--muted,#6f5f62);--m-line:var(--cline,var(--line,#e8dcd6));--m-soft:var(--soft,#f3e4e5);--m-accent:var(--accent,#7b1c2b);--m-display:var(--display,'Cormorant Garamond',Georgia,serif);--m-body:var(--body,Jost,system-ui,sans-serif);font:15px/1.45 var(--m-body);color:var(--m-ink)}
+#camenu{--m-ground:var(--ground,#f7f2ec);--m-paper:var(--paper,#fff);--m-ink:var(--ink,#2b1b1e);--m-muted:var(--muted,#6f5f62);--m-line:var(--cline,var(--line,#e8dcd6));--m-soft:var(--soft,var(--accent-soft,#f3e4e5));--m-accent:var(--accent,#7b1c2b);--m-display:var(--display,'Cormorant Garamond',Georgia,serif);--m-body:var(--body,Jost,system-ui,sans-serif);font:15px/1.45 var(--m-body);color:var(--m-ink)}
 #camenu .menu{position:fixed;inset:0;z-index:80;background:var(--m-ground);overflow:auto;-webkit-tap-highlight-color:transparent}
 #camenu .in{max-width:560px;margin:0 auto;padding:10px 12px calc(24px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;box-sizing:border-box}
 #camenu *,#camenu *::before{box-sizing:border-box}#camenu a{color:inherit}#camenu button{font-family:inherit;cursor:pointer}
@@ -145,6 +154,12 @@ body:has(.bar:not([hidden])) .ca-hbtn{bottom:calc(96px + env(safe-area-inset-bot
 #camenu .mlinks{display:flex;justify-content:center;gap:22px;padding:2px 0 4px;flex-wrap:wrap}#camenu .lnk{min-height:40px;display:inline-flex;align-items:center;font-size:14px;border:0;background:none;box-shadow:none;padding:0 4px;color:var(--m-accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;font-family:inherit}
 #camenu .mwho{display:flex;justify-content:center;padding:4px 0}#camenu .mwho .ca-chip{justify-content:center}
 @media (prefers-color-scheme:dark){#camenu .cb.ink{box-shadow:0 4px 0 rgba(0,0,0,.6)}}
+.ca-pw{position:fixed;inset:0;z-index:2147483000;background:rgba(30,18,20,.45);display:flex;align-items:center;justify-content:center;padding:18px}
+.ca-pw-box{background:var(--paper,#fff);color:var(--ink,#2b1b1e);border-radius:18px;max-width:360px;width:100%;padding:22px 20px 16px;box-shadow:0 18px 50px rgba(0,0,0,.35);text-align:center}
+.ca-pw-dot{width:40px;height:40px;border-radius:50%;margin:0 auto 10px;border:3px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.ca-pw-t{font:700 22px Georgia,serif;margin:0 0 6px}.ca-pw-s{font-size:14px;opacity:.8;margin:0 0 8px;line-height:1.4}.ca-pw-s.w{opacity:1;color:#9a5a12;font-weight:600}
+.ca-pw-b{display:block;width:100%;margin-top:12px;padding:14px;border:0;border-radius:12px;background:var(--accent,#7b1c2b);color:#fff;font:700 16px inherit;cursor:pointer}
+.ca-pw-x{display:block;width:100%;margin-top:6px;padding:10px;border:0;background:none;color:inherit;opacity:.7;font:600 14px inherit;cursor:pointer}
 </style>
 <script>
 /* Chaleur sign-in (phone + PIN, remember me, log out) and the in-app helper. Shared by the office desk, kitchen and audit pages. */
@@ -421,39 +436,41 @@ const CA=(function(){
 
   /* ===== v22.7 ONE MENU for every page (Alfred 1 Oct: "both this interface should be the same … only one for each thing").
      The pages, their areas, access and search words live here once; Home, the office desk and the kitchen page all draw the same menu. ===== */
-  const AREAS=["Kitchen HQ","Outlet Delivery","Back office","Help & support"];
-  const AREAD={"Kitchen HQ":"Opening and closing, prep list, morning and noon to-do, kitchen reports, numbers","Outlet Delivery":"Delivery orders, carry forward, bills, outlet reports, audits","Back office":"Reports, setup, staff, problem reports, corrections","Help & support":"How-to guide, the helper, report a problem, team treat"};
+  const AREAS=["Kitchen HQ","Outlet Delivery","Recipes","Back office","Help & support"]; /* v22.40: Recipes is the 3rd area (Alfred 14 Oct) */
+  const AREAD={"Kitchen HQ":"Opening and closing, prep list, morning and noon to-do, kitchen reports, numbers","Outlet Delivery":"Today, deliveries, outlet reports, bills, audits","Recipes":"Cakes with pictures, components by category, recipe calculator","Back office":"Reports, setup, staff, problem reports","Help & support":"How-to guide, the helper, report a problem, team treat"};
   /* [area, title, description, link, access (ticks: any of; or a function of can), search words, daily-for] */
 const PAGES=[
  /* v22.4 (Alfred 29 Sep): 6 clear Kitchen HQ pages. "Decoration & delivery list" → Morning to-do, "Production list" → Noon to-do;
     the production plan (lists for the next days) is inside the Noon to-do (and the Plan chip on the kitchen page), no longer its own page here. */
  ["Kitchen HQ","Kitchen opening","Opening report: fridges & freezers, HQ display count, outlet deliveries · due 10:30","kitchen.html#opening",["kitchen","kapprove","see_kitchen"],"opening report fridge freezer display count deliveries morning",["kitchen:am"]],
  ["Kitchen HQ","Kitchen closing","Closing report: fridges & freezers, waste & left, mise en place lists · due 19:30","kitchen.html#closing",["kitchen","kapprove","see_kitchen"],"closing report waste left lists evening",["kitchen:pm"]],
- ["Kitchen HQ","Prep list · what to make","What to make today for the HQ display and each outlet, what is left at each outlet, Made numbers","office.html#plan",["kitchen","deliv","doedit","reports","see_plan"],"prep list planned made delivery order do print sheet suggestion plan",["kitchen","office","outlets"]],
+ ["Kitchen HQ","Prep list","What to make today for the HQ display and each outlet, what is left at each outlet, Made numbers","office.html#plan",["kitchen","deliv","doedit","reports","see_plan"],"prep list planned made delivery order do print sheet suggestion plan",["kitchen","office","outlets"]],
  ["Kitchen HQ","Morning to-do · decorate & deliver","Morning team: today's cakes, custom & Grab orders, finish & decorate, pack & deliver the DOs","kitchen.html?team=am#today",["kitchen","kapprove","todo","see_kitchen"],"morning decoration decorate delivery list to-do custom order grab pack deliver",["kitchen:am"]],
  ["Kitchen HQ","Noon to-do · production","Noon team: today's production list, prep reminders, and the plan for the next days","kitchen.html?team=pm#today",["kitchen","kapprove","todo","see_kitchen"],"noon production list plan mise en place photo next days to-do reminders",["kitchen:pm"]],
  ["Kitchen HQ","Daily prep board","Prep jobs over the next days: who makes what, batch weights · tick To do → Doing → Done","kitchen.html#board",["kitchen","kapprove","todo","see_kitchen"],"prep board r&d plan compote insert sponge mousse batch jobs tick daily",[]],
  ["Kitchen HQ","Kitchen reports","Past reports, temperatures and photos · fridges, display cakes and reminders","kitchen.html#history",["kitchen","kapprove","view","see_khist"],"history temperature fridge freezer streak calendar setup display list reminder limit",[]],
- ["Kitchen HQ","Numbers · made & waste","To make, made, sent, sold, left and waste per cake · day, week or month","office.html#numbers",["reports","view","kapprove","see_numbers"],"numbers waste wastage made produced prepared sold left figures report",[]],
- ["Outlet Delivery","Delivery orders","Check colours, mark delivered, edit before it goes out","office.html#deliveries",["deliv","doedit","see_do"],"do delivery order colour dot",["kitchen","office"]],
- ["Outlet Delivery","Carry forward","Stock held at each outlet and what rolls into this week's bill","office.html#carry",(c)=>c("see_carry")||(c("money")&&(c("reports")||c("view")||c("bills"))),"carry forward b/f stock held unsold cf note",["office"]],
- ["Outlet Delivery","Weekly billing","Invoice, carry forward and credit note per outlet week","office.html#billing",(c)=>c("see_billing")||(c("money")&&(c("reports")||c("bills"))),"invoice bill cf cn credit bukku payment weekly",["office"]],
- ["Outlet Delivery","All bills","Every invoice, carry forward and credit note: amount, paid, Bukku","office.html#bills",(c)=>c("see_bills")||(c("money")&&(c("reports")||c("view")||c("bills"))),"all bills invoices list paid bukku history",["office"]],
- ["Outlet Delivery","Outlet closing reports","Each outlet's nightly count, and corrections","office.html#daily",["reports","view","see_daily"],"closing report correction paste waste balance sold",["office","outlets"]],
- ["Outlet Delivery","To clear today","Missing reports, chase outlets, bills to approve","office.html#today",["chase","view","see_today"],"attention chase whatsapp missing report board",["office","outlets"]],
+ ["Kitchen HQ","Numbers","To make, made, sent, sold, left and waste per cake · day, week or month","office.html#numbers",["reports","view","kapprove","see_numbers"],"numbers waste wastage made produced prepared sold left figures report",[]],
+ ["Outlet Delivery","Today","Clear the board: missing reports, chase outlets, bills to approve","office.html#today",["chase","view","see_today"],"attention chase whatsapp missing report board",["office","outlets"]],
+ ["Outlet Delivery","Deliveries","Check colours, mark delivered, edit before it goes out","office.html#deliveries",["deliv","doedit","see_do"],"do delivery order colour dot",["kitchen","office"]],
+ ["Outlet Delivery","Outlet reports","Each outlet's nightly count, corrections and all changes","office.html#daily",["reports","view","see_daily","see_log"],"closing report correction paste waste balance sold",["office","outlets"]],
+ ["Outlet Delivery","Bills","Each week's invoice, carry forward and credit note; what the outlet still holds; every past bill","office.html#billing",(c)=>c("see_billing")||c("see_carry")||c("see_bills")||(c("money")&&(c("reports")||c("bills"))),"invoice bill cf cn credit bukku payment weekly",["office"]],
  ["Outlet Delivery","Spot audit","Visit an outlet: display, prices, chiller","audit.html",["audit"],"audit visit outlet check",["outlets"]],
- ["Outlet Delivery","Audit results","Every spot audit and taste check, with photos and PDF","office.html#audits",["audit","kapprove","see_audits"],"spot audit results qc history pdf score taste check",[]],
+ ["Outlet Delivery","Audits","Every spot audit and taste check, with photos and PDF","office.html#audits",["audit","kapprove","see_audits"],"spot audit results qc history pdf score taste check",[]],
+ /* v22.40 (Alfred 14 Oct): "recipe should be in one of the 4 main menu, make it the 3rd … 1. product index > each cake with picture > each component 2. Component > category > each recipe 3. calculator > search button" */
+ ["Recipes","Cakes","Every cake with its picture: open one to see its components and scale the whole cake","office.html#recipes/cakes",["kitchen","kapprove","reports","view","setup"],"recipe recipes cake cakes product index picture photo build component scale",["kitchen"]],
+ ["Recipes","Components","Every recipe by category: sponge, mousse & cream, filling, glaze, crunch, décor…","office.html#recipes/components",["kitchen","kapprove","reports","view","setup"],"recipe recipes component components category sponge mousse filling glaze crunch dough coating decor ingredient method",[]],
+ ["Recipes","Calculator","Search a recipe and scale it: what I have, target total, trays or pieces","office.html#recipes/calc",["kitchen","kapprove","reports","view","setup"],"recipe calculator scale batch search weight gram",[]],
  ["Back office","Reports","Every report: done and not done, what was sent, photos, reminders and Chase on WhatsApp","reports.html",(c,s)=>c("see_reports")||/owner|manager/i.test(labelOf(s)||""),"reports report done undone missing photos chase reminder whatsapp",[]],
  ["Back office","Setup","Outlets, cakes, prices, WhatsApp, points, fresh start","office.html#setup",["setup","see_setup"],"outlet cake product price shelf life whatsapp wasapbot bukku key go-live fresh start holiday limits",[]],
  ["Back office","Staff & access","Who can sign in, PINs and what each person can do","office.html#staff",["staff"],"team pin phone access permission",[]],
  ["Back office","Problem reports","What the team reported: reply, mark done","office.html#feedback",["problems","see_feedback"],"feedback problem report reply urgent helper questions",[]],
- ["Back office","Corrections log","Every change to a report: who, when and why","office.html#log",["reports","view","see_log"],"edit log correction history",[]],
 ];
-const HELP=[["How-to guide","Step by step for your job, and I'm stuck answers","#guide"],["Ask the helper","How-to questions, any language","ask"],["Report a problem","App, equipment, stock, safety","fb"],["My reports","What happened and the office's reply","mine"],["Team treat & points","This month's treat, the jar and the leaderboard","#treat"]];
+const HELP=[["How-to guide","Step by step for your job, and I'm stuck answers","#guide"],["Ask the helper","How-to questions, any language","ask"],["Report a problem","App, equipment, stock, safety","fb"],["My reports","What happened and the office's reply","mine"],["Team treat & points","This month's treat, the jar and the leaderboard","#team"]];
 const ICON={
  "Kitchen HQ":["#f3e4e5",`<svg viewBox="0 0 30 30"><circle cx="15" cy="5" r="3" fill="#c0392b"/><path d="M7 12h16v4H7z" fill="#e0707a"/><path d="M5 16h20v9H5z" fill="#7b1c2b"/><path d="M5 19h20v2H5z" fill="#e3c466"/></svg>`],
  "Quality checks":["#fbecd2",`<svg viewBox="0 0 30 30"><circle cx="12" cy="12" r="7" fill="none" stroke="#a0620a" stroke-width="3"/><circle cx="10" cy="10" r="2.5" fill="#f2c230"/><path d="M17 17l8 8" stroke="#a0620a" stroke-width="4" stroke-linecap="round"/></svg>`],
  "Outlet Delivery":["#dde8f8",`<svg viewBox="0 0 30 30"><path d="M4 9h22v4H4z" fill="#b07c44"/><path d="M6 13h18v12H6z" fill="#c9955b"/><path d="M13 13h4v12h-4z" fill="#ecc98f"/><circle cx="23" cy="22" r="4" fill="#2f6fd0" stroke="#fff" stroke-width="1.5"/></svg>`],
+ "Recipes":["#f6e7d6",`<svg viewBox="0 0 30 30"><path d="M6 4h15a3 3 0 0 1 3 3v19H9a3 3 0 0 1-3-3z" fill="#fff" stroke="#7b1c2b" stroke-width="2"/><path d="M6 23a3 3 0 0 1 3-3h15" fill="none" stroke="#7b1c2b" stroke-width="2"/><path d="M11 9h8M11 13h6" stroke="#c9955b" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="5" r="3" fill="#e0707a"/></svg>`],
  "Back office":["#fbf1d3",`<svg viewBox="0 0 30 30"><rect x="6" y="5" width="18" height="22" rx="3" fill="#fff" stroke="#2b1b1e" stroke-width="2"/><rect x="11" y="3" width="8" height="5" rx="2" fill="#2b1b1e"/><path d="M10 13h10M10 17h7M10 21h9" stroke="#a0620a" stroke-width="2"/></svg>`],
  "Help & support":["#dcefe2",`<svg viewBox="0 0 30 30"><path d="M4 6h22v14H13l-6 5v-5H4z" fill="#1e8449"/><text x="15" y="17" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Jost,sans-serif">?</text></svg>`]};
 
@@ -467,7 +484,7 @@ const ICON={
   const isHere=href=>{ const h=here(); if(href===h) return true; const base=href.split("#")[0]; return !href.includes("#")&&base===h.split("#")[0]&&!/^index\.html/.test(base); };
   const icon=sec=>ICON[sec]||ICON["Help & support"];
   const row=it=>{ const ic=icon(it.sec), inner=`<span class="mi" style="background:${ic[0]}" aria-hidden="true">${ic[1]}</span><span class="mt"><b>${esc(it.t)}</b><small>${esc(it.d)}</small></span><span class="go" aria-hidden="true">›</span>`;
-    return it.help?`<button type="button" class="mrow" data-help="${esc(it.help)}">${inner}</button>`:`<a class="mrow" href="${esc(it.href)}" data-mgo="1" ${isHere(it.href)?'aria-current="page"':""}>${inner}</a>`; };
+    return it.help?`<button type="button" class="mrow" data-help="${esc(it.help)}">${inner}</button>`:it.menu?`<button type="button" class="mrow" data-mopen="${esc(it.sec)}">${inner}</button>`:`<a class="mrow" href="${esc(it.href)}" data-mgo="1" ${isHere(it.href)?'aria-current="page"':""}>${inner}</a>`; };
   let MOPEN=(()=>{ try{ const v=localStorage.getItem("chaleur.menu"); return v==null?null:v; }catch(e){ return null; } })(), MQ="", MINE=null, MON=false;
   function menuBody(){ const s=get(), q=MQ.trim().toLowerCase(), secs=sections(s);
     if(q){ const words=q.split(/\s+/), all=secs.flatMap(x=>x.items), hit=all.filter(it=>{ const hay=(it.t+" "+it.d+" "+it.k+" "+it.sec).toLowerCase(); return words.every(w=>hay.includes(w)); });
@@ -484,13 +501,33 @@ const ICON={
       <div id="mres">${menuBody()}</div>
       <div class="mf"><button type="button" class="cb ink" data-help="ask">? Ask / Report</button><button type="button" class="cb ghost" data-ca-logout="1">Log out</button></div>
       <div class="mlinks">${/^index\.html/.test(here())?"":`<a class="lnk" href="index.html">‹ Home</a>`}${mc?`<button type="button" class="lnk" data-help="mine">My reports (${mc} open)</button>`:""}</div>
-      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.18-board</div></div></div>`; }
-  function menuOpen(){ const s=get(); if(!s) return; MON=true; MQ=""; drawMenu(); if(!MINE){ run("feedbackMine",s.t).then(r=>{ MINE=r||[]; if(MON) drawMenu(); }).catch(()=>{ MINE=[]; }); } }
+      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.41-clear1</div></div></div>`; }
+  function menuOpen(area){ const s=get(); if(!s) return; if(area&&AREAS.includes(area)) MOPEN=area; MON=true; MQ=""; drawMenu(); if(!MINE){ run("feedbackMine",s.t).then(r=>{ MINE=r||[]; if(MON) drawMenu(); }).catch(()=>{ MINE=[]; }); } }
   function menuClose(){ if(!MON) return; MON=false; MQ=""; drawMenu(); }
   document.addEventListener("input",e=>{ if(e.target&&e.target.id==="msq"&&e.target.closest("#camenu")){ MQ=e.target.value; const r=document.querySelector("#camenu #mres"); if(r) r.innerHTML=menuBody(); } });
-  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&MON) menuClose(); });
+  /* v22.24 photo chooser: pick("kshot=op_prep","Filled prep sheet") finds the page's hidden file inputs input[data-kshot="op_prep"] — the one with
+     `capture` opens the camera, the one without opens the album (several at once when it has `multiple`) — and asks which one. A button with
+     data-pick="kshot=op_prep" opens it on tap. One input only → it is clicked straight away. */
+  let PICKEL=null;
+  function pickClose(){ if(PICKEL){ PICKEL.remove(); PICKEL=null; } }
+  function pick(spec,title){ pickClose(); const m=/^([a-z][a-z0-9-]*)=(.*)$/i.exec(String(spec||"")); if(!m) return false;
+    const key=m[1].replace(/[A-Z]/g,c=>"-"+c.toLowerCase()), val=m[2].replace(/"/g,'\\"'), sel=`input[type="file"][data-${key}="${val}"]`;
+    const cam=document.querySelector(sel+"[capture]"), alb=document.querySelector(sel+":not([capture])"); if(!cam&&!alb) return false;
+    if(!cam||!alb){ const one=cam||alb; one.value=""; one.click(); return true; }
+    const multi=alb.hasAttribute("multiple");
+    const el=document.createElement("div"); el.className="ca-pick"; el.setAttribute("role","dialog"); el.setAttribute("aria-label",title||"Add a photo");
+    el.innerHTML=`<div class="ca-pick-box"><div class="ca-pick-t">${esc(title||"Add a photo")}</div>
+      <button type="button" class="ca-pick-b" data-pk="cam"><span class="ic">📷</span><span>Take a photo<small>opens the camera</small></span></button>
+      <button type="button" class="ca-pick-b" data-pk="alb"><span class="ic">🖼️</span><span>Choose from album<small>${multi?"you can pick several at once":"a photo already on this phone"}</small></span></button>
+      <button type="button" class="ca-pick-x" data-pk="x">Cancel</button></div>`;
+    el.addEventListener("click",ev=>{ const b=ev.target.closest("[data-pk]"); const which=b?b.dataset.pk:(ev.target===el?"x":""); if(!which) return; ev.stopPropagation();
+      const inp=which==="cam"?cam:which==="alb"?alb:null; pickClose(); if(inp){ inp.value=""; inp.click(); } });
+    document.body.appendChild(el); const fb=el.querySelector("[data-pk=cam]"); if(fb) fb.focus(); PICKEL=el;
+    [cam,alb].forEach(i=>i.addEventListener("change",()=>{ if(PICKEL===el) pickClose(); },{once:true})); return true; }
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ if(PICKEL){ pickClose(); return; } if(MON) menuClose(); } });
   document.addEventListener("click",e=>{ const t=e.target; if(!t||!t.closest) return;
-    const mb=t.closest("[data-menu]"); if(mb&&!t.closest("#camenu")){ e.preventDefault(); e.stopImmediatePropagation(); menuOpen(); return; }
+    const pk=t.closest("[data-pick]"); if(pk&&!pk.disabled){ e.preventDefault(); e.stopImmediatePropagation(); pick(pk.dataset.pick,pk.dataset.pickTitle||pk.getAttribute("aria-label")||"Add a photo"); return; }
+    const mb=t.closest("[data-menu],[data-mopen]"); if(mb&&!t.closest("#camenu")){ e.preventDefault(); e.stopImmediatePropagation(); menuOpen(mb.dataset.mopen||mb.dataset.marea||""); return; }
     if(!t.closest("#camenu")) return;
     e.stopImmediatePropagation(); /* the menu handles its own taps; the page's handlers stay out */
     if(t.closest("[data-mclose]")){ menuClose(); return; }
@@ -498,8 +535,45 @@ const ICON={
     const h=t.closest("[data-help]"); if(h){ menuClose(); openHelp(h.dataset.help); return; }
     const g=t.closest("[data-mgo]"); if(g){ const href=g.getAttribute("href")||""; menuClose(); if(href.split("#")[0]===here().split("#")[0]&&href.includes("#")){ e.preventDefault(); location.hash=href.slice(href.indexOf("#")); } return; }
     if(t.closest("[data-ca-logout]")){ e.preventDefault(); logout(); return; } });
+  /* v22.29 (Alfred 11 Oct): "it should be a window within the app, title Daily prep is out, with a button Open and print". Mornings
+     (06:00–13:59), for people who can print the prep sheet, on every page, until today's sheet is printed (by anyone); again when online
+     orders for today came in after it was printed. "Later" hides it for 15 minutes. On the office Prep list the button prints straight
+     away (window.caPrintPrep); elsewhere it opens the Prep list, where the same window prints with one more tap. */
+  let PW=null;
+  const pwClose=()=>{ if(PW){ PW.remove(); PW=null; } };
+  async function prepWin(force){ try{ if(window.CHALEUR_NO_GUIDE&&!window.CHALEUR_PREP_WIN) return; /* automated tests opt in */ const s=get(); if(!s||!s.t) return; const P=permsOf(s); if(!["kitchen","deliv","doedit","reports"].some(k=>P.includes(k))) return;
+      const h=new Date().getHours(); if(!force&&(h<6||h>=14)) return;
+      let sn=0; try{ sn=+sessionStorage.getItem("ca.pwLater")||0; }catch(e){} if(!force&&Date.now()<sn) return;
+      const r=await run("prepOut",s.t); if(!r||!r.show) return; if(r.printed&&!r.newOrders) { pwClose(); return; }
+      if(typeof window.caPrepWinOK==="function"&&!window.caPrepWinOK(r)) return;
+      pwClose(); const d=new Date(r.date+"T12:00:00"), day=d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}), onDesk=typeof window.caPrintPrep==="function";
+      const el=document.createElement("div"); el.className="ca-pw"; el.id="ca-pw"; el.setAttribute("role","dialog"); el.setAttribute("aria-label","Daily prep is out");
+      el.innerHTML=`<div class="ca-pw-box"><div class="ca-pw-dot" style="background:${esc(r.hex||"#888")}"></div><p class="ca-pw-t">Daily prep is out</p>
+        <p class="ca-pw-s">${esc(day)} · ${esc(String(r.dot||"").charAt(0)+String(r.dot||"").slice(1).toLowerCase())} dot. Check it, print it, then start your day.</p>
+        ${r.printed&&r.newOrders?`<p class="ca-pw-s w">${r.newOrders} new online order${r.newOrders===1?"":"s"} since it was printed by ${esc(r.printed.by||"someone")} — print it again.</p>`:""}
+        <button type="button" class="ca-pw-b" data-pw="go">${onDesk?"Print":"Open and print"}</button><button type="button" class="ca-pw-x" data-pw="later">Later</button></div>`;
+      el.addEventListener("click",ev=>{ const b=ev.target.closest("[data-pw]"); if(!b) return; ev.stopPropagation(); ev.preventDefault();
+        if(b.dataset.pw==="later"){ try{ sessionStorage.setItem("ca.pwLater",String(Date.now()+15*60000)); }catch(e){} pwClose(); return; }
+        if(typeof window.caPrintPrep==="function"){ pwClose(); window.caPrintPrep(r.date); return; }
+        try{ sessionStorage.setItem("ca.pwGo",r.date); }catch(e){} location.href="office.html#plan"; });
+      document.body.appendChild(el); PW=el; const fb=el.querySelector("[data-pw=go]"); if(fb) fb.focus(); }catch(e){} }
+  if(!/closing|audit/.test(location.pathname)) { if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",()=>setTimeout(prepWin,1800)); else setTimeout(prepWin,1800); }
+  /* v22.38 (Alfred 14 Oct): B2B orders from Bukku invoices — shown from the invoice date until the delivery date ("they take 3-4 days to
+     prep bulk order up, so include it as upcoming b2b order"). Shared by the office Prep list and the kitchen To-do; each page draws its card. */
+  const B2B=(()=>{ const dd=(a,b)=>Math.round((Date.parse(b+"T00:00:00Z")-Date.parse(a+"T00:00:00Z"))/864e5), WD=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MO=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const nice=d=>{ if(!d) return ""; const x=new Date(d+"T00:00:00Z"); return isNaN(x)?d:WD[x.getUTCDay()]+" "+x.getUTCDate()+" "+MO[x.getUTCMonth()]; };
+    const pick=o=>/pick|collect/i.test((o&&o.method)||"");
+    const phase=(o,t,pd)=>{ if(!o.del) return {k:"nodate",n:null,lab:"No delivery date in Bukku"}; const n=dd(t,o.del), v=pick(o)?"pick-up":"delivery"; if(n<0) return null;
+      if(n===0) return {k:"today",n,lab:(pick(o)?"Pick-up":"Delivery")+" today"}; if(n<=pd) return {k:"prep",n,lab:"Prep now · "+v+" "+(n===1?"tomorrow":"in "+n+" days")}; return {k:"up",n,lab:"Upcoming · in "+n+" days"}; };
+    const clean=s=>String(s||"").replace(/\s*\d+\s*NOS\s*\/\s*CTN\s*$/i,"").trim();
+    const item=i=>{ const u=String(i.unit||""), b=i.base&&i.bunit&&(i.bunit!==u||+i.base!==+i.qty)?` (${i.base} ${i.bunit})`:""; return `${i.qty} ${u} ${clean(i.name)}${b}`.replace(/\s+/g," ").trim(); };
+    const view=(B,t)=>{ if(!B) return null; const pd=+B.prepDays||4, rows=(B.orders||[]).map(o=>({o,ph:phase(o,t,pd)})).filter(x=>x.ph);
+      const dated=rows.filter(x=>x.ph.k!=="nodate").sort((a,b)=>a.o.del.localeCompare(b.o.del)||String(a.o.no).localeCompare(String(b.o.no))), nodate=rows.filter(x=>x.ph.k==="nodate");
+      const tot={}; dated.filter(x=>x.ph.k!=="up").forEach(x=>(x.o.items||[]).forEach(i=>{ const k=(i.sku||clean(i.name)).toUpperCase()+"|"+(i.unit||""), z=tot[k]||(tot[k]={name:clean(i.name),unit:i.unit||"",qty:0,base:0,bunit:i.bunit||""}); z.qty+=+i.qty||0; z.base+=+i.base||0; }));
+      return {pd,dated,nodate,tot:Object.values(tot),nPrep:dated.filter(x=>x.ph.k!=="up").length}; };
+    return {phase,view,item,nice,clean,pick}; })();
   const menu={open:menuOpen,close:menuClose,on:()=>MON,redraw:()=>{ if(MON) drawMenu(); },sections:()=>sections(get()),pages:()=>pagesFor(get()),ok:x=>pageOK(x,get()),row,icon,areas:AREAS,desc:AREAD,myArea:()=>myArea(get())};
-  return {get,save,clear,run,isAuthErr,loginForm,logout,toLogin,chip,helper,openHelp:v=>openHelp(v),ROLE,esc,nextHref,nextList,HOME,canView,vaSelect,loadVA,permsOf,labelOf,areaOf,can,update,tour:TOUR,menu,PAGES,HELP,ICON};
+  return {get,save,clear,run,isAuthErr,loginForm,logout,toLogin,chip,helper,openHelp:v=>openHelp(v),ROLE,esc,nextHref,nextList,HOME,canView,vaSelect,loadVA,permsOf,labelOf,areaOf,can,update,tour:TOUR,menu,PAGES,HELP,ICON,pick,pickClose,prepWin,prepWinClose:()=>pwClose(),b2b:B2B};
 })();
 </script>
 
@@ -610,7 +684,7 @@ label.f input,label.f select,label.f textarea{text-transform:none;letter-spacing
 .stp2 input::-webkit-outer-spin-button,.stp2 input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .stp2.fw input:not(:placeholder-shown){color:var(--bad-tx)}
 .ptiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.ptiles.two{grid-template-columns:repeat(2,1fr)}
-.pt{height:88px;border-radius:16px;border:2px dashed #d9c9c1;background:var(--paper);color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12.5px;font-weight:600;cursor:pointer;text-align:center;padding:4px;position:relative;overflow:hidden}
+.pt{font:inherit;height:88px;border-radius:16px;border:2px dashed #d9c9c1;background:var(--paper);color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12.5px;font-weight:600;cursor:pointer;text-align:center;padding:4px;position:relative;overflow:hidden}
 .pt .mk{font-size:20px;line-height:1}.pt.on{border:2px solid var(--ok);background:var(--ok-bg);color:var(--ok-tx)}.pt.need{border-color:var(--warn);background:var(--warn-bg);color:var(--warn-tx)}
 .pt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}.pt .mk,.pt .lb{position:relative}
 .thumbs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.thumbs img{width:64px;height:64px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
@@ -629,7 +703,114 @@ th:first-child,td:first-child{text-align:left}td{padding:8px 4px;border-bottom:1
 .ca-hbtn{bottom:calc(142px + env(safe-area-inset-bottom,0px))!important;min-height:44px!important;padding:0 14px!important;font-size:14px!important}
 .opt{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line,#eee);cursor:pointer}.opt:first-of-type{border-top:0}.opt input[type=radio]{width:24px;height:24px;flex:0 0 24px;margin:0;accent-color:#7b1c2b}.opt span{flex:1;line-height:1.4}.opt .cq-why{width:100%;margin-top:8px;padding:10px;border:1px solid var(--line,#ccc);border-radius:10px;font:inherit}
 .decl{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line,#ddd);border-radius:12px;padding:12px;margin-top:10px;font-size:14px;line-height:1.45;cursor:pointer}.decl input{width:22px;height:22px;flex:0 0 22px;margin-top:2px;accent-color:var(--ok,#1d7a3c)}.decl.on{border-color:var(--ok,#1d7a3c);background:rgba(29,122,60,.06)}.decl.need{border-color:var(--bad,#b3261e);box-shadow:0 0 0 3px rgba(179,38,30,.15)}
-</style></head><body>
+</style><style id="cv-css">
+/* Clear view · step 1 (playground). Readability only: no numbers or features change.
+   Secondary text darker; failing buttons/chips fixed; bigger tick boxes; floating help buttons smaller on phones. */
+:root{--muted:#594a4c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--muted:#c9b9bb}}
+:root[data-theme="dark"]{--muted:#c9b9bb}
+/* WhatsApp button: white on #1f8f55 was 4.1 : 1 */
+.btn.wa,a.btn.wa{background:#157347!important;border-color:#157347!important;color:#fff!important}
+/* menu count badge: 10 px white on pale red in dark */
+span.n{background:#b3261e!important;color:#fff!important;font-size:11.5px!important}
+/* dark mode: chips whose background follows the ink/accent colour but whose text stayed light */
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]) .pill.ink{color:#6b4f00!important}
+ :root:not([data-theme="light"]) .pchip{color:#2a1a1d!important}
+ :root:not([data-theme="light"]) .dtile.sel,:root:not([data-theme="light"]) .dtile.sel *{color:var(--ground,#161012)!important}
+}
+:root[data-theme="dark"] .pill.ink{color:#6b4f00!important}
+:root[data-theme="dark"] .pchip{color:#2a1a1d!important}
+:root[data-theme="dark"] .dtile.sel,:root[data-theme="dark"] .dtile.sel *{color:var(--ground,#161012)!important}
+/* Prep list cards: the little pills under a box ("4 on display", "1 HQ") wrap under it instead of running over the next box */
+table.prep.cards td.pn label{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+table.prep.cards td.pn .pill{white-space:normal;text-align:center;max-width:100%;line-height:1.15}
+/* tick boxes and radio buttons */
+input[type=checkbox]:not(.tick *):not(.tk *),input[type=radio]:not(.tick *):not(.tk *){width:20px!important;height:20px!important;accent-color:var(--accent,#7b1c2b);vertical-align:middle}
+@media (max-width:600px){
+ input[type=checkbox]:not(.tick *):not(.tk *),input[type=radio]:not(.tick *):not(.tk *){width:24px!important;height:24px!important;min-width:24px}
+ summary{padding-top:9px;padding-bottom:9px}
+ .btn.sm,button.sm,a.btn.sm{min-height:40px}
+ /* "? Ask" becomes a round "?" so it covers less; "Show me how" smaller */
+ .ca-hbtn{width:52px;min-width:52px;padding:0!important;border-radius:50%!important;font-size:0!important;display:inline-flex;align-items:center;justify-content:center}
+ .ca-hbtn::after{content:"?";font:700 24px/1 var(--body,Jost,system-ui,sans-serif)}
+ .tourshow{padding:6px 12px!important}
+ /* room at the end of every page so the last rows are not under the floating buttons */
+ body::after{content:"";display:block;height:72px}
+}
+@media print{ body::after{display:none} }
+</style>
+<script id="cv-js">
+/* Clear view · step 1 (playground) — runs on every page.
+   1. Text-size floor: every on-screen CSS rule or inline style under 13 px is raised to 13 px (badges 11.5 px). Print rules untouched.
+   2. Contrast guard: any text that ends up below 4.5 : 1 against what is behind it (3 : 1 for large text) is darkened or
+      lightened just enough, in light and dark mode. Re-checked after every redraw and when the theme changes.
+   Nothing else changes: same numbers, same buttons, same layout code. */
+(function(){
+ if(window.__CV) return; window.__CV={v:1,fixed:0,floor:0};
+ var FLOOR=13, UPF=12, TIGHT=/td\.pn::before/, BADGE=/(span\.n\b|\.badge\b|\.cnt\b)/;
+ var css=null, fl=document.createElement('style'); fl.id='cv-floor';
+ function last(){ var h=document.head; if(!h) return; css=css||document.getElementById('cv-css'); if(h.lastElementChild!==fl){ if(css) h.appendChild(css); h.appendChild(fl); } }
+ function isPrint(m){ var t=(m||'').toLowerCase(); return /\bprint\b/.test(t)&&!/\bscreen\b|\ball\b/.test(t); }
+ function walk(rules,out){ for(var i=0;i<rules.length;i++){ var r=rules[i];
+   if(r.type===1){ var fs=r.style&&r.style.fontSize;
+     if(!fs&&r.style){ var sh=r.style.getPropertyValue('font')||((/(?:^|[;{\s])font\s*:\s*([^;}]+)/.exec(r.cssText)||[])[1])||''; var mm=/(?:^|\s)(\d+(?:\.\d+)?)px(?=\/|\s|$)/.exec(sh); if(mm) fs=mm[1]+'px'; }
+     if(fs&&/px$/.test(fs)){ var v=parseFloat(fs), sel=r.selectorText||''; if(v>0&&v<FLOOR){ var up=(r.style.textTransform==='uppercase')||/text-transform\s*:\s*uppercase/.test(r.cssText); var nv=BADGE.test(sel)?Math.max(v,11.5):TIGHT.test(sel)?Math.max(v,11):(up?Math.max(v,UPF):FLOOR); if(nv>v) out.push(sel+'{font-size:'+nv+'px'+(up?';letter-spacing:.03em':'')+'}'); } } }
+   else if(r.type===4){ if(isPrint(r.media&&r.media.mediaText)) continue; var o=[]; walk(r.cssRules,o); if(o.length) out.push('@media '+r.media.mediaText+'{'+o.join('')+'}'); }
+   else if(r.type===12){ var o2=[]; walk(r.cssRules,o2); if(o2.length) out.push('@supports '+r.conditionText+'{'+o2.join('')+'}'); } } }
+ var sheetsSeen=-1;
+ function floor(){ var n=document.styleSheets.length; if(n===sheetsSeen) return; sheetsSeen=n; var out=[];
+   for(var i=0;i<n;i++){ var s=document.styleSheets[i]; if(!s||s.ownerNode===fl||s.ownerNode===css) continue; if(s.media&&isPrint(s.media.mediaText)) continue; try{ walk(s.cssRules,out); }catch(e){} }
+   fl.textContent=out.join('\n'); window.__CV.floor=out.length; last(); }
+ function inline(root){ var els=(root||document).querySelectorAll?(root||document).querySelectorAll('[style*="font"]'):[]; for(var i=0;i<els.length;i++){ var e=els[i], fs=e.style.fontSize;
+   if(!fs){ var mm=/(?:^|\s)(\d+(?:\.\d+)?)px(?=\/|\s|$)/.exec(e.style.getPropertyValue('font')||((/font\s*:\s*([^;]+)/.exec(e.getAttribute('style')||'')||[])[1])||''); if(mm) fs=mm[1]+'px'; }
+   if(fs&&/px$/.test(fs)){ var v=parseFloat(fs); if(v>0&&v<FLOOR&&!e.closest('svg')) e.style.fontSize=(e.matches('span.n,.badge,.cnt')?Math.max(v,11.5):FLOOR)+'px'; } } }
+ // ---- contrast guard
+ function P(s){ var m=/rgba?\(([^)]+)\)/.exec(s||''); if(!m) return null; var a=m[1].split(/[\s,\/]+/).filter(Boolean).map(Number); return [a[0],a[1],a[2],a.length>3?a[3]:1]; }
+ function lin(v){ v/=255; return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4); }
+ function L(c){ return 0.2126*lin(c[0])+0.7152*lin(c[1])+0.0722*lin(c[2]); }
+ function CR(a,b){ var x=L(a),y=L(b); return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05); }
+ function mix(t,b){ var a=t[3]; return [t[0]*a+b[0]*(1-a),t[1]*a+b[1]*(1-a),t[2]*a+b[2]*(1-a),1]; }
+ var BGC;
+ function bgOf(el){ if(BGC.has(el)) return BGC.get(el); var cs=getComputedStyle(el), res;
+   if(cs.backgroundImage&&cs.backgroundImage!=='none') res=null;
+   else { var c=P(cs.backgroundColor); var under=el.parentElement?bgOf(el.parentElement):(P(getComputedStyle(document.documentElement).backgroundColor)||[255,255,255,1]);
+     if(!c||c[3]===0) res=under; else if(c[3]>=1) res=c; else res=under?mix(c,under):null; }
+   if(el===document.documentElement&&!res) res=[255,255,255,1];
+   BGC.set(el,res); return res; }
+ function shift(fg,bg,need){ var dark=L(bg)>0.35, c=fg.slice(0,3); for(var k=0;k<30;k++){ var t=[c[0],c[1],c[2],1]; if(CR(t,bg)>=need) return t;
+   c=dark?c.map(function(v){ return v*0.9; }):c.map(function(v){ return v+(255-v)*0.12; }); } return dark?[0,0,0,1]:[255,255,255,1]; }
+ function guard(){ BGC=new WeakMap();
+   var old=document.querySelectorAll('[data-cvc]'); for(var i=0;i<old.length;i++){ old[i].style.removeProperty('color'); old[i].removeAttribute('data-cvc'); }
+   var oldf=document.querySelectorAll('[data-cvf]'); for(var i2=0;i2<oldf.length;i2++){ oldf[i2].style.removeProperty('font-size'); oldf[i2].removeAttribute('data-cvf'); }
+   var small=[];
+   var seen=new Set(), todo=[], tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT), n, count=0;
+   while((n=tw.nextNode())&&count<12000){ if(!/[A-Za-z0-9À-ɏ一-鿿]/.test(n.nodeValue)) continue; var el=n.parentElement; if(!el||seen.has(el)) continue; seen.add(el); count++;
+     if(/^(SCRIPT|STYLE|NOSCRIPT|OPTION|TEXTAREA)$/.test(el.tagName)||el.closest('svg,[disabled],[aria-disabled="true"],:disabled,.ca-band,[data-cv-skip]')) continue;
+     if(!el.getClientRects().length) continue;
+     var cs=getComputedStyle(el); if(cs.visibility==='hidden'||+cs.opacity<0.6) continue;
+     var fg=P(cs.color), bg=bgOf(el); if(!fg||!bg) continue; var f=mix(fg,bg), fs=parseFloat(cs.fontSize), big=fs>=24||(fs>=18.6&&+cs.fontWeight>=700), need=big?3:4.5;
+     if(CR(f,bg)<need) todo.push([el,shift(f,bg,need+0.3)]);
+     if(fs>1&&fs<(cs.textTransform==='uppercase'?UPF:FLOOR)-0.05&&!el.matches('span.n,.badge,.cnt,.ca-hbtn,.ca-hbtn *')) small.push([el,cs.textTransform==='uppercase'?UPF:FLOOR]); }
+   for(var k=0;k<small.length;k++){ small[k][0].style.setProperty('font-size',small[k][1]+'px','important'); small[k][0].setAttribute('data-cvf','1'); }
+   for(var j=0;j<todo.length;j++){ var c=todo[j][1]; todo[j][0].style.setProperty('color','rgb('+Math.round(c[0])+','+Math.round(c[1])+','+Math.round(c[2])+')','important'); todo[j][0].setAttribute('data-cvc','1'); }
+   window.__CV.fixed=todo.length; window.__CV.sized=small.length; }
+ var tmr=null;
+ function run(){ tmr=null; try{ floor(); inline(document); guard(); }catch(e){ if(window.console) console.warn('clear view',e); } }
+ function soon(ms){ if(tmr) clearTimeout(tmr); tmr=setTimeout(function(){ (window.requestIdleCallback||function(f){ f(); })(run,{timeout:600}); },ms||250); }
+ window.__CV.run=run;
+ function start(){ last(); run();
+   new MutationObserver(function(ms){ for(var i=0;i<ms.length;i++){ var t=ms[i].target; if(t===fl||t===css) continue; if(ms[i].type==='childList'){ soon(); return; } if(ms[i].type==='attributes'&&ms[i].attributeName!=='style'&&!(t.hasAttribute&&t.hasAttribute('data-cvc'))){ soon(); return; } } })
+     .observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','hidden','open']});
+   new MutationObserver(function(){ sheetsSeen=-1; last(); soon(50); }).observe(document.head,{childList:true});
+   new MutationObserver(function(){ soon(50); }).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','class']});
+   try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){ soon(50); }); }catch(e){}
+   addEventListener('hashchange',function(){ soon(400); }); addEventListener('resize',function(){ soon(400); });
+   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ soon(100); }); }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start); else start();
+})();
+</script>
+</head><body>
 <div class="w" id="app"><div class="empty"><span class="spin"></span> Loading…</div></div>
 <div class="foot" id="bar" hidden><div class="in"><div class="st" id="status"></div><button class="cb big full" id="next" type="button">Send tonight's count</button></div></div>
 <div id="sheet"></div>
@@ -717,7 +898,7 @@ function grouped(){
 function stepper(k,f,label){const v=ROWS[k][f];return `<div class="stp2 f${f}"><button type="button" data-step="${esc(k)}" data-sf="${f}" data-sn="-1" aria-label="${label} minus one">−</button><input type="number" inputmode="numeric" min="0" step="1" placeholder="0" value="${esc(v)}" data-k="${esc(k)}" data-f="${f}" aria-label="${label}"><button type="button" data-step="${esc(k)}" data-sf="${f}" data-sn="1" aria-label="${label} plus one">+</button></div>`;}
 function noteOf(r){ const q=sfOf(r.productId,r.colour), k=K(r.productId,r.colour), nd=!EXP.has(k)&&ORDER.some(x=>x!==k&&EXP.has(x)&&ROWS[x].productId===r.productId);
   const base=q==="bad"?`<small class="bad">Past shelf life · throw away</small>`:q==="warn"?`<small class="warn">${esc(capw(r.colour))} · last day, sell first</small>`:`<small>${esc(capw(r.colour))} · ${esc(colDay(r.colour))}</small>`;
-  return nd?base+`<small class="warn">Not on your delivery list — check the sticker</small>`:base; }
+  return nd?base+`<small class="warn">Not on your delivery list — is the sticker really this colour? (today's colour is not the cake's dot)</small>`:base; }
 /* v22.11 (Alfred 6 Oct, after Jiran re-entered Monday's cakes under each day's colour): a count under a colour that was never delivered
    to this outlet, while the delivered colour of the same cake is left empty, gets one question before sending — with the likely answer
    ready ("they're the ORANGE ones, move my count") and a second answer they fill in ("we really have YELLOW: because…"). */
@@ -752,7 +933,8 @@ function render(){
   ${DRAFTED?`<div class="banner info" style="margin-top:12px">We kept the counts and photos you hadn't sent yet.</div>`:""}
   <section class="sec">
     ${safetyBanner()}
-    <p class="hint" style="text-wrap:balance"><b>Waste</b> = thrown away or damaged · <b>Left</b> = still in the chiller · empty = 0. Another colour? Tap its dot.</p>
+    <p class="hint" style="text-wrap:balance"><b>Waste</b> = thrown away or damaged · <b>Left</b> = still in the chiller · empty = 0.</p>
+    <p class="hint" style="text-wrap:balance"><b>The dot = the sticker on the cake</b> (the day it was made), <b>not today</b>. Count each cake under its sticker's colour — a Monday cake stays that colour all week. Only tap another dot if a sticker really has that colour.</p>
     ${g.length?g.map(c=>`<div class="cat">${esc(CATL[c.cat]||c.cat)}</div>${c.items.map(({p,keys})=>`<div class="card cake" id="cake-${esc(p.id)}"><div class="hd2">${pic(p)}<div class="tt"><div class="nm">${esc(p.name)}</div><div class="sub">${keys.length?`${keys.length} colour${keys.length>1?"s":""}`:"Tap the colour dot on the cake"}</div></div></div>
       <div class="dots" role="group" aria-label="Colour dots for ${esc(p.name)}">${COL().map(c=>{const k=K(p.id,c.name), on=!!ROWS[k]; return `<button type="button" class="cd${on?" on":""}" data-cd="${esc(k)}" aria-pressed="${on}" aria-label="${esc(c.name)}, made ${esc(colDay(c.name))}"><i style="background:${esc(c.hex)}"></i><span>${esc(colDay(c.name))}</span></button>`;}).join("")}</div>
       ${keys.length?`<div class="colh"><span>Cake · dot</span><span>Waste</span><span>Left</span></div>`:""}${keys.map(k=>{const r=ROWS[k];return `<div class="ln"><div class="dot"><i style="background:${esc(colHex(r.colour))}"></i><span><b>${esc(p.name)}</b>${noteOf(r)}</span></div>${stepper(k,"w","Waste")}${stepper(k,"b","Left")}</div>`}).join("")}</div>`).join("")}`).join("")
@@ -760,7 +942,7 @@ function render(){
     <button class="cb dash full" type="button" data-act="add">+ Add a cake that's not listed</button>
   </section>
   <section class="sec">
-    <div class="eb">Photos · tap to take</div>
+    <div class="eb">Photos · tap to take or choose</div>
     <div class="ptiles ${hasWaste()?"":"two"}" id="ptiles">${tile("sales","Sales report")}${tile("display","Chiller")}${hasWaste()?tile("waste","Waste"):""}</div>
     <div class="plinks" id="plinks">${plinks()}</div>
     ${thumbs()}
@@ -770,10 +952,12 @@ function render(){
   saveDraft(); $("#bar").hidden=false; $("#next").textContent="Send tonight's count"; $("#next").disabled=false; setBtn();
 }
 const canAdd=k=>k==="sales"?PH.sales.length<3:!PH[k];
-const plinks=()=>["sales","display"].concat(hasWaste()?["waste"]:[]).map(k=>canAdd(k)?`<label>🖼 ${k==="sales"?"Sales report":k==="display"?"Chiller":"Waste"} from phone<input type="file" accept="image/*" data-shot="${k}" hidden></label>`:"").join("");
+const plinks=()=>""; /* v22.24: the album choice is inside the tile's pop-up now */
 function tile(key,title){ const v=PH[key], has=key==="sales"?v.length>0:!!v, first=key==="sales"?v[0]:v, n=key==="sales"?v.length:0;
   const lbl=has?(key==="sales"?(n<3?`${n} photo${n>1?"s":""} · add more`:`${n} photos`):"Done · tap to retake"):title;
-  return `<label class="pt ${has?"on":""}" id="shot-${key}" data-tile="${key}">${has&&first?`<img src="${first}" alt="">`:""}<span class="mk">${has?"✓":"📷"}</span><span class="lb">${esc(lbl)}</span>${canAdd(key)||key!=="sales"?`<input type="file" accept="image/*" capture="environment" data-shot="${key}" hidden>`:""}</label>`; }
+  /* v22.24 (Alfred): one tap → "Take a photo" or "Choose from album" (the sales report may be several photos at once) */
+  const ok=canAdd(key)||key!=="sales", ttl=key==="sales"?"Sales report":key==="display"?"Chiller":"Waste";
+  return `<button type="button" class="pt ${has?"on":""}" id="shot-${key}" data-tile="${key}" ${ok?`data-pick="shot=${key}" data-pick-title="${ttl}"`:"disabled"}>${has&&first?`<img src="${first}" alt="">`:""}<span class="mk">${has?"✓":"📷"}</span><span class="lb">${esc(lbl)}</span></button>${ok?`<input type="file" accept="image/*" capture="environment" data-shot="${key}" hidden><input type="file" accept="image/*" ${key==="sales"?"multiple":""} data-shot="${key}" hidden>`:""}`; }
 function thumbs(){ const items=PH.sales.map((u,i)=>`<span class="tw"><img src="${u}" alt="Sales photo ${i+1}"><button type="button" data-rm="sales|${i}" aria-label="Remove photo">×</button></span>`);
   if(PH.display) items.push(`<span class="tw"><img src="${PH.display}" alt="Chiller photo"><button type="button" data-rm="display|0" aria-label="Remove photo">×</button></span>`);
   if(PH.waste&&hasWaste()) items.push(`<span class="tw"><img src="${PH.waste}" alt="Waste photo"><button type="button" data-rm="waste|0" aria-label="Remove photo">×</button></span>`);
@@ -882,7 +1066,8 @@ document.addEventListener("input",e=>{const t=e.target;
 document.addEventListener("change",async e=>{const t=e.target;
   if(t.id==="date"&&t.value){keep();DATE=t.value;PH={sales:[],display:null,waste:null};NOTE="";PREV=null;PHSIG="";return load();}
   if(t.dataset.shot&&t.files&&t.files[0]){const key=t.dataset.shot; keep(); status("Processing photo…"); const nx=$("#next"); if(nx) nx.disabled=true;
-    try{const u=await shrink(t.files[0],key==="sales"?2000:1400); if(key==="sales") PH.sales.push(u); else PH[key]=u;}catch(err){status("That photo couldn't be read. Please try again.",true);}
+    /* v22.23: the sales report can be several photos picked at once from the gallery (up to 3 in all) */
+    try{ const files=key==="sales"?[...t.files].slice(0,Math.max(0,3-PH.sales.length)):[t.files[0]]; for(const f of files){ const u=await shrink(f,key==="sales"?2000:1400); if(key==="sales") PH.sales.push(u); else PH[key]=u; } }catch(err){status("That photo couldn't be read. Please try again.",true);}
     const y=window.scrollY; render(); window.scrollTo(0,y);}
 });
 /* ---- First-time guide (step-by-step, auto-advances, skippable) ----
@@ -899,7 +1084,7 @@ const rowsProg=()=>{const n=ORDER.filter(rowDone).length; return ORDER.length?`$
 const tourOnForm=()=>!!$("#who")&&!!(INFO&&INFO.outlet);
 const tourSteps=[
   {sel:"#who",title:"Step 1 of 4 · Your name",text:"Type your name here, so Chaleur knows who counted tonight. Is it already showing your name? Tap Next.",done:nameOk},
-  {sel:"#app .cake, #app [data-act=add]",title:"Step 2 of 4 · Count the cakes",text:"Fill in <b>every row</b>: <b>Waste</b> (thrown away or damaged) and <b>Left</b> (still in the chiller) for each colour dot. Tap + / − or type; 0 if none. Missing a colour, or no rows yet? Tap the dot on the cake.",done:()=>ORDER.length>0&&ORDER.every(rowDone),prog:rowsProg,next:false},
+  {sel:"#app .cake, #app [data-act=add]",title:"Step 2 of 4 · Count the cakes",text:"Fill in <b>every row</b>: <b>Waste</b> (thrown away or damaged) and <b>Left</b> (still in the chiller) for each colour dot. Tap + / − or type; 0 if none. <b>The dot is the sticker on the cake, not today's colour</b> — a cake keeps its dot all week. Missing a colour, or no rows yet? Tap the dot that matches the sticker.",done:()=>ORDER.length>0&&ORDER.every(rowDone),prog:rowsProg,next:false},
   {sel:"#ptiles",title:"Step 3 of 4 · Photos",text:"Tap each box to take a photo: today's <b>sales report</b> from the POS, the <b>chiller</b>, and the <b>waste</b> if there is any.",done:()=>PH.sales.length>0&&!!PH.display&&(!hasWaste()||!!PH.waste),next:false},
   {sel:"#next",title:"Step 4 of 4 · Send",text:"Tap <b>Send tonight's count</b>. Check the numbers on the next screen, then <b>Confirm &amp; send</b>. You're done when you see “Sent. Thank you!”",done:()=>false,last:true}
 ];
@@ -918,4 +1103,4 @@ document.getElementById("next").onclick=review;
 load().then(()=>setTimeout(tourMaybeStart,400));
 if(typeof CA!=="undefined") CA.helper({noReport:true,auth:()=>KEY&&INFO&&INFO.outlet?"o:"+KEY:"",page:()=>"Outlet closing form",hello:"Hi! Ask me anything about the closing form, for example: “What do I do with a cake past its shelf life?” or “What does the colour dot mean?”"});
 </script>
-<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.18-board</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
+<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.41-clear1</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
