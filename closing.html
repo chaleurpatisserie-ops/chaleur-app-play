@@ -828,7 +828,7 @@ th:first-child,td:first-child{text-align:left}td{padding:8px 4px;border-bottom:1
 .cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
 .cal button{border:0;border-radius:10px;padding:5px 0 4px;font:600 10.5px var(--body);display:flex;flex-direction:column;align-items:center;gap:1px;background:var(--seg);color:var(--muted);min-height:48px;cursor:default;min-width:0}
 .cal button b{font:700 14px var(--body);color:var(--ink)}
-.cal .ok{background:var(--ok-bg)}.cal .late{background:var(--warn-bg)}.cal .miss{background:var(--bad-bg);cursor:pointer;color:var(--bad-tx)}.cal .caught{background:var(--soft)}.cal .cur{box-shadow:0 0 0 2px var(--accent)}
+.cal .future{opacity:.45}.cal .ok{background:var(--ok-bg)}.cal .late{background:var(--warn-bg)}.cal .miss{background:var(--bad-bg);cursor:pointer;color:var(--bad-tx)}.cal .caught{background:var(--soft)}.cal .cur{box-shadow:0 0 0 2px var(--accent)}
 .calk{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--muted)}
 .mq{padding:12px;margin:0}.mq .nm{font-weight:700;margin-bottom:2px}
 </style></head><body>
@@ -849,7 +849,9 @@ const niceDate=iso=>{const d=new Date(iso+"T00:00:00");return d.toLocaleDateStri
 function calToday(){ const d=new Date(); return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10); }
 function dAdd(iso,n){ const d=new Date(iso+"T12:00:00Z"); d.setUTCDate(d.getUTCDate()+n); return d.toISOString().slice(0,10); }
 function defaultDate(){ const q=(new URLSearchParams(location.search).get("d")||"").trim(), t=calToday(), y=dAdd(t,-1);
-  if(/^\d{4}-\d{2}-\d{2}$/.test(q)&&q<=t&&q>=dAdd(t,-7)) return q; return new Date().getHours()<15?y:t; } /* v22.71: a reminder link can open any of the last 7 nights */
+  if(/^\d{4}-\d{2}-\d{2}$/.test(q)&&q<=t&&q>=lastMon(t)) return q; return new Date().getHours()<15?y:t; } /* v22.71: a reminder link can open any night of this week or last week */
+function lastMon(t){ const d=new Date(t+"T12:00:00Z"); return dAdd(t,-((d.getUTCDay()+6)%7)-7); } /* Monday of last week — counts go by the billing week, Mon–Sun */
+const backFrom=()=>(INFO&&INFO.backFrom)||lastMon(calToday());
 let INFO=null, KEY=(PRESET||store.get("chaleur.key")||"").trim().toUpperCase(), DATE=defaultDate();
 let DRAFTED=false, ROWS={}, ORDER=[], SHOWN=[], EXP=new Set(), PH={sales:[],display:null,waste:null}, NOTE="", WHO=store.get("chaleur.who")||"", PREV=null, SENDING=false, COLOK={};
 let COVER="", MISSOK=null, AFTER_PHOTO=null, WN=null; /* v22.71: catch-up choice, answers about cakes not accounted for, the Waste now sheet */
@@ -1054,13 +1056,13 @@ document.addEventListener("click",async e=>{ const b=e.target.closest("[data-rem
 function wnBtn(){ return `<button class="wnbtn" type="button" data-act="wn"><span class="ic">🗑</span><span><b>Waste now</b><small>A cake dropped, damaged or expired during the day? Record it now with a photo, then throw it away — no need to keep it until closing.</small></span></button>`; }
 function wnToday(){ const L=wnList(); if(!L.length) return "";
   return `<div class="banner info" id="wntoday"><b>Waste already recorded${L.some(e=>e.d!==DATE)?"":" today"}</b> — it is added to tonight's waste:<br>${L.map(e=>`${e.qty} × ${esc(prod(e.productId).name)} ${esc(capw(e.colour))} · ${esc(e.reason)}${e.d!==DATE?" · "+esc(niceDate(e.d)):""} · ${esc(hm(e.at))}${e.by?" · "+esc(e.by):""}${e.url?" · photo ✓":""}`).join("<br>")}</div>`; }
-function calHtml(){ const C=(INFO&&INFO.cal)||[]; if(!C.length) return ""; const minD=dAdd(calToday(),-(+INFO.backDays||7));
-  const lab={ok:"✓",late:"⏰",caught:"↪",miss:"✕",closed:"–",open:"·",pre:""}, tip={ok:"sent",late:"sent late",caught:"covered by a later count",miss:"not sent",closed:"closed",open:"tonight",pre:"before the start"};
+function calHtml(){ const C=(INFO&&INFO.cal)||[]; if(!C.length) return ""; const minD=backFrom();
+  const lab={ok:"✓",late:"⏰",caught:"↪",miss:"✕",closed:"–",open:"·",pre:"",future:""}, tip={ok:"sent",late:"sent late",caught:"covered by a later count",miss:"not sent",closed:"closed",open:"tonight",pre:"before the start",future:"coming"};
   const nMiss=C.filter(x=>x.st==="miss").length;
-  return `<details class="card" style="margin-top:12px;padding:12px" ${nMiss?"open":""} id="cal"><summary style="cursor:pointer;font-weight:700">Your last 14 nights ${nMiss?`<span class="pill" style="background:var(--bad-bg);color:var(--bad-tx)">${nMiss} not sent</span>`:`<span class="pill" style="background:var(--ok-bg);color:var(--ok-tx)">all in</span>`}</summary>
+  return `<details class="card" style="margin-top:12px;padding:12px" ${nMiss?"open":""} id="cal"><summary style="cursor:pointer;font-weight:700">Last week and this week ${nMiss?`<span class="pill" style="background:var(--bad-bg);color:var(--bad-tx)">${nMiss} not sent</span>`:`<span class="pill" style="background:var(--ok-bg);color:var(--ok-tx)">all in</span>`}</summary>
     <div class="cal" style="margin-top:10px">${C.map(x=>{ const can=x.st==="miss"&&x.d>=minD&&x.d!==DATE; return `<button type="button" class="${x.st}${x.d===DATE?" cur":""}" ${can?`data-cal="${x.d}"`:`tabindex="-1"`} title="${esc(niceDate(x.d)+": "+tip[x.st]+(x.cov?" ("+niceDate(x.cov)+")":"")+(x.by?" · "+x.by:""))}" aria-label="${esc(niceDate(x.d)+": "+tip[x.st])}"><span>${WD[new Date(x.d+"T00:00:00").getDay()]}</span><b>${+x.d.slice(8)}</b><span>${lab[x.st]}</span></button>`; }).join("")}</div>
     <div class="calk" style="margin-top:8px"><span>✓ sent</span><span>⏰ late</span><span>↪ covered by a later count</span><span>✕ not sent — tap to send it</span><span>– closed</span></div></details>`; }
-function catchHtml(){ const M=(INFO&&INFO.missed)||[]; if(!M.length) return ""; const n=M.length, minD=dAdd(calToday(),-(+INFO.backDays||7));
+function catchHtml(){ const M=(INFO&&INFO.missed)||[]; if(!M.length) return ""; const n=M.length, minD=backFrom();
   return `<div class="card stack" style="margin-top:12px;border:2px solid var(--warn)" id="catchup"><h3 style="font:700 20px var(--display);margin:0">${n===1?"1 night":n+" nights"} without a count: ${M.map(x=>esc(niceDate(x))).join(", ")}</h3>
     <label class="opt"><input type="radio" name="cover" value="cover" ${COVER==="cover"?"checked":""}><span><b>This count covers ${n===1?"it":"them"}</b> (catch-up). Count what you have now as usual. For the sales report, take the POS report <b>from ${esc(niceDate(M[0]))} to ${esc(niceDate(DATE))}</b> — one report for the period, or one photo a day.</span></label>
     <label class="opt"><input type="radio" name="cover" value="each" ${COVER==="each"?"checked":""}><span><b>I have the count${n>1?"s":""} of ${n===1?"that night":"those nights"}</b> — send ${n===1?"it":"each night"} first, oldest first:<span class="chips" style="margin-top:6px">${M.filter(x=>x>=minD).map(x=>`<button type="button" class="chip" data-cal="${x}">${esc(niceDate(x))}</button>`).join("")}</span></span></label></div>`; }
@@ -1117,7 +1119,7 @@ function render(){
   const ex=INFO.existing, g=grouped();
   $("#app").innerHTML=`${head()}
   <div class="card stack" style="gap:10px">
-    <div class="g2"><label class="f">Date<input id="date" type="date" value="${esc(DATE)}" min="${esc(dAdd(calToday(),-(+INFO.backDays||2)))}" max="${esc(calToday())}"></label>
+    <div class="g2"><label class="f">Date<input id="date" type="date" value="${esc(DATE)}" min="${esc(backFrom())}" max="${esc(calToday())}"></label>
     <label class="f">Your name<input id="who" value="${esc(WHO)}" placeholder="e.g. Aina" autocomplete="name"></label></div>
     <div class="banner ${DATE<calToday()?"warn":"info"}" id="nightsay" style="margin:0">You are sending the closing count for <b>${esc(niceDate(DATE))}${DATE===isoAdd(calToday(),-1)?" (last night)":DATE===calToday()?" (tonight)":" (late)"}</b>. Not the right night? Change the date above.</div>
   </div>
