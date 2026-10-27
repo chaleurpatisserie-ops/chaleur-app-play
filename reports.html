@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.41-clear1", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><title>PLAY · Chaleur Atelier · Reports</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
+<html><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.71", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><style>.panel:has([data-act="freshGo"]),.panel:has([data-act="freshPrev"]),.panel:has([data-act="scanSample"]),.panel:has([data-act="clearSample2"]),[data-act="bkCleanAsk"],[data-act="bkClean"]{display:none!important}</style><title>PLAY · Chaleur Atelier · Reports</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
 /* Chaleur API bridge: talks to the Google backend anonymously, so it works in any browser */
 (function(){var API="https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec";
 function call(fn,args,ok,fail){var ac=typeof AbortController!=="undefined"?new AbortController():null,tm=null,done=function(){if(tm)clearTimeout(tm);};
- var opt={method:"POST",credentials:"omit",redirect:"follow",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:fn,args:args})};
+ var opt={method:"POST",credentials:"omit",redirect:"follow",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:fn,args:args,loc:(window.CA_LOC&&/^(hqSubmitPart|hqSave|qcSubmit|submitAudit|hqDoCheck|hqDoDeliver|hqSubmit)$/.test(fn))?window.CA_LOC():undefined})}; /* v22.58: where a job was done */
  var go=function(sig){var o={};for(var k in opt)o[k]=opt[k];if(sig)o.signal=sig;try{return fetch(API,o);}catch(e){return Promise.reject(e);}};
  /* 7 Oct 2026: a browser add-on that wraps fetch and posts the request to another window crashed on the timeout signal
     ("Failed to execute 'postMessage' on 'Window': AbortSignal object could not be cloned") — sign-in failed. Retry once without it. */
@@ -160,6 +160,12 @@ body:has(.bar:not([hidden])) .ca-hbtn{bottom:calc(96px + env(safe-area-inset-bot
 .ca-pw-t{font:700 22px Georgia,serif;margin:0 0 6px}.ca-pw-s{font-size:14px;opacity:.8;margin:0 0 8px;line-height:1.4}.ca-pw-s.w{opacity:1;color:#9a5a12;font-weight:600}
 .ca-pw-b{display:block;width:100%;margin-top:12px;padding:14px;border:0;border-radius:12px;background:var(--accent,#7b1c2b);color:#fff;font:700 16px inherit;cursor:pointer}
 .ca-pw-x{display:block;width:100%;margin-top:6px;padding:10px;border:0;background:none;color:inherit;opacity:.7;font:600 14px inherit;cursor:pointer}
+.ca-onb{max-width:400px;text-align:left}.ca-onb .ca-pw-t,.ca-onb .ca-pw-s{text-align:center}.ca-onb-ic{font-size:40px;text-align:center;margin-bottom:6px}
+.ca-onb-st{margin:8px 0 4px;padding-left:22px;font-size:14px;line-height:1.5}.ca-onb-st li{margin:4px 0}.ca-onb-sh{display:inline-block;border:1.5px solid currentColor;border-radius:5px;padding:0 5px;font-size:12px}
+.ca-onb-rows{margin:10px 0 4px}.ca-onb-r{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid rgba(0,0,0,.08)}
+.ca-onb-ri{font-size:22px;text-align:center}.ca-onb-rt b{display:block;font-size:15px}.ca-onb-rt small{display:block;font-size:12.5px;opacity:.75;line-height:1.35}
+.ca-onb-b{border:0;border-radius:10px;background:var(--accent,#7b1c2b);color:#fff;font:700 14px inherit;padding:10px 14px;cursor:pointer;min-height:40px}.ca-onb-b:disabled{opacity:.5}
+.ca-onb-ok{color:#2e6b3a;font-weight:700;font-size:14px;white-space:nowrap}.ca-onb-no{font-size:12px;opacity:.7;text-align:right;display:block;max-width:110px}.ca-onb-msg{min-height:1em;color:#9a2a1a;font-size:13px;margin:4px 0 0;text-align:center}.ca-onb-n{font-size:12.5px;opacity:.75;text-align:center;margin:2px 0 8px;line-height:1.35}.ca-onb-n:empty{display:none}
 </style>
 <script>
 /* Chaleur sign-in (phone + PIN, remember me, log out) and the in-app helper. Shared by the office desk, kitchen and audit pages. */
@@ -169,7 +175,7 @@ const CA=(function(){
   const rd=st=>{try{const v=st.getItem(K);return v?JSON.parse(v):null}catch(e){return null}};
   function clear(){try{localStorage.removeItem(K)}catch(e){} try{sessionStorage.removeItem(K)}catch(e){} try{sessionStorage.removeItem("chaleur.pin")}catch(e){}}
   function get(){const s=rd(sessionStorage)||rd(localStorage); if(s&&(!s.t||(s.exp&&Date.now()>s.exp))){clear();return null;} return s;}
-  function save(s){clear(); try{(s.remember?localStorage:sessionStorage).setItem(K,JSON.stringify(s));}catch(e){}}
+  function save(s){clear(); try{(s.remember?localStorage:sessionStorage).setItem(K,JSON.stringify(s));}catch(e){} setTimeout(()=>{ try{ ONB.maybe(); }catch(e){} },1200); /* v22.58: the one-time sheets right after sign-in */}
   /* v20: access ticks. Old saved sign-ins (before v20) only know their role: use that role's usual ticks until the page refreshes them. */
   const LEG={owner:"kitchen kapprove todo qc deliv doedit chase audit view money reports setup bills problems staff admin",manager:"kitchen kapprove todo qc deliv doedit chase audit view money reports setup bills problems staff admin",
     office:"kitchen todo deliv doedit chase audit view money reports setup problems",supervisor:"kitchen kapprove todo qc deliv doedit chase",kitchen:"kitchen qc deliv",auditor:"kitchen audit view money"};
@@ -222,7 +228,7 @@ const CA=(function(){
   /* While viewing as another role, a strip at the top of every page says so */
   function vaStrip(){ const c=get(); if(!c||!c.as||document.getElementById("ca-vastrip")) return; const d=document.createElement("div"); d.id="ca-vastrip"; d.className="ca-vabar";
     d.innerHTML=`<span>👁 You're seeing the app as <b>${esc(c.as)}</b> (${esc(labelOf(c))}). Changes you make are recorded as ${esc(c.name)}.</span><span class="ca-vact">${vaSelect()}<button type="button" data-ca-viewback="1">Back to Owner</button></span>`; document.body.prepend(d);
-    const fit=()=>document.documentElement.style.setProperty("--vah",(d.offsetHeight+((document.getElementById("ca-playbar")||{}).offsetHeight||0))+"px"); fit(); if(window.ResizeObserver) new ResizeObserver(fit).observe(d); window.addEventListener("resize",fit); }
+    const fit=()=>document.documentElement.style.setProperty("--vah",d.offsetHeight+"px"); fit(); if(window.ResizeObserver) new ResizeObserver(fit).observe(d); window.addEventListener("resize",fit); }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",vaStrip); else setTimeout(vaStrip,0);
   /* Where a "what to do next" item goes: page + tab (#hash) + kitchen team */
   const nextHref=g=>g?(g.page+(g.team?"?team="+encodeURIComponent(g.team):"")+(g.hash?"#"+g.hash:"")):"";
@@ -271,7 +277,8 @@ const CA=(function(){
         ${opt.noReport?"":`<div class="ca-tabs" role="tablist"><button type="button" role="tab" data-hv="ask" aria-selected="${VIEW==="ask"}">Ask a question</button><button type="button" role="tab" data-hv="fb" aria-selected="${VIEW==="fb"}">Report a problem</button></div>`}`; }
     function askHtml(){
       const nx=NX&&NX.items&&NX.items.length?`<div class="ca-m ca-a"><b>Hi ${esc(cap(String(NX.name||"").split(" ")[0]))}! Next for you:</b>${nextList(NX.items,true)}<div style="margin-top:6px">Tap an item to go there, or ask me how to do it.</div></div>`:(NXB?`<div class="ca-m ca-a">Checking what's next for you…</div>`:"");
-      return `<div class="ca-body"><div class="ca-msgs" aria-live="polite">${nx}<div class="ca-m ca-a">${esc(hi)}${opt.noReport?"":`<div style="margin-top:6px"><a class="ca-lnk" href="index.html#guide">Open the how-to guide ›</a></div>`}</div>${H.map(x=>x.q!=null?`<div class="ca-m ca-q">${esc(x.q)}</div>`:`<div class="ca-m ca-a" style="white-space:pre-wrap">${esc(plain(x.a))}</div>`).join("")}${busy?`<div class="ca-m ca-a">Thinking…</div>`:""}</div></div>
+      const tg=(()=>{ try{ return TOUR.has(); }catch(e){ return false; } })();
+      return `<div class="ca-body"><div class="ca-msgs" aria-live="polite">${nx}<div class="ca-m ca-a">${esc(hi)}${opt.noReport&&!tg?"":`<div style="margin-top:6px;display:flex;flex-direction:column;gap:4px;align-items:flex-start">${tg?`<button type="button" class="ca-lnk" data-tourgo="1">▶ Show me this page, step by step</button>`:""}${opt.noReport?"":`<a class="ca-lnk" href="index.html#guide">Open the how-to guide ›</a>`}</div>`}</div>${H.map(x=>x.q!=null?`<div class="ca-m ca-q">${esc(x.q)}</div>`:`<div class="ca-m ca-a" style="white-space:pre-wrap">${esc(plain(x.a))}</div>`).join("")}${busy?`<div class="ca-m ca-a">Thinking…</div>`:""}</div></div>
         <div class="ca-foot"><form class="ca-askf"><textarea rows="1" placeholder="Ask a question…" aria-label="Your question"></textarea><button type="submit">Send</button></form></div>`; }
     function fbHtml(){
       if(FB.sent){ const x=FB.sent;
@@ -315,6 +322,7 @@ const CA=(function(){
       const fp=panel.querySelector(".ca-fp"); if(fp) fp.onchange=async e=>{ const fl=e.target.files&&e.target.files[0]; if(!fl) return; try{ FB.photo=await shrink(fl); FB.err=""; }catch(x){ FB.err=x.message; } paint(); };
     }
     function onClick(e){ const t=e.target.closest("button"); if(!t||!panel||!panel.contains(t)) return; const d=t.dataset;
+      if(d.tourgo){ close(); try{ TOUR.start(true); }catch(x){} return; }
       if(d.fbreset){ FB=R0(); }
       if(d.hv){ setView(d.hv); return; }
       if(d.fbt){ FB.type=d.fbt; FB.err=""; paint(); return; }
@@ -385,7 +393,9 @@ const CA=(function(){
       try{ new MutationObserver(()=>{ showBtn(); re(); }).observe(document.body,{childList:true,subtree:true}); }catch(e){}
       window.addEventListener("pagehide",()=>{ const st=cur(); if(st&&!MAN&&(st.last||(C.leaveDone&&C.leaveDone(I)))) finish(); });
     }
-    function showBtn(){ if(!BTN) return; if(C&&C.btnBottom) BTN.style.bottom=fv(C.btnBottom)||""; BTN.classList.toggle("on",!!C&&I<0&&ready()&&!busy()&&!(C.btnHide&&C.btnHide())); }
+    /* v22.53 (Alfred 17 Oct, "a lot of buttons not needed"): no floating "Show me how" button any more — the guide still starts by itself
+       the first 3 visits, and "▶ Show me this page, step by step" in the ? Ask helper replays it */
+    function showBtn(){ if(!BTN) return; BTN.classList.remove("on"); }
     const pillTxt=()=>{ const st=cur(); if(!st) return ""; const t=String(fv(st.title)||"").split("·")[0].trim(); return `<b>❔</b> ${esc(t||"Guide")}${PROG?` · ${esc(PROG)}`:""} ▸`; };
     /* the pill sits where the Show-me-how button lives (bottom left); for a step drawn at the top it sits under the header instead, so it never covers the bottom controls */
     function pill(on){ if(!PILL) return; if(on){ PILL.innerHTML=pillTxt(); const st=cur(); if(st&&st.at==="top"){ PILL.style.bottom="auto"; PILL.style.top=Math.max(8,+(C&&fv(C.topPad))||8)+"px"; } else { PILL.style.top="auto"; PILL.style.bottom=(C&&fv(C.btnBottom))||""; } } PILL.classList.toggle("on",!!on); }
@@ -430,24 +440,23 @@ const CA=(function(){
     /* automatic start: at most once per page load (a page may call this after every render) */
     function maybeStart(){ if(!C||TRIED.has(C.key)||window.CHALEUR_NO_GUIDE) return; build(); showBtn(); if(I<0&&ready()&&seen()<auto()){ TRIED.add(C.key); start(false); } }
     function define(cfg){ stop(); C=cfg||null; build(); showBtn(); return TOUR; }
-    const TOUR={define,start,maybeStart,stop,skip,next,seen,on:()=>I>=0,step:()=>I,manual:()=>MAN,reset:()=>keys().forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} })};
+    const TOUR={define,start,maybeStart,stop,skip,next,seen,on:()=>I>=0,step:()=>I,manual:()=>MAN,has:()=>!!(C&&steps().length&&ready()),reset:()=>keys().forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} })};
     return TOUR;
   })();
 
   /* ===== v22.7 ONE MENU for every page (Alfred 1 Oct: "both this interface should be the same … only one for each thing").
      The pages, their areas, access and search words live here once; Home, the office desk and the kitchen page all draw the same menu. ===== */
   const AREAS=["Kitchen HQ","Outlet Delivery","Recipes","Back office","Help & support"]; /* v22.40: Recipes is the 3rd area (Alfred 14 Oct) */
-  const AREAD={"Kitchen HQ":"Opening and closing, prep list, morning and noon to-do, kitchen reports, numbers","Outlet Delivery":"Today, deliveries, outlet reports, bills, audits","Recipes":"Cakes with pictures, components by category, recipe calculator","Back office":"Reports, setup, staff, problem reports","Help & support":"How-to guide, the helper, report a problem, team treat"};
+  const AREAD={"Kitchen HQ":"Opening and closing, prep list, morning and noon to-do, kitchen reports, numbers","Outlet Delivery":"Today, deliveries, outlet reports, bills, audits","Recipes":"Cakes with pictures, components by category, recipe calculator, the mould library, plan & order, ordering","Back office":"Reports, setup, staff, problem reports","Help & support":"How-to guide, the helper, report a problem, team treat"};
   /* [area, title, description, link, access (ticks: any of; or a function of can), search words, daily-for] */
 const PAGES=[
  /* v22.4 (Alfred 29 Sep): 6 clear Kitchen HQ pages. "Decoration & delivery list" → Morning to-do, "Production list" → Noon to-do;
     the production plan (lists for the next days) is inside the Noon to-do (and the Plan chip on the kitchen page), no longer its own page here. */
- ["Kitchen HQ","Kitchen opening","Opening report: fridges & freezers, HQ display count, outlet deliveries · due 10:30","kitchen.html#opening",["kitchen","kapprove","see_kitchen"],"opening report fridge freezer display count deliveries morning",["kitchen:am"]],
- ["Kitchen HQ","Kitchen closing","Closing report: fridges & freezers, waste & left, mise en place lists · due 19:30","kitchen.html#closing",["kitchen","kapprove","see_kitchen"],"closing report waste left lists evening",["kitchen:pm"]],
+ ["Kitchen HQ","Kitchen opening","Opening report: fridges & freezers, HQ display count, outlet deliveries","kitchen.html#opening",["kitchen","kapprove","see_kitchen"],"opening report fridge freezer display count deliveries morning",["kitchen:am"]],
+ ["Kitchen HQ","Kitchen closing","Closing report: fridges & freezers, waste & left, mise en place lists","kitchen.html#closing",["kitchen","kapprove","see_kitchen"],"closing report waste left lists evening",["kitchen:pm"]],
  ["Kitchen HQ","Prep list","What to make today for the HQ display and each outlet, what is left at each outlet, Made numbers","office.html#plan",["kitchen","deliv","doedit","reports","see_plan"],"prep list planned made delivery order do print sheet suggestion plan",["kitchen","office","outlets"]],
  ["Kitchen HQ","Morning to-do · decorate & deliver","Morning team: today's cakes, custom & Grab orders, finish & decorate, pack & deliver the DOs","kitchen.html?team=am#today",["kitchen","kapprove","todo","see_kitchen"],"morning decoration decorate delivery list to-do custom order grab pack deliver",["kitchen:am"]],
  ["Kitchen HQ","Noon to-do · production","Noon team: today's production list, prep reminders, and the plan for the next days","kitchen.html?team=pm#today",["kitchen","kapprove","todo","see_kitchen"],"noon production list plan mise en place photo next days to-do reminders",["kitchen:pm"]],
- ["Kitchen HQ","Daily prep board","Prep jobs over the next days: who makes what, batch weights · tick To do → Doing → Done","kitchen.html#board",["kitchen","kapprove","todo","see_kitchen"],"prep board r&d plan compote insert sponge mousse batch jobs tick daily",[]],
  ["Kitchen HQ","Kitchen reports","Past reports, temperatures and photos · fridges, display cakes and reminders","kitchen.html#history",["kitchen","kapprove","view","see_khist"],"history temperature fridge freezer streak calendar setup display list reminder limit",[]],
  ["Kitchen HQ","Numbers","To make, made, sent, sold, left and waste per cake · day, week or month","office.html#numbers",["reports","view","kapprove","see_numbers"],"numbers waste wastage made produced prepared sold left figures report",[]],
  ["Outlet Delivery","Today","Clear the board: missing reports, chase outlets, bills to approve","office.html#today",["chase","view","see_today"],"attention chase whatsapp missing report board",["office","outlets"]],
@@ -460,6 +469,9 @@ const PAGES=[
  ["Recipes","Cakes","Every cake with its picture: open one to see its components and scale the whole cake","office.html#recipes/cakes",["kitchen","kapprove","reports","view","setup"],"recipe recipes cake cakes product index picture photo build component scale",["kitchen"]],
  ["Recipes","Components","Every recipe by category: sponge, mousse & cream, filling, glaze, crunch, décor…","office.html#recipes/components",["kitchen","kapprove","reports","view","setup"],"recipe recipes component components category sponge mousse filling glaze crunch dough coating decor ingredient method",[]],
  ["Recipes","Calculator","Search a recipe and scale it: what I have, target total, trays or pieces","office.html#recipes/calc",["kitchen","kapprove","reports","view","setup"],"recipe calculator scale batch search weight gram",[]],
+ ["Recipes","Moulds","The mould library: every mould with its photo, box, sheets and cavities; count them and take a better photo","office.html#recipes/moulds",["kitchen","kapprove","reports","view","setup"],"mould mold library silicone cavity cavities sheet box tin tray ring frame photo",[]],
+ ["Recipes","Ingredients","Every ingredient with its price (RM a kg) from the Bukku bills and price lists; filter missing price, price update, to check","office.html#recipes/ings",(c)=>c("money")&&["kitchen","kapprove","reports","view","setup","admin"].some(c),"ingredient ingredients price prices bukku bill bills supplier price list missing price update cost per kg",[]],
+ ["Recipes","Costing","What every cake (one piece) and component (a batch, a kg) costs, food cost %","office.html#recipes/cost",(c)=>c("money")&&["kitchen","kapprove","reports","view","setup","admin"].some(c),"cost costing cake component recipe food cost margin per piece per kg",[]],
  ["Back office","Reports","Every report: done and not done, what was sent, photos, reminders and Chase on WhatsApp","reports.html",(c,s)=>c("see_reports")||/owner|manager/i.test(labelOf(s)||""),"reports report done undone missing photos chase reminder whatsapp",[]],
  ["Back office","Setup","Outlets, cakes, prices, WhatsApp, points, fresh start","office.html#setup",["setup","see_setup"],"outlet cake product price shelf life whatsapp wasapbot bukku key go-live fresh start holiday limits",[]],
  ["Back office","Staff & access","Who can sign in, PINs and what each person can do","office.html#staff",["staff"],"team pin phone access permission",[]],
@@ -501,7 +513,7 @@ const ICON={
       <div id="mres">${menuBody()}</div>
       <div class="mf"><button type="button" class="cb ink" data-help="ask">? Ask / Report</button><button type="button" class="cb ghost" data-ca-logout="1">Log out</button></div>
       <div class="mlinks">${/^index\.html/.test(here())?"":`<a class="lnk" href="index.html">‹ Home</a>`}${mc?`<button type="button" class="lnk" data-help="mine">My reports (${mc} open)</button>`:""}</div>
-      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.41-clear1</div></div></div>`; }
+      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.71</div></div></div>`; }
   function menuOpen(area){ const s=get(); if(!s) return; if(area&&AREAS.includes(area)) MOPEN=area; MON=true; MQ=""; drawMenu(); if(!MINE){ run("feedbackMine",s.t).then(r=>{ MINE=r||[]; if(MON) drawMenu(); }).catch(()=>{ MINE=[]; }); } }
   function menuClose(){ if(!MON) return; MON=false; MQ=""; drawMenu(); }
   document.addEventListener("input",e=>{ if(e.target&&e.target.id==="msq"&&e.target.closest("#camenu")){ MQ=e.target.value; const r=document.querySelector("#camenu #mres"); if(r) r.innerHTML=menuBody(); } });
@@ -541,7 +553,7 @@ const ICON={
      away (window.caPrintPrep); elsewhere it opens the Prep list, where the same window prints with one more tap. */
   let PW=null;
   const pwClose=()=>{ if(PW){ PW.remove(); PW=null; } };
-  async function prepWin(force){ try{ if(window.CHALEUR_NO_GUIDE&&!window.CHALEUR_PREP_WIN) return; /* automated tests opt in */ const s=get(); if(!s||!s.t) return; const P=permsOf(s); if(!["kitchen","deliv","doedit","reports"].some(k=>P.includes(k))) return;
+  async function prepWin(force){ try{ if(window.CHALEUR_NO_GUIDE&&!window.CHALEUR_PREP_WIN) return; /* automated tests opt in */ const s=get(); if(!s||!s.t) return; if(document.getElementById("ca-onb")){ setTimeout(()=>prepWin(force),3000); return; } /* v22.58: after the one-time sheets */ const P=permsOf(s); if(!["kitchen","deliv","doedit","reports"].some(k=>P.includes(k))) return;
       const h=new Date().getHours(); if(!force&&(h<6||h>=14)) return;
       let sn=0; try{ sn=+sessionStorage.getItem("ca.pwLater")||0; }catch(e){} if(!force&&Date.now()<sn) return;
       const r=await run("prepOut",s.t); if(!r||!r.show) return; if(r.printed&&!r.newOrders) { pwClose(); return; }
@@ -572,8 +584,110 @@ const ICON={
       const tot={}; dated.filter(x=>x.ph.k!=="up").forEach(x=>(x.o.items||[]).forEach(i=>{ const k=(i.sku||clean(i.name)).toUpperCase()+"|"+(i.unit||""), z=tot[k]||(tot[k]={name:clean(i.name),unit:i.unit||"",qty:0,base:0,bunit:i.bunit||""}); z.qty+=+i.qty||0; z.base+=+i.base||0; }));
       return {pd,dated,nodate,tot:Object.values(tot),nPrep:dated.filter(x=>x.ph.k!=="up").length}; };
     return {phase,view,item,nice,clean,pick}; })();
+  /* ===== v22.58 (Alfred 18 Oct) =====
+     "can we send notification directly from the app to their phone instead of whatsapp" → A (built in): sw.js shows them;
+     "for those who never add to home screen, pop it out the next time they open the app. this is a one time only. then let them allow
+     location, notification and gallery access. and camera access"; location: "i wanted to know who is at hq or where did they do their job".
+     LOC keeps the phone's last position while a page is open (only after the person allowed it) and the API bridge sends it with the calls
+     that finish a job; PUSH turns this phone's notifications on/off; ONB = the two sheets (v22.58b: they come back each time the app is opened until notifications are on). */
+  const LSg=k=>{ try{ return localStorage.getItem(k); }catch(e){ return null; } }, LSs=(k,v)=>{ try{ localStorage.setItem(k,v); }catch(e){} };
+  const LOC=(()=>{ let fix=null, watch=null; const has=()=>typeof navigator!=="undefined"&&"geolocation" in navigator;
+    const take=p=>{ fix={lat:p.coords.latitude,lng:p.coords.longitude,acc:Math.round(p.coords.accuracy||0),at:new Date(p.timestamp||Date.now()).toISOString()}; };
+    async function perm(){ if(!has()) return "unsupported"; try{ if(navigator.permissions&&navigator.permissions.query){ const r=await navigator.permissions.query({name:"geolocation"}); return r.state; } }catch(e){} return LSg("ca.loc")==="on"?"granted":"prompt"; }
+    function start(){ if(!has()||watch!==null) return; try{ watch=navigator.geolocation.watchPosition(take,()=>{},{enableHighAccuracy:true,maximumAge:120000,timeout:30000}); }catch(e){} }
+    async function boot(){ if(!get()) return; if(await perm()==="granted") start(); }
+    function ask(){ return new Promise(res=>{ if(!has()) return res(false); try{ navigator.geolocation.getCurrentPosition(p=>{ take(p); LSs("ca.loc","on"); start(); res(true); },()=>res(false),{enableHighAccuracy:true,timeout:20000,maximumAge:60000}); }catch(e){ res(false); } }); }
+    window.CA_LOC=()=>fix&&Date.now()-Date.parse(fix.at)<30*60000?fix:null;
+    return {boot,ask,perm,get:()=>fix}; })();
+  const PUSH=(()=>{ const ua=navigator.userAgent||"";
+    const isIOS=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+    const standalone=()=>{ try{ return matchMedia("(display-mode: standalone)").matches||navigator.standalone===true; }catch(e){ return false; } };
+    const sup=()=>"serviceWorker" in navigator&&"PushManager" in window&&"Notification" in window;
+    const devName=()=>(isIOS?"iPhone":/Android/.test(ua)?"Android":/Windows/.test(ua)?"Windows PC":/Mac/.test(ua)?"Mac":"Phone")+(standalone()?" · home-screen app":" · browser");
+    function dev(){ let d=null; try{ d=JSON.parse(LSg("ca.dev")||"null"); }catch(e){} if(!d||!/^[a-z0-9]{16,40}$/.test(d.id||"")){ const r=()=>Array.from(crypto.getRandomValues(new Uint8Array(12))).map(b=>b.toString(16).padStart(2,"0")).join(""); d={id:r(),sec:r()+r()}; LSs("ca.dev",JSON.stringify(d)); } return d; }
+    function idbPut(d){ return new Promise(res=>{ try{ const o=indexedDB.open("ca-push",1); o.onupgradeneeded=()=>o.result.createObjectStore("kv"); o.onsuccess=()=>{ try{ const tx=o.result.transaction("kv","readwrite"); tx.objectStore("kv").put(d,"dev"); tx.oncomplete=()=>res(true); tx.onerror=()=>res(false); }catch(e){ res(false); } }; o.onerror=()=>res(false); }catch(e){ res(false); } }); }
+    const b64=s=>{ s=String(s).replace(/-/g,"+").replace(/_/g,"/"); while(s.length%4) s+="="; const b=atob(s), a=new Uint8Array(b.length); for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i); return a; };
+    const u64=buf=>btoa(String.fromCharCode.apply(null,Array.from(new Uint8Array(buf)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+    async function reg(){ const r=await navigator.serviceWorker.register("sw.js",{scope:"./"}); await navigator.serviceWorker.ready; return r; }
+    async function state(){ if(!sup()) return isIOS&&!standalone()?"ios-browser":"unsupported"; if(Notification.permission==="denied") return "denied"; if(Notification.permission!=="granted") return "off";
+      try{ const r=await navigator.serviceWorker.getRegistration(); const s=r&&await r.pushManager.getSubscription(); return s&&LSg("ca.push")==="on"?"on":"off"; }catch(e){ return "off"; } }
+    async function send(sub){ const s=get(); if(!s) throw new Error("Sign in first."); const d=dev(); await idbPut(d); await run("pushSubscribe",s.t,sub.toJSON(),{id:d.id,sec:d.sec,ua:devName(),standalone:standalone()}); LSs("ca.push","on"); LSs("ca.pushAt",String(Date.now())); }
+    async function enable(){ /* from a tap */
+      if(!sup()) throw new Error(isIOS&&!standalone()?"On iPhone: add the app to your Home Screen first, then open it from there.":"This browser can't show notifications. Use Chrome (Android) or the Home Screen app (iPhone).");
+      const p=await Notification.requestPermission(); if(p!=="granted") throw new Error(p==="denied"?"Notifications are blocked for this app. Allow them in the phone's settings, then try again.":"Notifications were not allowed.");
+      const r=await reg(), k=await run("pushKey"); let sub=await r.pushManager.getSubscription();
+      if(sub){ try{ const ak=sub.options&&sub.options.applicationServerKey; if(ak&&u64(ak)!==k.key){ await sub.unsubscribe(); sub=null; } }catch(e){} }
+      if(!sub) sub=await r.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64(k.key)});
+      await send(sub); return true; }
+    async function refresh(){ /* once a day: the phone's push address can change */ try{ if(!sup()||Notification.permission!=="granted"||LSg("ca.push")!=="on") return; if(Date.now()-(+LSg("ca.pushAt")||0)<20*3600e3) return;
+      const r=await navigator.serviceWorker.getRegistration(); const sub=r&&await r.pushManager.getSubscription(); if(sub) await send(sub); else LSs("ca.push","off"); }catch(e){} }
+    async function off(){ try{ const r=await navigator.serviceWorker.getRegistration(), sub=r&&await r.pushManager.getSubscription(); if(sub) await sub.unsubscribe(); }catch(e){} LSs("ca.push","off"); const s=get(); if(s) await run("pushUnsubscribe",s.t,dev().id).catch(()=>{}); }
+    async function test(){ const s=get(); if(!s) throw new Error("Sign in first."); return run("pushTest",s.t); }
+    const mobile=()=>isIOS||/Android|Mobile|iPad/i.test(ua);
+    /* v22.59 (Alfred 22 Oct: "when outlet did not send report and its times up, will they get notification? app noti, not whatsapp"): the outlet
+       closing form turns this phone's reminders on for its outlet — no sign-in, the outlet's link is the key */
+    async function subOutlet(key){ if(!sup()) throw new Error(isIOS&&!standalone()?"On iPhone: tap Share › Add to Home Screen, open the form from there, then turn reminders on.":"This browser can't show notifications. Use Chrome (Android) or the Home Screen app (iPhone).");
+      const p=await Notification.requestPermission(); if(p!=="granted") throw new Error(p==="denied"?"Notifications are blocked for this page. Allow them in the phone's settings, then try again.":"Notifications were not allowed.");
+      const r=await reg(), k=await run("pushKey"); let sub=await r.pushManager.getSubscription();
+      if(sub){ try{ const ak=sub.options&&sub.options.applicationServerKey; if(ak&&u64(ak)!==k.key){ await sub.unsubscribe(); sub=null; } }catch(e){} }
+      if(!sub) sub=await r.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64(k.key)});
+      const d=dev(); await idbPut(d); const out=await run("pushSubscribeOutlet",key,sub.toJSON(),{id:d.id,sec:d.sec,ua:devName(),standalone:standalone()}); LSs("ca.pusho",key); LSs("ca.pushoAt",String(Date.now())); return out; }
+    async function offOutlet(key){ LSs("ca.pusho",""); try{ await run("pushUnsubscribeOutlet",key,dev().id); }catch(e){}
+      if(LSg("ca.push")!=="on"){ try{ const r=await navigator.serviceWorker.getRegistration(), sub=r&&await r.pushManager.getSubscription(); if(sub) await sub.unsubscribe(); }catch(e){} } }
+    async function stateOutlet(key){ if(isIOS&&!standalone()) return "ios-browser"; /* iPhone/iPad: only the Home Screen icon can get notifications */ if(!sup()) return "unsupported"; if(Notification.permission==="denied") return "denied"; if(Notification.permission!=="granted"||!key||LSg("ca.pusho")!==key) return "off";
+      try{ const r=await navigator.serviceWorker.getRegistration(), s=r&&await r.pushManager.getSubscription(); if(!s) return "off";
+        if(Date.now()-(+LSg("ca.pushoAt")||0)>20*3600e3){ const d=dev(); await run("pushSubscribeOutlet",key,s.toJSON(),{id:d.id,sec:d.sec,ua:devName(),standalone:standalone()}); LSs("ca.pushoAt",String(Date.now())); } /* once a day: the push address can change */
+      }catch(e){ return "off"; } return "on"; }
+    return {sup,isIOS,standalone,mobile,state,enable,refresh,off,test,dev,devName,subOutlet,offOutlet,stateOutlet}; })();
+  const ONB=(()=>{ let bip=null; try{ window.addEventListener("beforeinstallprompt",e=>{ e.preventDefault(); bip=e; }); }catch(e){}
+    const close=()=>{ const d=document.getElementById("ca-onb"); if(d) d.remove(); };
+    const sheet=(html,lab)=>{ close(); const d=document.createElement("div"); d.id="ca-onb"; d.className="ca-pw"; d.setAttribute("role","dialog"); d.setAttribute("aria-label",lab); d.innerHTML=`<div class="ca-pw-box ca-onb">${html}</div>`; document.body.appendChild(d); return d; };
+    function a2hs(){ LSs("ca.onb.a2hs",new Date().toISOString()); const ios=PUSH.isIOS, can=!!bip;
+      const steps=ios?`<ol class="ca-onb-st"><li>Tap <b>Share</b> <span class="ca-onb-sh" aria-hidden="true">⬆︎</span> (Safari: bottom of the screen · Chrome: top right)</li><li>Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b></li><li>Open <b>Chaleur Atelier</b> from your Home Screen and sign in once</li></ol>`
+        :can?`<p class="ca-pw-s">One tap and it sits on your Home Screen like a normal app.</p>`:`<ol class="ca-onb-st"><li>Tap the <b>⋮</b> menu (top right of Chrome)</li><li>Tap <b>Add to Home screen</b> or <b>Install app</b></li><li>Open <b>Chaleur Atelier</b> from your Home Screen</li></ol>`;
+      const d=sheet(`<div class="ca-onb-ic" aria-hidden="true">📲</div><p class="ca-pw-t">Add the app to your Home Screen</p><p class="ca-pw-s">It opens like a normal app, and reminders come straight to your phone${ios?" — on iPhone notifications only work from the Home Screen app":""}.</p>${steps}
+        ${can?`<button type="button" class="ca-pw-b" data-onb="install">Add to Home Screen</button>`:`<button type="button" class="ca-pw-b" data-onb="next">${ios?"OK":"Done"}</button>`}<button type="button" class="ca-pw-x" data-onb="next">Not now</button>`,"Add the app to your Home Screen");
+      d.addEventListener("click",async ev=>{ const b=ev.target.closest("[data-onb]"); if(!b) return; ev.preventDefault(); ev.stopPropagation();
+        if(b.dataset.onb==="install"&&bip){ try{ bip.prompt(); await bip.userChoice; }catch(e){} bip=null; }
+        close(); const st=await PUSH.state(); if(st==="off"||st==="denied"||!LSg("ca.onb.perm")) setTimeout(perms,300); }); }
+    async function rowsHtml(){ const ps=await PUSH.state(), lp=await LOC.perm(); let cp="prompt"; try{ if(navigator.permissions&&navigator.permissions.query) cp=(await navigator.permissions.query({name:"camera"})).state; }catch(e){ cp=LSg("ca.cam")==="on"?"granted":"prompt"; }
+      const ok=`<span class="ca-onb-ok">✓ On</span>`, row=(ic,t,s,right)=>`<div class="ca-onb-r"><span class="ca-onb-ri" aria-hidden="true">${ic}</span><span class="ca-onb-rt"><b>${t}</b><small>${s}</small></span><span>${right}</span></div>`;
+      const nR=ps==="on"?ok:ps==="ios-browser"?`<span class="ca-onb-no">Home Screen app first</span>`:ps==="unsupported"?`<span class="ca-onb-no">Not on this browser</span>`:ps==="denied"?`<span class="ca-onb-no">Blocked · phone settings</span>`:`<button type="button" class="ca-onb-b" data-perm="notif">Allow</button>`;
+      return row("🔔","Notifications","Reminders and alerts straight to this phone",nR)
+        +row("📷","Camera","For the report photos",cp==="granted"?ok:cp==="denied"?`<span class="ca-onb-no">Blocked · phone settings</span>`:`<button type="button" class="ca-onb-b" data-perm="cam">Allow</button>`)
+        +row("📍","Location","Saved only when you send a report or finish a job, so Chef Alfred sees where it was done",lp==="granted"?ok:lp==="denied"?`<span class="ca-onb-no">Blocked · phone settings</span>`:lp==="unsupported"?`<span class="ca-onb-no">Not on this phone</span>`:`<button type="button" class="ca-onb-b" data-perm="loc">Allow</button>`)
+        +row("🖼️","Photos (gallery)","Your phone asks the first time you choose a photo","<span class=\"ca-onb-no\">When needed</span>"); }
+    /* v22.58b (Alfred: "if they didnot turn it on, the pop will keep coming out everytime untill they turn it on"): while notifications
+       are not on, this sheet comes back each time the app is opened; a blocked one says where to unblock it. */
+    const unblock=()=>PUSH.isIOS?"To unblock: iPhone Settings › Notifications › Chaleur Atelier › Allow Notifications.":PUSH.standalone()&&/Android/.test(navigator.userAgent||"")?"To unblock: hold the app icon › App info › Notifications › On.":"To unblock: tap the icon left of the web address › Notifications › Allow.";
+    async function foot(d){ const ps=await PUSH.state(), on=ps==="on", can=ps==="off"||ps==="denied"; const n=d.querySelector(".ca-onb-n"), b=d.querySelector('[data-perm="done"]');
+      if(n) n.textContent=on||!can?"":(ps==="denied"?unblock()+" ":"")+"This comes back each time you open the app until notifications are on."; if(b) b.textContent=on||!can?"Done":"Not now"; }
+    async function perms(){ LSs("ca.onb.perm",new Date().toISOString());
+      const d=sheet(`<div class="ca-onb-ic" aria-hidden="true">✅</div><p class="ca-pw-t">Allow the app</p><p class="ca-pw-s">Tap Allow on each, then Allow again when the phone asks.</p><div class="ca-onb-rows">${await rowsHtml()}</div><p class="ca-onb-msg" role="status"></p><p class="ca-onb-n"></p><button type="button" class="ca-pw-b" data-perm="done">Done</button>`,"Allow the app");
+      await foot(d);
+      const paint=async()=>{ const el=d.querySelector(".ca-onb-rows"); if(el) el.innerHTML=await rowsHtml(); await foot(d); }, msg=t=>{ const m=d.querySelector(".ca-onb-msg"); if(m) m.textContent=t||""; };
+      d.addEventListener("click",async ev=>{ const b=ev.target.closest("[data-perm]"); if(!b) return; ev.preventDefault(); ev.stopPropagation(); const k=b.dataset.perm; if(k==="done"){ close(); return; }
+        b.disabled=true; msg("");
+        try{ if(k==="notif") await PUSH.enable();
+          if(k==="cam"){ const st=await navigator.mediaDevices.getUserMedia({video:{facingMode:"environment"}}); st.getTracks().forEach(t=>t.stop()); LSs("ca.cam","on"); }
+          if(k==="loc"&&!await LOC.ask()) throw new Error("Location was not allowed."); }
+        catch(e){ msg((e&&e.message)||"Not allowed."); }
+        await paint(); }); }
+    let tries=0, booted=false;
+    async function maybe(){ try{ if(window.CHALEUR_NO_GUIDE&&!window.CHALEUR_ONB) return; if(/closing/.test(location.pathname)) return; const s=get(); if(!s||!s.t){ if(++tries<100) setTimeout(maybe,3000); return; }
+        if(!booted){ booted=true; LOC.boot(); PUSH.refresh(); }
+        if(document.getElementById("ca-pw")||document.getElementById("ca-onb")||document.querySelector(".si")){ setTimeout(maybe,4000); return; }
+        if(seen()) return; const ps=await PUSH.state(), tip=!PUSH.standalone()&&PUSH.mobile()&&!LSg("ca.onb.a2hs"); /* the Home Screen tip: phones and tablets only */
+        if(ps==="on"){ if(tip){ mark(); a2hs(); } return; } /* notifications on: nothing more to ask */
+        if(ps==="unsupported"){ if(!LSg("ca.onb.perm")){ mark(); perms(); } return; } /* can't be turned on here: show it once only */
+        mark(); if(ps==="ios-browser"||tip) return a2hs(); /* iPhone: notifications only from the Home Screen app, so that sheet keeps coming */
+        return perms(); }catch(e){} }
+    const seen=()=>{ try{ return sessionStorage.getItem("ca.onb.seen"); }catch(e){ return null; } }, mark=()=>{ try{ sessionStorage.setItem("ca.onb.seen","1"); }catch(e){} }; /* once per opening of the app */
+    return {maybe,a2hs,perms,close}; })();
+  const bootV58=()=>{ setTimeout(ONB.maybe,1000); };
+  if(!/closing/.test(location.pathname)){ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",bootV58); else bootV58(); }
   const menu={open:menuOpen,close:menuClose,on:()=>MON,redraw:()=>{ if(MON) drawMenu(); },sections:()=>sections(get()),pages:()=>pagesFor(get()),ok:x=>pageOK(x,get()),row,icon,areas:AREAS,desc:AREAD,myArea:()=>myArea(get())};
-  return {get,save,clear,run,isAuthErr,loginForm,logout,toLogin,chip,helper,openHelp:v=>openHelp(v),ROLE,esc,nextHref,nextList,HOME,canView,vaSelect,loadVA,permsOf,labelOf,areaOf,can,update,tour:TOUR,menu,PAGES,HELP,ICON,pick,pickClose,prepWin,prepWinClose:()=>pwClose(),b2b:B2B};
+  return {get,save,clear,run,isAuthErr,loginForm,logout,toLogin,chip,helper,openHelp:v=>openHelp(v),ROLE,esc,nextHref,nextList,HOME,canView,vaSelect,loadVA,permsOf,labelOf,areaOf,can,update,tour:TOUR,menu,PAGES,HELP,ICON,pick,pickClose,prepWin,prepWinClose:()=>pwClose(),b2b:B2B,push:PUSH,loc:LOC,onb:ONB};
 })();
 </script>
 
@@ -699,7 +813,7 @@ button{font-family:inherit;cursor:pointer}a{color:inherit}
 .card.flat{box-shadow:none}.card.hot{border:2px solid var(--accent);box-shadow:0 3px 0 var(--accent)}
 .card h3{margin:0 0 6px;font-size:16px}
 /* header */
-.hd{position:sticky;top:var(--vah,0px);z-index:20;background:var(--ground);display:flex;align-items:center;gap:10px;padding:10px 0}
+.hd{position:sticky;top:0;z-index:20;background:var(--ground);display:flex;align-items:center;gap:10px;padding:10px 0}
 .hd .tt{flex:1;min-width:0}.hd .eb{letter-spacing:.02em;text-transform:none;font:500 12.5px var(--body)}
 .ptitle{font:700 26px/1.05 var(--display);margin:0}
 .back{width:46px;height:46px;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);font-size:22px;color:var(--ink);flex:none;display:grid;place-items:center;text-decoration:none;box-shadow:0 3px 0 var(--line)}
@@ -767,7 +881,7 @@ body{background:var(--ground)}
 .badge{font:600 12px var(--body);border-radius:999px;padding:4px 9px;background:var(--soft);color:var(--ink);white-space:nowrap}
 .badge.warn{background:#fbe3e1;color:#8c1d18}
 .body{padding:0 14px 14px;border-top:1px solid var(--line)}
-.sec{margin-top:12px}.sec h3{font:700 14px var(--body);margin:0 0 4px;display:flex;justify-content:space-between;gap:8px}.sec h3 small{font-weight:500;color:var(--muted)}
+.sec{margin-top:12px}.sec h3{font:700 14px var(--body);margin:0 0 4px;display:flex;justify-content:space-between;gap:8px}.sec h3 small{font-weight:500;color:var(--muted)}.sec h3 small .where{color:var(--warn-tx,#8a5a00);text-decoration:none;white-space:nowrap}.sec h3 small .where.hq{color:var(--ok-tx,#2e6b3a)}
 .kv{display:grid;grid-template-columns:1fr auto;gap:2px 12px;font-size:13.5px}.kv span:nth-child(even){text-align:right;font-family:var(--mono);font-size:12.5px}
 .iss{font-size:12.5px;background:#fff6e0;color:#4a3208;border-radius:8px;padding:6px 8px;margin-top:6px} /* v22.35: readable in dark mode too */
 .miss{font-size:13px;color:#b3261e;font-weight:600}
@@ -781,114 +895,7 @@ body{background:var(--ground)}
 .empty{background:var(--paper);border-radius:14px;padding:18px;text-align:center;color:var(--muted)}
 @media print{.rmenu,.rtop a,#camenu,.ca-hbtn,.ca-vabar,button{display:none!important}body{background:#fff!important}@page{size:A4;margin:12mm}}
 .rmenu{height:40px;padding:0 12px;border-radius:12px;border:1.5px solid var(--line,#e8dcd6);background:var(--paper,#fff);font:600 14px inherit;font-family:inherit;color:var(--ink,#2b1b1e);cursor:pointer}
-</style><style id="cv-css">
-/* Clear view · step 1 (playground). Readability only: no numbers or features change.
-   Secondary text darker; failing buttons/chips fixed; bigger tick boxes; floating help buttons smaller on phones. */
-:root{--muted:#594a4c}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--muted:#c9b9bb}}
-:root[data-theme="dark"]{--muted:#c9b9bb}
-/* WhatsApp button: white on #1f8f55 was 4.1 : 1 */
-.btn.wa,a.btn.wa{background:#157347!important;border-color:#157347!important;color:#fff!important}
-/* menu count badge: 10 px white on pale red in dark */
-span.n{background:#b3261e!important;color:#fff!important;font-size:11.5px!important}
-/* dark mode: chips whose background follows the ink/accent colour but whose text stayed light */
-@media (prefers-color-scheme:dark){
- :root:not([data-theme="light"]) .pill.ink{color:#6b4f00!important}
- :root:not([data-theme="light"]) .pchip{color:#2a1a1d!important}
- :root:not([data-theme="light"]) .dtile.sel,:root:not([data-theme="light"]) .dtile.sel *{color:var(--ground,#161012)!important}
-}
-:root[data-theme="dark"] .pill.ink{color:#6b4f00!important}
-:root[data-theme="dark"] .pchip{color:#2a1a1d!important}
-:root[data-theme="dark"] .dtile.sel,:root[data-theme="dark"] .dtile.sel *{color:var(--ground,#161012)!important}
-/* Prep list cards: the little pills under a box ("4 on display", "1 HQ") wrap under it instead of running over the next box */
-table.prep.cards td.pn label{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
-table.prep.cards td.pn .pill{white-space:normal;text-align:center;max-width:100%;line-height:1.15}
-/* tick boxes and radio buttons */
-input[type=checkbox]:not(.tick *):not(.tk *),input[type=radio]:not(.tick *):not(.tk *){width:20px!important;height:20px!important;accent-color:var(--accent,#7b1c2b);vertical-align:middle}
-@media (max-width:600px){
- input[type=checkbox]:not(.tick *):not(.tk *),input[type=radio]:not(.tick *):not(.tk *){width:24px!important;height:24px!important;min-width:24px}
- summary{padding-top:9px;padding-bottom:9px}
- .btn.sm,button.sm,a.btn.sm{min-height:40px}
- /* "? Ask" becomes a round "?" so it covers less; "Show me how" smaller */
- .ca-hbtn{width:52px;min-width:52px;padding:0!important;border-radius:50%!important;font-size:0!important;display:inline-flex;align-items:center;justify-content:center}
- .ca-hbtn::after{content:"?";font:700 24px/1 var(--body,Jost,system-ui,sans-serif)}
- .tourshow{padding:6px 12px!important}
- /* room at the end of every page so the last rows are not under the floating buttons */
- body::after{content:"";display:block;height:72px}
-}
-@media print{ body::after{display:none} }
-</style>
-<script id="cv-js">
-/* Clear view · step 1 (playground) — runs on every page.
-   1. Text-size floor: every on-screen CSS rule or inline style under 13 px is raised to 13 px (badges 11.5 px). Print rules untouched.
-   2. Contrast guard: any text that ends up below 4.5 : 1 against what is behind it (3 : 1 for large text) is darkened or
-      lightened just enough, in light and dark mode. Re-checked after every redraw and when the theme changes.
-   Nothing else changes: same numbers, same buttons, same layout code. */
-(function(){
- if(window.__CV) return; window.__CV={v:1,fixed:0,floor:0};
- var FLOOR=13, UPF=12, TIGHT=/td\.pn::before/, BADGE=/(span\.n\b|\.badge\b|\.cnt\b)/;
- var css=null, fl=document.createElement('style'); fl.id='cv-floor';
- function last(){ var h=document.head; if(!h) return; css=css||document.getElementById('cv-css'); if(h.lastElementChild!==fl){ if(css) h.appendChild(css); h.appendChild(fl); } }
- function isPrint(m){ var t=(m||'').toLowerCase(); return /\bprint\b/.test(t)&&!/\bscreen\b|\ball\b/.test(t); }
- function walk(rules,out){ for(var i=0;i<rules.length;i++){ var r=rules[i];
-   if(r.type===1){ var fs=r.style&&r.style.fontSize;
-     if(!fs&&r.style){ var sh=r.style.getPropertyValue('font')||((/(?:^|[;{\s])font\s*:\s*([^;}]+)/.exec(r.cssText)||[])[1])||''; var mm=/(?:^|\s)(\d+(?:\.\d+)?)px(?=\/|\s|$)/.exec(sh); if(mm) fs=mm[1]+'px'; }
-     if(fs&&/px$/.test(fs)){ var v=parseFloat(fs), sel=r.selectorText||''; if(v>0&&v<FLOOR){ var up=(r.style.textTransform==='uppercase')||/text-transform\s*:\s*uppercase/.test(r.cssText); var nv=BADGE.test(sel)?Math.max(v,11.5):TIGHT.test(sel)?Math.max(v,11):(up?Math.max(v,UPF):FLOOR); if(nv>v) out.push(sel+'{font-size:'+nv+'px'+(up?';letter-spacing:.03em':'')+'}'); } } }
-   else if(r.type===4){ if(isPrint(r.media&&r.media.mediaText)) continue; var o=[]; walk(r.cssRules,o); if(o.length) out.push('@media '+r.media.mediaText+'{'+o.join('')+'}'); }
-   else if(r.type===12){ var o2=[]; walk(r.cssRules,o2); if(o2.length) out.push('@supports '+r.conditionText+'{'+o2.join('')+'}'); } } }
- var sheetsSeen=-1;
- function floor(){ var n=document.styleSheets.length; if(n===sheetsSeen) return; sheetsSeen=n; var out=[];
-   for(var i=0;i<n;i++){ var s=document.styleSheets[i]; if(!s||s.ownerNode===fl||s.ownerNode===css) continue; if(s.media&&isPrint(s.media.mediaText)) continue; try{ walk(s.cssRules,out); }catch(e){} }
-   fl.textContent=out.join('\n'); window.__CV.floor=out.length; last(); }
- function inline(root){ var els=(root||document).querySelectorAll?(root||document).querySelectorAll('[style*="font"]'):[]; for(var i=0;i<els.length;i++){ var e=els[i], fs=e.style.fontSize;
-   if(!fs){ var mm=/(?:^|\s)(\d+(?:\.\d+)?)px(?=\/|\s|$)/.exec(e.style.getPropertyValue('font')||((/font\s*:\s*([^;]+)/.exec(e.getAttribute('style')||'')||[])[1])||''); if(mm) fs=mm[1]+'px'; }
-   if(fs&&/px$/.test(fs)){ var v=parseFloat(fs); if(v>0&&v<FLOOR&&!e.closest('svg')) e.style.fontSize=(e.matches('span.n,.badge,.cnt')?Math.max(v,11.5):FLOOR)+'px'; } } }
- // ---- contrast guard
- function P(s){ var m=/rgba?\(([^)]+)\)/.exec(s||''); if(!m) return null; var a=m[1].split(/[\s,\/]+/).filter(Boolean).map(Number); return [a[0],a[1],a[2],a.length>3?a[3]:1]; }
- function lin(v){ v/=255; return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4); }
- function L(c){ return 0.2126*lin(c[0])+0.7152*lin(c[1])+0.0722*lin(c[2]); }
- function CR(a,b){ var x=L(a),y=L(b); return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05); }
- function mix(t,b){ var a=t[3]; return [t[0]*a+b[0]*(1-a),t[1]*a+b[1]*(1-a),t[2]*a+b[2]*(1-a),1]; }
- var BGC;
- function bgOf(el){ if(BGC.has(el)) return BGC.get(el); var cs=getComputedStyle(el), res;
-   if(cs.backgroundImage&&cs.backgroundImage!=='none') res=null;
-   else { var c=P(cs.backgroundColor); var under=el.parentElement?bgOf(el.parentElement):(P(getComputedStyle(document.documentElement).backgroundColor)||[255,255,255,1]);
-     if(!c||c[3]===0) res=under; else if(c[3]>=1) res=c; else res=under?mix(c,under):null; }
-   if(el===document.documentElement&&!res) res=[255,255,255,1];
-   BGC.set(el,res); return res; }
- function shift(fg,bg,need){ var dark=L(bg)>0.35, c=fg.slice(0,3); for(var k=0;k<30;k++){ var t=[c[0],c[1],c[2],1]; if(CR(t,bg)>=need) return t;
-   c=dark?c.map(function(v){ return v*0.9; }):c.map(function(v){ return v+(255-v)*0.12; }); } return dark?[0,0,0,1]:[255,255,255,1]; }
- function guard(){ BGC=new WeakMap();
-   var old=document.querySelectorAll('[data-cvc]'); for(var i=0;i<old.length;i++){ old[i].style.removeProperty('color'); old[i].removeAttribute('data-cvc'); }
-   var oldf=document.querySelectorAll('[data-cvf]'); for(var i2=0;i2<oldf.length;i2++){ oldf[i2].style.removeProperty('font-size'); oldf[i2].removeAttribute('data-cvf'); }
-   var small=[];
-   var seen=new Set(), todo=[], tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT), n, count=0;
-   while((n=tw.nextNode())&&count<12000){ if(!/[A-Za-z0-9À-ɏ一-鿿]/.test(n.nodeValue)) continue; var el=n.parentElement; if(!el||seen.has(el)) continue; seen.add(el); count++;
-     if(/^(SCRIPT|STYLE|NOSCRIPT|OPTION|TEXTAREA)$/.test(el.tagName)||el.closest('svg,[disabled],[aria-disabled="true"],:disabled,.ca-band,[data-cv-skip]')) continue;
-     if(!el.getClientRects().length) continue;
-     var cs=getComputedStyle(el); if(cs.visibility==='hidden'||+cs.opacity<0.6) continue;
-     var fg=P(cs.color), bg=bgOf(el); if(!fg||!bg) continue; var f=mix(fg,bg), fs=parseFloat(cs.fontSize), big=fs>=24||(fs>=18.6&&+cs.fontWeight>=700), need=big?3:4.5;
-     if(CR(f,bg)<need) todo.push([el,shift(f,bg,need+0.3)]);
-     if(fs>1&&fs<(cs.textTransform==='uppercase'?UPF:FLOOR)-0.05&&!el.matches('span.n,.badge,.cnt,.ca-hbtn,.ca-hbtn *')) small.push([el,cs.textTransform==='uppercase'?UPF:FLOOR]); }
-   for(var k=0;k<small.length;k++){ small[k][0].style.setProperty('font-size',small[k][1]+'px','important'); small[k][0].setAttribute('data-cvf','1'); }
-   for(var j=0;j<todo.length;j++){ var c=todo[j][1]; todo[j][0].style.setProperty('color','rgb('+Math.round(c[0])+','+Math.round(c[1])+','+Math.round(c[2])+')','important'); todo[j][0].setAttribute('data-cvc','1'); }
-   window.__CV.fixed=todo.length; window.__CV.sized=small.length; }
- var tmr=null;
- function run(){ tmr=null; try{ floor(); inline(document); guard(); }catch(e){ if(window.console) console.warn('clear view',e); } }
- function soon(ms){ if(tmr) clearTimeout(tmr); tmr=setTimeout(function(){ (window.requestIdleCallback||function(f){ f(); })(run,{timeout:600}); },ms||250); }
- window.__CV.run=run;
- function start(){ last(); run();
-   new MutationObserver(function(ms){ for(var i=0;i<ms.length;i++){ var t=ms[i].target; if(t===fl||t===css) continue; if(ms[i].type==='childList'){ soon(); return; } if(ms[i].type==='attributes'&&ms[i].attributeName!=='style'&&!(t.hasAttribute&&t.hasAttribute('data-cvc'))){ soon(); return; } } })
-     .observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','hidden','open']});
-   new MutationObserver(function(){ sheetsSeen=-1; last(); soon(50); }).observe(document.head,{childList:true});
-   new MutationObserver(function(){ soon(50); }).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','class']});
-   try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){ soon(50); }); }catch(e){}
-   addEventListener('hashchange',function(){ soon(400); }); addEventListener('resize',function(){ soon(400); });
-   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ soon(100); }); }
- if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start); else start();
-})();
-</script>
-</head><body>
+</style></head><body>
 <div class="rw" id="app"><p class="hint">Loading…</p></div>
 <script>
 const $=s=>document.querySelector(s), esc=CA.esc;
@@ -901,7 +908,7 @@ const pLink=id=>/^https?:/.test(id)?id:"https://drive.google.com/file/d/"+encode
 const OPEN=new Set();
 function secHtml(x){
   if(x.missing) return `<div class="sec"><h3>${esc(x.title)}</h3><div class="miss">Not sent yet</div></div>`;
-  return `<div class="sec"><h3>${esc(x.title)}<small>${x.by?"by "+esc(x.by):""}${x.at?" · "+esc(hm(x.at)):""}</small></h3>
+  return `<div class="sec"><h3>${esc(x.title)}<small>${x.by?"by "+esc(x.by):""}${x.at?" · "+esc(hm(x.at)):""}${x.where?` · <a class="where ${x.hq?"hq":""}" href="${esc(x.map||"#")}" target="_blank" rel="noopener" title="Where it was sent (the phone's location)">📍 ${esc(x.where)}</a>`:""}</small></h3>
     ${x.rows.length?`<div class="kv">${x.rows.map(r=>`<span>${esc(r[0])}</span><span>${esc(r[1])}</span>`).join("")}</div>`:""}
     ${x.note?`<div class="iss" style="background:var(--soft)">Note: ${esc(x.note)}</div>`:""}
     ${(x.issues||[]).map(i=>`<div class="iss">⚠️ ${esc(i)}</div>`).join("")}
@@ -922,7 +929,7 @@ function render(){
   const t=D.today, days=[0,-1,-2,-3,-4,-5,-6].map(n=>addD(t,n));
   const done=D.rows.filter(r=>r.done), undone=D.rows.filter(r=>!r.done);
   const card=r=>`<details class="rep ${r.done?"done":r.late?"late":""}" data-key="${esc(r.key)}" ${OPEN.has(r.key)?"open":""}><summary><span class="st">${r.done?"✓":r.late?"!":""}</span>
-      <span><span class="t">${esc(r.title)}</span><span class="s ${r.done?"":"lt"}">${r.done?`✓ ${esc(r.by)}${r.at?" · "+esc(hm(r.at)):""}`:(r.late?"Late — due ":"Due ")+esc(r.due)+(r.left&&r.left.length?" · still: "+esc(r.left.join(", ")):"")}</span></span>
+      <span><span class="t">${esc(r.title)}</span><span class="s ${r.done?"":"lt"}">${r.done?`✓ ${esc(r.by)}${r.at?" · "+esc(hm(r.at)):""}`:(r.late?"Late — due ":r.aim?"Aim for ":"Due ")+esc(r.due)+(r.left&&r.left.length?" · still: "+esc(r.left.join(", ")):"")}</span></span>
       ${r.done?"":`<span class="badge ${r.times?"":"warn"}">${r.times?`🔔 ${r.times}×`:"no reminder"}</span>`}</summary>
       <div class="body">${r.done?"":remHtml(r)}${r.detail.map(secHtml).join("")||(r.done?"":"")}</div></details>`;
   a.innerHTML=`<div class="rtop"><h1>Reports</h1><span style="display:flex;gap:8px;align-items:center"><button type="button" class="rmenu" onclick="window.print()" title="Print this page (or choose Save as PDF in the print window)">🖨 Print</button><button type="button" data-menu="1" class="rmenu" aria-haspopup="dialog">☰ Menu</button><a href="index.html">‹ Home</a></span></div>
@@ -940,4 +947,4 @@ document.addEventListener("change",e=>{ if(e.target.id==="pick"&&e.target.value)
 document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="visible"&&S) load(); });
 (function(){ S=CA.get(); CA.helper({auth:()=>S&&S.t,page:()=>"Reports page"}); if(!S) return CA.toLogin(); load(""); })();
 </script>
-<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.41-clear1</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
+<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.71</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
