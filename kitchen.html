@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.71", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><style>.panel:has([data-act="freshGo"]),.panel:has([data-act="freshPrev"]),.panel:has([data-act="scanSample"]),.panel:has([data-act="clearSample2"]),[data-act="bkCleanAsk"],[data-act="bkClean"]{display:none!important}</style><title>PLAY · Chaleur Atelier · Kitchen HQ</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
+<html><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.73", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><style>.panel:has([data-act="freshGo"]),.panel:has([data-act="freshPrev"]),.panel:has([data-act="scanSample"]),.panel:has([data-act="clearSample2"]),[data-act="bkCleanAsk"],[data-act="bkClean"]{display:none!important}</style><title>PLAY · Chaleur Atelier · Kitchen HQ</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
 /* Chaleur API bridge: talks to the Google backend anonymously, so it works in any browser */
 (function(){var API="https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec";
 function call(fn,args,ok,fail){var ac=typeof AbortController!=="undefined"?new AbortController():null,tm=null,done=function(){if(tm)clearTimeout(tm);};
@@ -446,36 +446,20 @@ const CA=(function(){
 
   /* ===== v22.7 ONE MENU for every page (Alfred 1 Oct: "both this interface should be the same … only one for each thing").
      The pages, their areas, access and search words live here once; Home, the office desk and the kitchen page all draw the same menu. ===== */
-  const AREAS=["Kitchen HQ","Outlet Delivery","Recipes","Back office","Help & support"]; /* v22.40: Recipes is the 3rd area (Alfred 14 Oct) */
-  const AREAD={"Kitchen HQ":"Opening and closing, prep list, morning and noon to-do, kitchen reports, numbers","Outlet Delivery":"Today, deliveries, outlet reports, bills, audits","Recipes":"Cakes with pictures, components by category, recipe calculator, the mould library, plan & order, ordering","Back office":"Reports, setup, staff, problem reports","Help & support":"How-to guide, the helper, report a problem, team treat"};
+  const AREAS=["Kitchen","Outlets","Office","Help & support"]; /* v22.73: 8 pages in 3 groups (Alfred 30 Oct) */
+  const AREAD={"Kitchen":"Prep list, kitchen report (opening, closing, Sunday stock), recipes","Outlets":"Deliveries, closing reports, bills","Office":"Reports, numbers, setup","Help & support":"How-to guide, the helper, report a problem, team treat"};
   /* [area, title, description, link, access (ticks: any of; or a function of can), search words, daily-for] */
 const PAGES=[
- /* v22.4 (Alfred 29 Sep): 6 clear Kitchen HQ pages. "Decoration & delivery list" → Morning to-do, "Production list" → Noon to-do;
-    the production plan (lists for the next days) is inside the Noon to-do (and the Plan chip on the kitchen page), no longer its own page here. */
- ["Kitchen HQ","Kitchen opening","Opening report: fridges & freezers, HQ display count, outlet deliveries","kitchen.html#opening",["kitchen","kapprove","see_kitchen"],"opening report fridge freezer display count deliveries morning",["kitchen:am"]],
- ["Kitchen HQ","Kitchen closing","Closing report: fridges & freezers, waste & left, mise en place lists","kitchen.html#closing",["kitchen","kapprove","see_kitchen"],"closing report waste left lists evening",["kitchen:pm"]],
- ["Kitchen HQ","Prep list","What to make today for the HQ display and each outlet, what is left at each outlet, Made numbers","office.html#plan",["kitchen","deliv","doedit","reports","see_plan"],"prep list planned made delivery order do print sheet suggestion plan",["kitchen","office","outlets"]],
- ["Kitchen HQ","Morning to-do · decorate & deliver","Morning team: today's cakes, custom & Grab orders, finish & decorate, pack & deliver the DOs","kitchen.html?team=am#today",["kitchen","kapprove","todo","see_kitchen"],"morning decoration decorate delivery list to-do custom order grab pack deliver",["kitchen:am"]],
- ["Kitchen HQ","Noon to-do · production","Noon team: today's production list, prep reminders, and the plan for the next days","kitchen.html?team=pm#today",["kitchen","kapprove","todo","see_kitchen"],"noon production list plan mise en place photo next days to-do reminders",["kitchen:pm"]],
- ["Kitchen HQ","Kitchen reports","Past reports, temperatures and photos · fridges, display cakes and reminders","kitchen.html#history",["kitchen","kapprove","view","see_khist"],"history temperature fridge freezer streak calendar setup display list reminder limit",[]],
- ["Kitchen HQ","Numbers","To make, made, sent, sold, left and waste per cake · day, week or month","office.html#numbers",["reports","view","kapprove","see_numbers"],"numbers waste wastage made produced prepared sold left figures report",[]],
- ["Outlet Delivery","Today","Clear the board: missing reports, chase outlets, bills to approve","office.html#today",["chase","view","see_today"],"attention chase whatsapp missing report board",["office","outlets"]],
- ["Outlet Delivery","Deliveries","Check colours, mark delivered, edit before it goes out","office.html#deliveries",["deliv","doedit","see_do"],"do delivery order colour dot",["kitchen","office"]],
- ["Outlet Delivery","Outlet reports","Each outlet's nightly count, corrections and all changes","office.html#daily",["reports","view","see_daily","see_log"],"closing report correction paste waste balance sold",["office","outlets"]],
- ["Outlet Delivery","Bills","Each week's invoice, carry forward and credit note; what the outlet still holds; every past bill","office.html#billing",(c)=>c("see_billing")||c("see_carry")||c("see_bills")||(c("money")&&(c("reports")||c("bills"))),"invoice bill cf cn credit bukku payment weekly",["office"]],
- ["Outlet Delivery","Spot audit","Visit an outlet: display, prices, chiller","audit.html",["audit"],"audit visit outlet check",["outlets"]],
- ["Outlet Delivery","Audits","Every spot audit and taste check, with photos and PDF","office.html#audits",["audit","kapprove","see_audits"],"spot audit results qc history pdf score taste check",[]],
- /* v22.40 (Alfred 14 Oct): "recipe should be in one of the 4 main menu, make it the 3rd … 1. product index > each cake with picture > each component 2. Component > category > each recipe 3. calculator > search button" */
- ["Recipes","Cakes","Every cake with its picture: open one to see its components and scale the whole cake","office.html#recipes/cakes",["kitchen","kapprove","reports","view","setup"],"recipe recipes cake cakes product index picture photo build component scale",["kitchen"]],
- ["Recipes","Components","Every recipe by category: sponge, mousse & cream, filling, glaze, crunch, décor…","office.html#recipes/components",["kitchen","kapprove","reports","view","setup"],"recipe recipes component components category sponge mousse filling glaze crunch dough coating decor ingredient method",[]],
- ["Recipes","Calculator","Search a recipe and scale it: what I have, target total, trays or pieces","office.html#recipes/calc",["kitchen","kapprove","reports","view","setup"],"recipe calculator scale batch search weight gram",[]],
- ["Recipes","Moulds","The mould library: every mould with its photo, box, sheets and cavities; count them and take a better photo","office.html#recipes/moulds",["kitchen","kapprove","reports","view","setup"],"mould mold library silicone cavity cavities sheet box tin tray ring frame photo",[]],
- ["Recipes","Ingredients","Every ingredient with its price (RM a kg) from the Bukku bills and price lists; filter missing price, price update, to check","office.html#recipes/ings",(c)=>c("money")&&["kitchen","kapprove","reports","view","setup","admin"].some(c),"ingredient ingredients price prices bukku bill bills supplier price list missing price update cost per kg",[]],
- ["Recipes","Costing","What every cake (one piece) and component (a batch, a kg) costs, food cost %","office.html#recipes/cost",(c)=>c("money")&&["kitchen","kapprove","reports","view","setup","admin"].some(c),"cost costing cake component recipe food cost margin per piece per kg",[]],
- ["Back office","Reports","Every report: done and not done, what was sent, photos, reminders and Chase on WhatsApp","reports.html",(c,s)=>c("see_reports")||/owner|manager/i.test(labelOf(s)||""),"reports report done undone missing photos chase reminder whatsapp",[]],
- ["Back office","Setup","Outlets, cakes, prices, WhatsApp, points, fresh start","office.html#setup",["setup","see_setup"],"outlet cake product price shelf life whatsapp wasapbot bukku key go-live fresh start holiday limits",[]],
- ["Back office","Staff & access","Who can sign in, PINs and what each person can do","office.html#staff",["staff"],"team pin phone access permission",[]],
- ["Back office","Problem reports","What the team reported: reply, mark done","office.html#feedback",["problems","see_feedback"],"feedback problem report reply urgent helper questions",[]],
+ /* v22.73 (Alfred 30 Oct: "the system seems abit over complicated also, toomany pages and button that team actually dont use" → "Can do lesser page?" →
+    picked 8 pages: Home · Prep list · Kitchen report · Recipes · Outlets · Reports · Numbers · Setup). A page that holds several parts shows them as a
+    strip at its top (CA.menu.subnav); Spot audit, Audits, Problem reports and Grab packs are off the menu (their data stays). */
+ ["Kitchen","Prep list","What to make today and what each outlet gets: open it and print","office.html#plan",["kitchen","deliv","doedit","reports","see_plan"],"prep list planned made delivery order do print sheet suggestion plan 2-day batch",["kitchen","office","outlets"]],
+ ["Kitchen","Kitchen report","Opening, closing and the Sunday stock check · fridges, temperatures, past reports","kitchen.html#report",["kitchen","kapprove","see_kitchen","see_khist"],"opening closing report fridge freezer temperature display count waste left mise en place lists history stock check sunday to-do",["kitchen"]],
+ ["Kitchen","Recipes","Cakes with pictures, components by category, the recipe calculator","office.html#recipes/cakes",["kitchen","kapprove","reports","view","setup"],"recipe recipes cake cakes component components calculator scale picture mould moulds ingredient ingredients price costing food cost",["kitchen"]],
+ ["Outlets","Outlets","Deliveries and colour check, the outlets' closing reports, the weekly bills","office.html#deliveries",(c)=>c("deliv")||c("doedit")||c("see_do")||c("reports")||c("view")||c("see_daily")||c("see_log")||c("see_billing")||c("see_carry")||c("see_bills")||(c("money")&&(c("reports")||c("bills"))),"delivery deliveries do colour dot deliver outlet closing report correction waste balance sold bill bills invoice cf cn credit bukku payment weekly",["office","outlets","kitchen:am"]],
+ ["Office","Reports","What needs doing today (missing reports, chasing, bills to approve) and every report by day","office.html#today",["chase","view","see_today","reports"],"today attention chase whatsapp missing report board reports done not done late",["office","outlets"]],
+ ["Office","Numbers","To make, made, sent, sold, left and waste per cake · day, week or month","office.html#numbers",["reports","view","kapprove","see_numbers"],"numbers waste wastage made produced prepared sold left figures report",[]],
+ ["Office","Setup","Outlets, cakes, prices, staff & access, WhatsApp, points","office.html#setup",["setup","see_setup","staff"],"setup outlet cake product price shelf life whatsapp wasapbot bukku key go-live holiday limits staff pin access team problem reports",[]],
 ];
 const HELP=[["How-to guide","Step by step for your job, and I'm stuck answers","#guide"],["Ask the helper","How-to questions, any language","ask"],["Report a problem","App, equipment, stock, safety","fb"],["My reports","What happened and the office's reply","mine"],["Team treat & points","This month's treat, the jar and the leaderboard","#team"]];
 const ICON={
@@ -485,10 +469,19 @@ const ICON={
  "Recipes":["#f6e7d6",`<svg viewBox="0 0 30 30"><path d="M6 4h15a3 3 0 0 1 3 3v19H9a3 3 0 0 1-3-3z" fill="#fff" stroke="#7b1c2b" stroke-width="2"/><path d="M6 23a3 3 0 0 1 3-3h15" fill="none" stroke="#7b1c2b" stroke-width="2"/><path d="M11 9h8M11 13h6" stroke="#c9955b" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="5" r="3" fill="#e0707a"/></svg>`],
  "Back office":["#fbf1d3",`<svg viewBox="0 0 30 30"><rect x="6" y="5" width="18" height="22" rx="3" fill="#fff" stroke="#2b1b1e" stroke-width="2"/><rect x="11" y="3" width="8" height="5" rx="2" fill="#2b1b1e"/><path d="M10 13h10M10 17h7M10 21h9" stroke="#a0620a" stroke-width="2"/></svg>`],
  "Help & support":["#dcefe2",`<svg viewBox="0 0 30 30"><path d="M4 6h22v14H13l-6 5v-5H4z" fill="#1e8449"/><text x="15" y="17" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Jost,sans-serif">?</text></svg>`]};
+ICON["Kitchen"]=ICON["Kitchen HQ"]; ICON["Outlets"]=ICON["Outlet Delivery"]; ICON["Office"]=ICON["Back office"]; /* v22.73 group names */
 
   const pageOK=(x,s)=>{ const c=p=>permsOf(s).includes(p); return typeof x[4]==="function"?!!x[4](c,s):x[4].some(c); };
   const pagesFor=s=>PAGES.filter(x=>pageOK(x,s));
-  const myArea=s=>(areaOf(s)||"office")==="kitchen"?"Kitchen HQ":"Outlet Delivery";
+  const myArea=s=>(areaOf(s)||"office")==="kitchen"?"Kitchen":"Outlets";
+  /* v22.73: the parts of a merged page, as a strip at its top (only the parts the person can open; nothing when only one) */
+  const SUBNAV={
+    out:[["Deliveries","office.html#deliveries",["deliv","doedit","see_do"]],["Closing reports","office.html#daily",["reports","view","see_daily","see_log"]],["Bills","office.html#billing",c=>c("see_billing")||c("see_carry")||c("see_bills")||(c("money")&&(c("reports")||c("bills")))]],
+    rep:[["Today's board","office.html#today",["chase","view","see_today","reports"]],["Every report by day","reports.html",["chase","view","see_today","reports"]]],
+    set:[["Setup","office.html#setup",["setup","see_setup"]],["Staff & access","office.html#staff",["staff"]],["Problem reports","office.html#feedback",["problems","see_feedback"]]]};
+  function subnav(g,cur){ const s=get(); if(!s) return ""; const c=p=>permsOf(s).includes(p), it=(SUBNAV[g]||[]).filter(x=>typeof x[2]==="function"?!!x[2](c):x[2].some(c)); if(it.length<2) return "";
+    if(!document.getElementById("ca-subnav-css")){ const st=document.createElement("style"); st.id="ca-subnav-css"; st.textContent=".ca-subnav{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}.ca-subnav a{flex:1 1 auto;text-align:center;padding:10px 12px;border:1px solid var(--line,#e8dcd6);border-radius:999px;text-decoration:none;color:var(--ink,#2b1b1e);font:600 14px var(--body,system-ui,sans-serif);background:var(--paper,#fff);min-height:44px;display:flex;align-items:center;justify-content:center}.ca-subnav a[aria-current=page]{background:var(--accent,#7b1c2b);color:var(--accent-ink,#fff);border-color:var(--accent,#7b1c2b)}@media print{.ca-subnav{display:none}}"; document.head.appendChild(st); }
+    return `<nav class="ca-subnav" aria-label="Parts of this page">${it.map(([t,h])=>`<a href="${h}" ${h===cur?'aria-current="page"':""}>${esc(t)}</a>`).join("")}</nav>`; }
   const helpItems=()=>HELP.map(([t,d,v])=>/^#/.test(v)?{t,d,href:"index.html"+v,sec:"Help & support",k:"help guide ask report problem treat points"}:{t,d,help:v,sec:"Help & support",k:"help ask report problem mine"});
   /* the four areas in a fixed order (the same everywhere); a person only sees the pages their access allows */
   const sections=s=>AREAS.map(sec=>({name:sec,items:sec==="Help & support"?helpItems():pagesFor(s).filter(x=>x[0]===sec).map(x=>({t:x[1],d:x[2],href:x[3],k:x[5]||"",sec}))})).filter(x=>x.items.length);
@@ -502,7 +495,7 @@ const ICON={
     if(q){ const words=q.split(/\s+/), all=secs.flatMap(x=>x.items), hit=all.filter(it=>{ const hay=(it.t+" "+it.d+" "+it.k+" "+it.sec).toLowerCase(); return words.every(w=>hay.includes(w)); });
       return hit.length?`<div class="mlab">${hit.length} page${hit.length===1?"":"s"}</div><div class="card mlist">${hit.map(row).join("")}</div>`:`<div class="card mnone">Nothing found for “${esc(MQ.trim())}”. Try another word, or tap <b>? Ask</b>.</div>`; }
     if(MOPEN==null||(MOPEN&&!secs.some(x=>x.name===MOPEN))) MOPEN=secs.some(x=>x.name===myArea(s))?myArea(s):(secs.length?secs[0].name:""); /* "" = all areas closed (v21.13) */
-    return secs.map(sec=>{ const op=MOPEN===sec.name, ic=icon(sec.name);
+    return secs.map(sec=>{ const op=true, ic=icon(sec.name); /* v22.73: few pages — every group open */
       return `<div class="card grp"><button type="button" data-msec="${esc(sec.name)}" aria-expanded="${op}"><span class="ico" style="background:${ic[0]}" aria-hidden="true">${ic[1]}</span><span class="nm"><b>${esc(sec.name)}</b><small>${esc(AREAD[sec.name]||"")}</small></span><span class="chev" aria-hidden="true">${op?"▲":`${sec.items.length} ▼`}</span></button>
         ${op?`<div class="its">${sec.items.map((it,i)=>it.help?`<button type="button" data-help="${esc(it.help)}"><span class="num" aria-hidden="true">${i+1}</span><span><b>${esc(it.t)}</b><small>${esc(it.d)}</small></span><span class="go" aria-hidden="true">›</span></button>`:`<a href="${esc(it.href)}" data-mgo="1" ${isHere(it.href)?'aria-current="page"':""}><span class="num" aria-hidden="true">${i+1}</span><span><b>${esc(it.t)}</b><small>${esc(it.d)}</small></span><span class="go" aria-hidden="true">›</span></a>`).join("")}</div>`:""}</div>`; }).join(""); }
   function menuEl(){ let m=document.getElementById("camenu"); if(!m){ m=document.createElement("div"); m.id="camenu"; document.body.appendChild(m); } return m; }
@@ -513,7 +506,7 @@ const ICON={
       <div id="mres">${menuBody()}</div>
       <div class="mf"><button type="button" class="cb ink" data-help="ask">? Ask / Report</button><button type="button" class="cb ghost" data-ca-logout="1">Log out</button></div>
       <div class="mlinks">${/^index\.html/.test(here())?"":`<a class="lnk" href="index.html">‹ Home</a>`}${mc?`<button type="button" class="lnk" data-help="mine">My reports (${mc} open)</button>`:""}</div>
-      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.71</div></div></div>`; }
+      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.73</div></div></div>`; }
   function menuOpen(area){ const s=get(); if(!s) return; if(area&&AREAS.includes(area)) MOPEN=area; MON=true; MQ=""; drawMenu(); if(!MINE){ run("feedbackMine",s.t).then(r=>{ MINE=r||[]; if(MON) drawMenu(); }).catch(()=>{ MINE=[]; }); } }
   function menuClose(){ if(!MON) return; MON=false; MQ=""; drawMenu(); }
   document.addEventListener("input",e=>{ if(e.target&&e.target.id==="msq"&&e.target.closest("#camenu")){ MQ=e.target.value; const r=document.querySelector("#camenu #mres"); if(r) r.innerHTML=menuBody(); } });
@@ -686,7 +679,7 @@ const ICON={
     return {maybe,a2hs,perms,close}; })();
   const bootV58=()=>{ setTimeout(ONB.maybe,1000); };
   if(!/closing/.test(location.pathname)){ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",bootV58); else bootV58(); }
-  const menu={open:menuOpen,close:menuClose,on:()=>MON,redraw:()=>{ if(MON) drawMenu(); },sections:()=>sections(get()),pages:()=>pagesFor(get()),ok:x=>pageOK(x,get()),row,icon,areas:AREAS,desc:AREAD,myArea:()=>myArea(get())};
+  const menu={open:menuOpen,close:menuClose,on:()=>MON,redraw:()=>{ if(MON) drawMenu(); },sections:()=>sections(get()),pages:()=>pagesFor(get()),ok:x=>pageOK(x,get()),row,icon,areas:AREAS,desc:AREAD,myArea:()=>myArea(get()),subnav};
   return {get,save,clear,run,isAuthErr,loginForm,logout,toLogin,chip,helper,openHelp:v=>openHelp(v),ROLE,esc,nextHref,nextList,HOME,canView,vaSelect,loadVA,permsOf,labelOf,areaOf,can,update,tour:TOUR,menu,PAGES,HELP,ICON,pick,pickClose,prepWin,prepWinClose:()=>pwClose(),b2b:B2B,push:PUSH,loc:LOC,onb:ONB};
 })();
 </script>
@@ -1079,10 +1072,10 @@ function alert0(m){const s=$("#status");s.innerHTML=`<span class="err">${esc(m)}
 
 <script>
 /* v21.10 (Alfred): "Kitchen setup … can put inside kitchen history > kitchen report" → one Reports tab = past reports + fridges, display cakes, reminders */
-const TABS=[["today","To-do"],["opening","Opening"],["closing","Closing"],["plan","Plan"],["history","Reports"]];
+const TABS=[["today","To-do"],["opening","Opening"],["closing","Closing"],["stock","Stock"],["plan","Plan"],["history","History"]]; /* v22.73: "History" (Reports is the office board now) */
 /* v22.53 (Alfred 17 Oct: "a lot of buttons not needed"): 4 chips, one row. The Plan page opens from the To-do (Plan for the next days); the prep list from the To-do link. */
 const CHIPS=TABS.filter(([k])=>k!=="plan");
-const TAB_ALIAS={lists:"history",setup:"history"};
+const TAB_ALIAS={lists:"history",setup:"history",get report(){ return new Date().getHours()<14?"opening":"closing"; }}; /* v22.73: the menu's "Kitchen report" opens the report that is due: opening before 2 pm, closing after */
 const SEEN={}; const partOf=(k,p)=>(INFO&&INFO.day&&INFO.day[k]&&INFO.day[k].parts&&INFO.day[k].parts[p])||(k==="opening"&&p==="prep"&&INFO&&INFO.prep&&INFO.prep.madeAt?{by:INFO.prep.madeBy+" (office page)",at:INFO.prep.madeAt,id:"desk",issues:[],desk:true}:null);
 /* v21.11 (Alfred): the display photo is checked for tidiness the moment it is taken; a messy display pops up with the photo and asks for a re-do.
    TIDY[key] = {state:"checking"|"ok"|"messy"|"skip", problems, tips, tries} — sending waits while checking, and is blocked on the first messy photo. */
@@ -1124,6 +1117,7 @@ function qcCard(){ if(!QCI||!QCI.today||DATE!==INFO.today) return ""; const q=QC
     <span class="pt">${d?"":"+30"}</span>${late?`<p class="err" style="grid-column:1/-1;margin:4px 0 0">Late: the taste check was due by ${esc(by)}.</p>`:""}
     <div class="go">${d?`<a class="lnk" href="index.html#qc">See it</a>`:`<a class="cb sm ghost" href="index.html#qc">Start</a>`}</div></div>`; }
 let TOK=null, INFO=null, INFO_AT=0, TAB=(h=>TAB_ALIAS[h]||h)((location.hash||"#today").slice(1)), DATE=null, SENDING=false, RESULT=null, HIST=null, HISTERR="", PLE=null, NEWD=null, PART=null, PHWARN=false, RU={m:"",r:"",l:"1"};
+if((location.hash||"")==="#report"){ try{ history.replaceState(null,"","#"+TAB); }catch(e){} } /* v22.73: the menu's Kitchen report → the report that is due */
 let V2="", CK=null, RCV=null, PSBUSY=false, MSBUSY="", PARTT=0, HSEL="", SETC="eq", EQE=null, DECOED="", CONFD="";
 if(!TABS.some(([k])=>k===TAB)) TAB="today";
 const K={opening:null,closing:null}, P2={};
@@ -1200,12 +1194,12 @@ function render(){
   const ro=!!(INFO.me&&!INFO.me.kit&&!INFO.me.sup&&!INFO.me.canTask); document.body.classList.toggle("ro",ro);
   document.body.classList.toggle("dark",!res&&!V2&&(TAB==="opening"||TAB==="closing")&&PART==="eq"&&st(TAB).step<INFO.conf.equipment.length);
   $("#tabs").hidden=flow; $("#ktabs").hidden=flow; $("#acct").hidden=flow;
-  $("#tabs").innerHTML=flow?"":CHIPS.map(([k,l])=>`<button type="button" role="tab" aria-selected="${TAB===k}" data-tab="${k}">${l}${k==="today"&&INFO.proposals.length&&SUP()?`<span class="n">${INFO.proposals.length}</span>`:""}</button>`).join("");
+  $("#tabs").innerHTML=flow?"":CHIPS.filter(([k])=>k!=="stock"||TAB==="stock"||[0,1,2].includes(new Date().getDay())).map(([k,l])=>`<button type="button" role="tab" aria-selected="${TAB===k}" data-tab="${k}">${l}${k==="today"&&INFO.proposals.length&&SUP()?`<span class="n">${INFO.proposals.length}</span>`:""}</button>`).join("");
   $("#ktabs").innerHTML=`<nav aria-label="Main"><a href="index.html#today">${TABI.today}<span>Today</span></a><a href="kitchen.html" aria-current="page">${TABI.kitchen}<span>Kitchen</span></a><a href="index.html#team">${TABI.team}<span>Team</span></a><a href="index.html#me">${TABI.me}<span>Me</span></a></nav>`;
   $("#hdr").innerHTML=flow?"":tabHdr();
   let html;
   if(V2==="deco") html=vDeco(); else if(/^do:/.test(V2)) html=vDo(V2.slice(3)); else if(/^chk:/.test(V2)) html=vChk(V2.slice(4)); else if(/^rcv:/.test(V2)) html=vRcv(V2.slice(4));
-  else html={today:vToday,opening:()=>vReport("opening"),closing:()=>vReport("closing"),plan:vPlan,lists:vHistory,history:vHistory}[TAB]();
+  else html={today:vToday,opening:()=>vReport("opening"),closing:()=>vReport("closing"),stock:()=>vStock(),plan:vPlan,lists:vHistory,history:vHistory}[TAB]();
   $("#main").innerHTML=(document.body.classList.contains("ro")?`<div class="card" style="border-color:var(--warn);padding:10px 14px;margin-bottom:10px"><b>View only.</b> You can look at the kitchen pages; ticking, typing and sending need "Kitchen work" (ask Alfred or Joscelyn).</div>`:"")+(PHWARN?phWarn():"")+html;
   $("#bar").hidden=!(!V2&&(TAB==="opening"||TAB==="closing")&&PART&&!(RESULT&&RESULT.kind===TAB));
   if(!V2&&(TAB==="opening"||TAB==="closing")&&PART) refresh();
@@ -1216,6 +1210,7 @@ function tabHdr(){ const eb="Kitchen HQ · "+niceD(DATE);
   if(TAB==="today") return hdr("To-do",{back:{href:"index.html",label:"Home"},eb,right:INFO.game?`<a class="pill ink" href="index.html#me" style="text-decoration:none">${nf(INFO.game.mine)} pts</a>`:""});
   if(TAB==="opening"||TAB==="closing"){ const s0=INFO.state[TAB], due=TAB==="opening"?INFO.conf.openBy:INFO.conf.closeBy, late=repLate(TAB,s0);
     return hdr(TAB==="opening"?"Opening report":"Closing report",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb,right:`<span class="duepill ${s0.done?"ok":late?"bad":""}">${s0.done?"✓ Complete":late?"Late · "+esc(due):TAB==="closing"?"aim "+esc(due):"due "+esc(due)}</span>`}); }
+  if(TAB==="stock") return hdr("Sunday stock check",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb:"Kitchen HQ · "+niceD(DATE)}); /* v22.73 */
   if(TAB==="plan") return hdr("Production plan",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb:"Kitchen HQ"});
   return hdr("Kitchen reports",{back:{attr:'data-tab="today"',label:"Back to to-do"},eb:"Kitchen HQ · last 14 days, fridges, display cakes, reminders",print:true}); }
 function go(t){ if(SENDING){ toast("Please wait until the report is sent."); return; } t=TAB_ALIAS[t]||t; TAB=t; RESULT=null; PART=null; V2=""; CK=null; RCV=null; history.replaceState(null,"","#"+t); render(); window.scrollTo(0,0); if((t==="opening"||t==="closing")&&Date.now()-INFO_AT>60000) reload(); }
@@ -2008,4 +2003,114 @@ CA.tour.define({key:"kitchen",steps:tourSteps,ready:()=>!!INFO&&!V2&&!!TOK&&(TAB
   const qt=new URLSearchParams(location.search).get("team"); if(qt==="am"||qt==="pm") teamSet(qt);
   const s=CA.get(); if(!s) return signIn(); TOK=s.t; boot2(); })();
 </script>
-<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.71</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
+<script>
+/* v22.73 Sunday stock check (Kitchen report › Stock) — Alfred 30 Oct 2026: "every sunday they will need to do a full stock check. but i need a
+   format for them to fill and do the dubmission so the system/ai can read with minimal mistakes" → cakes + mise en place every Sunday, ingredients
+   on the first Sunday of the month. 1 print the sheet · 2 count and write (numbers only, one digit a box) · 3 snap each page, the app reads it ·
+   4 check (unsure lines are marked, two answers) · 5 send. The draft stays on this phone until it is sent. */
+let SK=null, SKBUSY="";
+const skKey=d=>"kh2.stock."+d;
+const skHM=at=>{ try{ return new Date(at).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}); }catch(e){ return ""; } };
+function skSave(){ if(!SK||!SK.info) return; try{ localStorage.setItem(skKey(SK.info.date),JSON.stringify({vals:SK.vals,extra:SK.extra,pages:SK.pages})); }catch(e){} }
+async function skLoad(){ if(SKBUSY==="load") return; SKBUSY="load";
+  try{ const info=await run("stockInfo",""); const old=SK||{}; SK={info,vals:{},extra:[],pages:{},open:old.open||0,fix:false};
+    if(!info.saved){ try{ const dr=JSON.parse(localStorage.getItem(skKey(info.date))||"null"); if(dr){ SK.vals=dr.vals||{}; SK.extra=dr.extra||[]; SK.pages=dr.pages||{}; } }catch(e){} } }
+  catch(e){ SK={err:(e&&e.message)||"Could not load the stock check."}; }
+  SKBUSY=""; if(TAB==="stock") render(); }
+const skRows=()=>((SK.info.sheet||{}).rows)||[];
+const skPrev=k=>{ const P=SK.info.prevCounts||{}; const x=P[k]; return x&&x.q!=null?x.q:null; };
+const skVal=n=>SK.vals[n]||(SK.vals[n]={count:"",part:"",crossed:false,note:"",unsure:false,ok:false});
+const skHasPart=u=>u==="tray"||u==="kg";
+function skRowHtml(r){ const v=SK.vals[r.n]||{}, warn=v.unsure&&!v.ok&&!v.crossed, pv=skPrev(r.k);
+  return `<div class="skr${warn?" warn":""}${v.crossed?" off":""}" id="skr-${r.n}"><div class="skn"><b>${r.n}</b></div><div class="skt"><b>${esc(r.name)}</b><small>${esc(r.unit)}${pv!=null?` · last Sunday ${pv}`:""}${v.note?` · ${esc(v.note)}`:""}</small>
+    ${warn?`<div class="skw">Not sure what was written${v.count!==""?`: read <b>${esc(v.count)}</b>`:""}. <button type="button" class="cb sm ok" data-skok="${r.n}" ${v.count===""?"disabled":""}>✓ ${v.count===""?"—":esc(v.count)} is right</button> <button type="button" class="cb sm ghost" data-skfix="${r.n}">Type it</button></div>`:""}</div>
+    <div class="skv"><input inputmode="decimal" data-skq="${r.n}" value="${esc(v.crossed?"":v.count)}" ${v.crossed?"disabled":""} aria-label="Count of ${esc(r.name)} in ${esc(r.unit)}" placeholder="${v.crossed?"–":"empty"}">
+    ${skHasPart(r.unit)?`<select data-skp="${r.n}" aria-label="Open part">${["","1/4","1/2","3/4"].map(x=>`<option value="${x}" ${v.part===x?"selected":""}>${x?{"1/4":"+¼","1/2":"+½","3/4":"+¾"}[x]:"full"}</option>`).join("")}</select>`:""}
+    <label class="skx"><input type="checkbox" data-skx="${r.n}" ${v.crossed?"checked":""}> not checked</label></div></div>`; }
+function skPage(p){ const sh=SK.info.sheet, nums=sh.pages[p-1]||[], rows=nums.map(n=>sh.rows[n-1]).filter(Boolean), pg=SK.pages[p]||{}, open=SK.open===p;
+  const nUnsure=rows.filter(r=>{ const v=SK.vals[r.n]; return v&&v.unsure&&!v.ok&&!v.crossed; }).length, nDone=rows.filter(r=>{ const v=SK.vals[r.n]; return v&&(v.count!==""||v.crossed); }).length;
+  const st=pg.busy?`<span class="pill">Reading… (up to 30 seconds)</span>`:pg.at?`<span class="pill ${nUnsure?"warn":"ok"}">${nUnsure?`${nUnsure} to check`:"✓ read"}</span>`:`<span class="pill">not snapped</span>`;
+  return `<div class="card skpg"><div class="skph"><button type="button" class="skpt" data-skopen="${p}" aria-expanded="${open}"><b>Page ${p} of ${sh.pages.length}</b><small>lines ${nums[0]}–${nums[nums.length-1]} · ${nDone} of ${rows.length} filled</small></button>${st}</div>
+    ${pg.aiError?`<p class="err" style="margin:6px 0 0">${esc(pg.aiError)}</p>`:""}${pg.at&&pg.codeOk===false?`<p class="err" style="margin:6px 0 0">This photo shows sheet ${esc(pg.code)}, not ${esc(sh.code)}. Snap the sheet printed for ${esc(niceD(SK.info.date))}.</p>`:""}
+    <div style="display:flex;gap:8px;margin-top:8px"><button type="button" class="cb ${pg.at?"ghost":""}" data-pick="skshot=${p}" data-pick-title="Stock sheet page ${p}" ${pg.busy?"disabled":""}>📷 ${pg.at?"Snap again":"Snap page "+p}</button>${open?"":`<button type="button" class="cb ghost" data-skopen="${p}">${pg.at?"Check the numbers":"Type instead"}</button>`}</div>
+    <input type="file" accept="image/*" capture="environment" data-skshot="${p}" hidden><input type="file" accept="image/*" data-skshot="${p}" hidden>
+    ${open?`<div class="skrows">${rows.map((r,i)=>`${i===0||r.sec!==rows[i-1].sec?`<div class="sksec">${esc(r.sec)}</div>`:""}${skRowHtml(r)}`).join("")}</div>`:""}</div>`; }
+function skList(C,P){ const rows=skRows(); if(!C) return ""; const by={}; rows.forEach(r=>{ (by[r.sec]=by[r.sec]||[]).push(r); });
+  const extra=Object.entries(C).filter(([k])=>/^NEW:/.test(k));
+  return Object.entries(by).map(([sec,rs])=>`<div class="sksec">${esc(sec)}</div><div class="card" style="padding:0">${rs.map(r=>{ const x=C[r.k]||{}, pv=P&&P[r.k]&&P[r.k].q!=null?P[r.k].q:null, q=x.q;
+      return `<div class="skl"><span>${esc(r.name)}</span><span class="mono">${x.cross||q==null&&!x.part?`<span class="hint">not checked</span>`:`<b>${q==null?0:q}</b>${x.part?" +"+esc(x.part):""} ${esc(r.unit)}`}${pv!=null?`<small class="hint"> · last ${pv}</small>`:""}</span></div>`; }).join("")}</div>`).join("")
+    +(extra.length?`<div class="sksec">Written in by hand</div><div class="card" style="padding:0">${extra.map(([k,x])=>`<div class="skl"><span>${esc(k.slice(4).replace(/-/g," "))}</span><span class="mono"><b>${x.q==null?"":x.q}</b></span></div>`).join("")}</div>`:""); }
+function vStock(){
+  if(!SK){ skLoad(); return `<div class="card"><span class="hint">Loading the stock check…</span></div>`; }
+  if(SK.err) return `<div class="card"><p class="err">${esc(SK.err)}</p><button class="cb" type="button" data-sk="reload">Try again</button></div>`;
+  const I=SK.info, sh=I.sheet;
+  if(I.off) return `<div class="card"><p class="hint">The Sunday stock check is switched off in Setup.</p></div>`;
+  if(I.saved&&!SK.fix) return `<div class="stack"><div class="card" style="border-color:var(--ok)"><b>✓ Stock check for ${esc(niceD(I.date))} sent</b><p class="hint" style="margin:4px 0 0">${esc(I.saved.by)} · ${esc(skHM(I.saved.at))} · ${I.saved.n} counted${I.saved.notChecked?`, ${I.saved.notChecked} not checked`:""}${sh?` · sheet ${esc(sh.code)}`:""}</p>
+      ${I.canCount&&I.canSend?`<button type="button" class="cb ghost" data-sk="fix" style="margin-top:8px">Fix a number and send again</button>`:""}</div>${skList(I.counts,I.prevCounts)}</div>`;
+  if(!I.canCount) return `<div class="stack"><div class="card"><p class="hint">${I.saved?"":"Not sent yet for "+esc(niceD(I.date))+"."} You can look; counting and sending need Kitchen work.</p></div>${I.prev?`<div class="hint" style="margin:6px 2px">Last count: ${esc(niceD(I.prev))}</div>`+skList(I.prevCounts,null):""}</div>`;
+  if(!I.sunday&&!sh) return `<div class="stack"><div class="card"><b>The stock check is on Sundays</b><p class="hint" style="margin:4px 0 0">Next one: ${esc(niceD(addD(I.today,7-new Date(I.today+"T00:00:00Z").getUTCDay())))}. The closing team prints the sheet, counts, snaps each page and sends.</p></div>${I.prev?`<div class="hint" style="margin:6px 2px">Last count: ${esc(niceD(I.prev))}</div>`+skList(I.prevCounts,null):""}</div>`;
+  const rows=skRows(), filled=rows.filter(r=>{ const v=SK.vals[r.n]; return v&&(v.count!==""||v.crossed); }).length, unsure=rows.filter(r=>{ const v=SK.vals[r.n]; return v&&v.unsure&&!v.ok&&!v.crossed; }).length;
+  return `<div class="stack">
+    <div class="card"><b>1. Print the sheet</b><p class="hint" style="margin:4px 0 8px">${sh?`${esc(sh.code)} · ${sh.pages.length} page${sh.pages.length===1?"":"s"} · ${sh.rows.length} lines${sh.monthly?" (with ingredients: first Sunday of the month)":""} · printed ${esc(skHM(sh.at))} by ${esc(sh.by)}`:`Cakes in the freezer and the mise en place${I.monthly?", plus the ingredients (first Sunday of the month)":""}.`}</p>
+      <button type="button" class="cb ${sh?"ghost":""}" data-sk="print" ${SKBUSY?"disabled":""}>🖨 ${sh?"Print again":"Print the stock sheet"}</button></div>
+    ${sh?`<div class="card"><b>2. Count and write</b><p class="hint" style="margin:4px 0 0">One place at a time. <b>Numbers only, one digit in each box.</b> 0 if there is none. A part tray or an open pack: tick ¼, ½ or ¾. Not checked: one line through the boxes.</p></div>
+    <div class="card"><b>3. Snap each page</b><p class="hint" style="margin:4px 0 0">Flat, the whole page, good light. The app reads it; check the lines marked in yellow.</p></div>
+    ${sh.pages.map((_,i)=>skPage(i+1)).join("")}
+    ${(SK.extra||[]).length?`<div class="card"><b>Written in by hand</b>${SK.extra.map(x=>`<div class="skl"><span>${esc(x.name)}</span><span class="mono"><b>${x.count==null?"":x.count}</b></span></div>`).join("")}</div>`:""}
+    <div class="card"><b>4. Send</b><p class="hint" style="margin:4px 0 8px">${filled} of ${rows.length} lines filled${unsure?` · <b>${unsure} to check</b>`:""}. Lines left empty are sent as "not checked".</p>
+      ${SK.ask?`<div class="skw" style="margin-bottom:8px">${unsure} line${unsure===1?" is":"s are"} marked unsure. <button type="button" class="cb sm" data-sk="goUnsure">Check them</button> <button type="button" class="cb sm ghost" data-sk="sendAnyway">Send as read</button></div>`:""}
+      <button type="button" class="cb big full ok" data-sk="send" ${SKBUSY||!filled||!I.canSend?"disabled":""}>${SKBUSY==="send"?"Sending…":"Send the stock check"}</button>${!I.canSend?`<p class="err">Too late to send the count for ${esc(niceD(I.date))}.</p>`:""}</div>`:""}
+  </div>`; }
+function skPrint(sh){ const W=window.open("","_blank"); if(!W){ toast("Allow pop-ups to print"); return; }
+  const box='<span class="bx"></span>', boxes=u=>u==="kg"?box+box+'<span class="dot">.</span>'+box:box+box+box, P=sh.pages.length, d=niceD(sh.date)+" "+sh.date.slice(0,4);
+  const page=(nums,pi)=>{ let last="", h=`<div class="pg"><div class="hd"><div><h1>SUNDAY STOCK CHECK</h1><div class="who">Counted by: ____________________ &nbsp; Time: ________ &nbsp; Checked by: ______________</div></div><div class="r">${esc(sh.code)}<br>${esc(d)}<br>Page ${pi} of ${P}</div></div>`;
+    if(pi===1) h+=`<div class="how"><b>How to fill (so the app reads it right)</b><br>1. One place at a time, top to bottom. Count what is really there.<br>2. <b>Numbers only, one digit in each box</b>, from the right: 7 = [ ][ ][7], 12 = [ ][1][2]. Write <b>0</b> if there is none. kg lines: 2.5 kg = [0][2].[5].<br>3. Part of a tray or an open pack: count the full ones, then tick ¼, ½ or ¾.<br>4. Did not check a line? Draw one line through its boxes. Something not on the list? Write it in a blank line at the bottom: name + number.<br>5. Snap every page flat in the app: <b>Kitchen report › Stock › 📷 Snap</b>. Check the numbers it shows, then Send.</div>`;
+    h+=`<table><thead><tr><th style="width:9mm">#</th><th style="width:24mm">Code</th><th>Item</th><th style="width:11mm">Unit</th><th style="width:30mm">Count</th><th style="width:27mm">Open part</th><th style="width:26mm">Note</th></tr></thead><tbody>`;
+    nums.forEach(n=>{ const r=sh.rows[n-1]; if(!r) return; if(r.sec!==last){ h+=`<tr class="sec"><td colspan="7">${esc(r.part)} · ${esc(r.sec)}</td></tr>`; last=r.sec; }
+      h+=`<tr><td class="n">${r.n}</td><td class="c">${esc(String(r.k).replace(/^[A-Z]:/,""))}</td><td class="it">${esc(r.name)}</td><td class="u">${esc(r.unit)}</td><td class="q">${boxes(r.unit)}</td><td class="o">${r.unit==="pc"?'<span style="color:#999">—</span>':'¼<span class="tk"></span>½<span class="tk"></span>¾<span class="tk"></span>'}</td><td></td></tr>`; });
+    for(let i=0;i<2;i++) h+=`<tr class="blank"><td class="n"></td><td class="c">new</td><td></td><td class="u"></td><td class="q">${box+box+box}</td><td class="o"></td><td></td></tr>`;
+    return h+`</tbody></table><div class="ft"><span>${esc(sh.code)} · page ${pi}/${P}</span><span>Chaleur Atelier · Sunday stock check</span></div></div>`; };
+  const css=`@page{size:A4;margin:10mm 10mm 12mm}*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-family:Jost,Inter,Arial,sans-serif;color:#111;margin:0;font-size:10.5pt}.pg{page-break-after:always;position:relative;height:272mm;overflow:hidden}.pg:last-child{page-break-after:auto}.hd{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid #000;padding-bottom:4px;margin-bottom:6px}.hd h1{font-size:17pt;margin:0;letter-spacing:.04em}.hd .r{text-align:right;font:700 12pt monospace}.hd .who{font-size:9.5pt;margin-top:2px}.how{border:1.5px solid #000;border-radius:6px;padding:6px 9px;margin:0 0 8px;font-size:9.5pt;line-height:1.35}table{width:100%;border-collapse:collapse;table-layout:fixed}td,th{border:1px solid #777;padding:0 5px;height:7.2mm;vertical-align:middle}th{font-size:8.5pt;text-align:left;background:#eee;height:6mm}tr.sec td{background:#222;color:#fff;font-weight:700;font-size:9.5pt;height:6.5mm}td.n{text-align:right;font:700 9pt monospace}td.c{font:7.5pt monospace;color:#333;white-space:nowrap;overflow:hidden}td.it{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}td.u{text-align:center;font-size:9pt}td.q,td.o{white-space:nowrap;font-size:9pt}.bx{display:inline-block;width:6.5mm;height:6mm;border:1.6px solid #000;margin-right:1mm;vertical-align:middle;background:#fff}.dot{font:700 12pt monospace;margin:0 .5mm 0 -.5mm;vertical-align:middle}.tk{display:inline-block;width:3.6mm;height:3.6mm;border:1.3px solid #000;margin:0 .6mm 0 1.6mm;vertical-align:middle}.ft{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;font:9pt monospace;color:#333}tr.blank td.c{color:#999;font-style:italic}`;
+  W.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Sunday stock check ${esc(sh.code)}</title><style>${css}</style></head><body>${sh.pages.map((nums,i)=>page(nums,i+1)).join("")}</body></html>`); W.document.close(); W.focus(); setTimeout(()=>W.print(),600); }
+async function skSend(force){ const I=SK.info, rows=skRows(); const unsure=rows.filter(r=>{ const v=SK.vals[r.n]; return v&&v.unsure&&!v.ok&&!v.crossed; }).length;
+  if(unsure&&!force){ SK.ask=true; render(); return; }
+  SK.ask=false; SKBUSY="send"; render();
+  try{ const out=rows.map(r=>{ const v=SK.vals[r.n]||{}; return {n:r.n,count:v.crossed||v.count===""?null:v.count,part:v.part||"",crossed:!!v.crossed,note:v.note||""}; });
+    const photos=Object.entries(SK.pages).filter(([,p])=>p&&p.photo).map(([pg,p])=>({id:p.photo.id,url:p.photo.url,page:+pg}));
+    const r=await run("stockSave",I.date,out,SK.extra||[],photos); try{ localStorage.removeItem(skKey(I.date)); }catch(e){}
+    toast(`Stock check sent: ${r.counted} counted${r.notChecked?`, ${r.notChecked} not checked`:""}.`); SKBUSY=""; SK=null; skLoad(); }
+  catch(e){ SKBUSY=""; toast(e.message); render(); } }
+document.addEventListener("click",async e=>{ if(typeof TAB==="undefined"||TAB!=="stock"||!SK) return; const b=e.target.closest&&e.target.closest("[data-sk],[data-skok],[data-skfix],[data-skopen]"); if(!b) return; const d=b.dataset;
+  if(d.skopen){ SK.open=SK.open===+d.skopen?0:+d.skopen; render(); const el=document.querySelector(`[data-skopen="${d.skopen}"]`); if(el) el.scrollIntoView({block:"start"}); return; }
+  if(d.skok){ const v=skVal(+d.skok); v.ok=true; skSave(); render(); return; }
+  if(d.skfix){ const n=+d.skfix, v=skVal(n); v.ok=true; skSave(); render(); const i=document.querySelector(`input[data-skq="${n}"]`); if(i){ i.focus(); i.select&&i.select(); } return; }
+  if(d.sk==="reload"){ SK=null; skLoad(); render(); return; }
+  if(d.sk==="fix"){ const C=SK.info.counts||{}; skRows().forEach(r=>{ const x=C[r.k]; if(x) SK.vals[r.n]={count:x.q==null?"":String(x.q),part:x.part||"",crossed:!!x.cross,note:x.note||"",unsure:false,ok:true}; }); SK.fix=true; SK.open=1; render(); return; }
+  if(d.sk==="print"){ SKBUSY="print"; render(); try{ const r=await run("stockSheet",SK.info.date,false); SK.info.sheet=r.sheet; skPrint(r.sheet); }catch(err){ toast(err.message); } SKBUSY=""; render(); return; }
+  if(d.sk==="send"){ skSend(false); return; }
+  if(d.sk==="sendAnyway"){ skSend(true); return; }
+  if(d.sk==="goUnsure"){ SK.ask=false; const r=skRows().find(r=>{ const v=SK.vals[r.n]; return v&&v.unsure&&!v.ok&&!v.crossed; }); if(r){ const pi=SK.info.sheet.pages.findIndex(a=>a.includes(r.n)); SK.open=pi+1; render(); const el=document.getElementById("skr-"+r.n); if(el) el.scrollIntoView({block:"center"}); } return; } });
+document.addEventListener("input",e=>{ if(typeof TAB==="undefined"||TAB!=="stock"||!SK) return; const t=e.target, d=t.dataset||{};
+  if(d.skq){ const v=skVal(+d.skq); v.count=String(t.value).replace(/[^0-9.,]/g,"").replace(",","."); if(v.count!==t.value) t.value=v.count; v.ok=true; skSave(); return; } });
+document.addEventListener("change",async e=>{ if(typeof TAB==="undefined"||TAB!=="stock"||!SK) return; const t=e.target, d=t.dataset||{};
+  if(d.skp){ skVal(+d.skp).part=t.value; skSave(); return; }
+  if(d.skx){ const v=skVal(+d.skx); v.crossed=t.checked; if(t.checked) v.ok=true; skSave(); render(); return; }
+  if(d.skshot&&t.files&&t.files[0]){ const p=+d.skshot, I=SK.info; SK.pages[p]=Object.assign({},SK.pages[p]||{},{busy:true}); render();
+    try{ const url=await shrink(t.files[0],1800); const res=await run("stockRead",I.date,p,url);
+      (res.rows||[]).forEach(r=>{ SK.vals[r.n]={count:r.count==null?"":String(r.count),part:r.part||"",crossed:!!r.crossed,note:r.note||"",unsure:!!r.unsure,ok:false}; });
+      (res.extra||[]).forEach(x=>{ if(!(SK.extra||[]).some(y=>y.name===x.name)) (SK.extra=SK.extra||[]).push(x); });
+      SK.pages[p]={at:new Date().toISOString(),photo:res.photo,code:res.code,codeOk:res.codeOk,unclear:res.unclear,aiError:res.aiError}; SK.open=p; skSave(); }
+    catch(err){ SK.pages[p]=Object.assign({},SK.pages[p]||{},{busy:false}); toast(err.message); }
+    render(); return; } });
+</script>
+<style>
+.skr{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 8px;padding:10px 0;border-top:1px solid var(--line)}.skr .skv{grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.skr .skn{font:700 14px var(--mono,monospace);color:var(--muted);padding-top:2px}.skr .skt small{display:block;color:var(--muted);font-size:12.5px}
+.skr input[data-skq]{width:6.5em;font:600 18px var(--mono,monospace);padding:10px;border:1.5px solid var(--line);border-radius:10px;text-align:right}
+.skr select{font:inherit;font-size:15px;padding:9px;border:1.5px solid var(--line);border-radius:10px;min-height:44px;width:auto}.skx{display:inline-flex;gap:6px;align-items:center;font-size:13.5px;color:var(--muted);white-space:nowrap}.skx input{width:20px;height:20px;margin:0}
+.skr.warn{background:#fff7db;border-radius:10px;padding:10px 8px}.skr.off .skt b{color:var(--muted);text-decoration:line-through}.skw{margin-top:6px;font-size:13.5px}
+.skph{display:flex;justify-content:space-between;align-items:center;gap:8px}.skpt{background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer}.skpt small{display:block;color:var(--muted);font-size:12.5px}
+.sksec{font:700 12px var(--body,sans-serif);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 2px 4px}.skl{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-top:1px solid var(--line)}.skl:first-child{border-top:0}
+</style>
+
+<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.73</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
