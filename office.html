@@ -1461,10 +1461,12 @@ function attention(){
     if(ev.fails.length) push({sev:"warn",kind:"audit",key:`auditf|${a.id}`,pid:a.partnerId,text:`<b>${esc(partner(a.partnerId).name)}</b> audit ${nice(a.date)} — failed: ${ev.fails.map(esc).join(", ")}`,go:{tab:"audits"}});
   }
   /* v22.73 slow-cake rule: one item per outlet cake that wasted more than 40% there in 14 days — Keep at 1 / Stop sending here */
-  for(const p of partners().filter(x=>!x.internal&&!x.sample)){ const h=salesHistory(p.id,14);
+  for(const p of partners().filter(x=>!x.internal&&!x.sample)){ const h=salesHistory(p.id,14), L=[];
     for(const [id,arr] of Object.entries(h)){ if(!S.products[id]||S.products[id].active===false||arr.length<5) continue; const s0=arr.reduce((a,x)=>a+x.sold,0), w0=arr.reduce((a,x)=>a+x.waste,0); if(!(s0+w0)||w0/(s0+w0)<=.4) continue;
-      const car=(p.carries||[]); if(car.length&&!car.includes(id)) continue; const pct=Math.round(w0/(s0+w0)*100);
-      push({sev:"warn",kind:"slow",key:`slow|${p.id}|${id}`,pid:p.id,text:`<b>${esc(p.name)}</b> — ${esc(prod(id).name)} is slow here: ${w0} thrown away, ${s0} sold in 14 days (${pct}% waste). It now gets 1 on the counter.`,fix:{kind:"slow",pid:p.id,productId:id,opts:["keep","stop"]}}); } }
+      const car=(p.carries||[]); if(car.length&&!car.includes(id)) continue; if(HD[`slow|${p.id}|${id}`]) continue; L.push({id,s0,w0,pct:Math.round(w0/(s0+w0)*100)}); }
+    /* the 3 worst at a time (worst first), so the board is not flooded; the next ones come when these are answered */
+    L.sort((a,b)=>b.pct-a.pct||b.w0-a.w0); const more=Math.max(0,L.length-3);
+    L.slice(0,3).forEach((x,i)=>push({sev:"warn",kind:"slow",key:`slow|${p.id}|${x.id}`,pid:p.id,text:`<b>${esc(p.name)}</b> — ${esc(prod(x.id).name)} is slow here: ${x.w0} thrown away, ${x.s0} sold in 14 days (${x.pct}% waste). It now gets 1 on the counter.${i===2&&more?` <span class="muted">${more} more slow cake${more===1?"":"s"} here after these.</span>`:""}`,fix:{kind:"slow",pid:p.id,productId:x.id,opts:["keep","stop"]}})); }
   const order={bad:0,warn:1,info:2}, KOK=["report","photo","photocheck","missing","extra","variance","expiry","last","salesread"];
   return items.filter(a=>can("reports")||can("view")||KOK.includes(a.kind)).sort((a,b)=>order[a.sev]-order[b.sev]);
 }
