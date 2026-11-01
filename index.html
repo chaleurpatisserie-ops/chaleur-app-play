@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.79", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><style>.panel:has([data-act="freshGo"]),.panel:has([data-act="freshPrev"]),.panel:has([data-act="scanSample"]),.panel:has([data-act="clearSample2"]),[data-act="bkCleanAsk"],[data-act="bkClean"]{display:none!important}</style><title>PLAY · Chaleur Atelier · Back office</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.81", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><style>.panel:has([data-act="freshGo"]),.panel:has([data-act="freshPrev"]),.panel:has([data-act="scanSample"]),.panel:has([data-act="clearSample2"]),[data-act="bkCleanAsk"],[data-act="bkClean"]{display:none!important}</style><title>PLAY · Chaleur Atelier · Back office</title>
 <meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
 /* Chaleur API bridge: talks to the Google backend anonymously, so it works in any browser */
 (function(){var API="https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec";
@@ -506,7 +506,7 @@ ICON["Kitchen"]=ICON["Kitchen HQ"]; ICON["Outlets"]=ICON["Outlet Delivery"]; ICO
       <div id="mres">${menuBody()}</div>
       <div class="mf"><button type="button" class="cb ink" data-help="ask">? Ask / Report</button><button type="button" class="cb ghost" data-ca-logout="1">Log out</button></div>
       <div class="mlinks">${/^index\.html/.test(here())?"":`<a class="lnk" href="index.html">‹ Home</a>`}${mc?`<button type="button" class="lnk" data-help="mine">My reports (${mc} open)</button>`:""}</div>
-      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.79</div></div></div>`; }
+      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.81</div></div></div>`; }
   function menuOpen(area){ const s=get(); if(!s) return; if(area&&AREAS.includes(area)) MOPEN=area; MON=true; MQ=""; drawMenu(); if(!MINE){ run("feedbackMine",s.t).then(r=>{ MINE=r||[]; if(MON) drawMenu(); }).catch(()=>{ MINE=[]; }); } }
   function menuClose(){ if(!MON) return; MON=false; MQ=""; drawMenu(); }
   document.addEventListener("input",e=>{ if(e.target&&e.target.id==="msq"&&e.target.closest("#camenu")){ MQ=e.target.value; const r=document.querySelector("#camenu #mres"); if(r) r.innerHTML=menuBody(); } });
@@ -834,6 +834,7 @@ body:not(.hbt) .ca-hbtn{display:none!important}body.hbt .ca-hbtn{bottom:calc(84p
 @keyframes xp{0%{opacity:0;transform:translate(-50%,10px) scale(.8)}15%{opacity:1;transform:translate(-50%,0) scale(1.05)}70%{opacity:1}100%{opacity:0;transform:translate(-50%,-40px)}}
 .cf{position:fixed;width:10px;height:10px;border-radius:50%;z-index:89;pointer-events:none;left:50%;top:40%}
 /* v22.79 calendar: shifts and leave */
+#calsh .box>*{flex-shrink:0}
 .c2b{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .lvc{padding:14px;display:flex;flex-direction:column;gap:8px}
 .lvr{padding:12px 14px;border-bottom:1px solid var(--cline);display:flex;flex-direction:column;gap:6px}.lvr:last-child{border-bottom:0}.lvr .cb{align-self:flex-start}
@@ -850,7 +851,7 @@ body:not(.hbt) .ca-hbtn{display:none!important}body.hbt .ca-hbtn{bottom:calc(84p
 .cdn{display:flex;flex-direction:column;align-items:center;line-height:1.1}.cdn b{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.cdn span{font:700 20px var(--body)}
 .cdl{display:flex;flex-direction:column;gap:4px;font-size:14px;min-width:0}
 .sl{display:block;overflow-wrap:anywhere}.sl i{font-style:normal;font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:1px 6px;margin-right:4px;white-space:nowrap}
-.sM i,.wl i.sM{background:#fbf1d3;color:#6b4e06}.sP i,.wl i.sP{background:#dde8f8;color:#1f4f99}.sF i,.wl i.sF{background:#e8e0f5;color:#5b3f8a}.sO i,.wl i.sO{background:var(--seg);color:var(--ink)}.sL i{background:var(--accent);color:var(--accent-ink)}.sH i{background:var(--bad-bg);color:var(--bad-tx)}
+.sM i,.wl i.sM{background:#fbf1d3;color:#6b4e06}.sP i,.wl i.sP{background:#dde8f8;color:#1f4f99}.sF i,.wl i.sF{background:#e8e0f5;color:#5b3f8a}.sO i,.wl i.sO{background:var(--seg);color:var(--ink)}.sT i{background:var(--seg);color:var(--ink)}.sE i{background:#fbf1d3;color:#6b4e06;border:1px solid #e3c466}.tg.ev{background:#e3c466;color:#2b1b1e}.sl small.tm{color:var(--muted);font-size:12.5px}.sL i{background:var(--accent);color:var(--accent-ink)}.sH i{background:var(--bad-bg);color:var(--bad-tx)}
 .cal{padding:10px}
 .cgr{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
 .cgr .wd{font:600 11px var(--body);color:var(--muted);text-align:center;padding:2px 0}
@@ -1217,7 +1218,7 @@ document.addEventListener("click",e=>{ const b=e.target&&e.target.closest&&e.tar
    off or on leave). Staff apply for leave here (2 weeks ahead, a reason, 1–3 days, no Johor public holiday, one person a day); 2 teammates
    agree in the app, then the person asks Alfred, who approves (Staff & access). Alfred / Joscelyn also plan each person's normal week,
    change a single day and add leave or MC directly. When the app stops someone it offers two ready answers. ---------- */
-let CAL=null, CALV="week", CALM="", CALW="", CSH=null;
+let CAL=null, CALV="month", CALM="", CALW="", CSH=null;
 const CMON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], CMONL=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const cAdd=(d,n)=>{ const x=new Date(d+"T00:00:00Z"); x.setUTCDate(x.getUTCDate()+n); return x.toISOString().slice(0,10); };
 const cDow=d=>(new Date(d+"T00:00:00Z").getUTCDay()+6)%7, cMonday=d=>cAdd(d,-cDow(d));
@@ -1228,8 +1229,13 @@ const cOn=l=>l.status==="team"||l.status==="ready"||l.status==="approved";
 const cName=k=>((CAL&&CAL.people||[]).find(p=>p.key===k)||{}).name||cap(String(k||"").split(" ")[0]);
 const cShift=(k,d)=>((CAL.days[d]||{})[k])||((CAL.week[k]||[])[cDow(d)])||"";
 const CSL={M:"Morning",P:"Production",F:"Full day",O:"Off"}, CSS1={M:"M",P:"P",F:"F",O:"Off"};
-const cLeaveOn=d=>(CAL.leave||[]).filter(l=>cOn(l)&&l.from<=d&&l.to>=d);
-const cOnRota=()=>Object.keys(CAL.week||{}).filter(k=>(CAL.week[k]||[]).some(x=>x)).concat(Object.values(CAL.days||{}).flatMap(o=>Object.keys(o))).filter((k,i,a)=>a.indexOf(k)===i);
+const cLeaveOn=d=>(CAL.leave||[]).filter(l=>cOn(l)&&l.from<=d&&l.to>=d), cEvOn=d=>(CAL.events||[]).filter(e=>e.from<=d&&(e.to||e.from)>=d);
+/* v22.81: the shifts come from Alfred's Work Schedule sheet (CAL.sched) when it is connected; the app never writes it */
+const SM=()=>!!(CAL&&CAL.sched&&CAL.sched.ok), SP=()=>SM()?CAL.sched.people:[], sidOf=k=>{ const p=SP().find(x=>x.key&&x.key===k); return p?p.sid:""; };
+const sCell=(sid,d)=>(((CAL.sched||{}).cells||{})[d]||{})[sid]||"", SAWAY=["AL","PH","OIL","UL","MC","ABS","TBC"], sToks=v=>String(v||"").toUpperCase().replace(/[^A-Z]+/g," ").trim().split(" ").filter(Boolean);
+const sAway=v=>sToks(v).some(x=>SAWAY.includes(x)), sOff=v=>{ const x=String(v||"").trim().toUpperCase(); return x==="OFF"||x==="-"; }, sMorn=v=>/^0?7\s*[–—-]/.test(String(v||"").trim());
+const sNm=p=>p.key?cName(p.key):p.name, STC={kitchen:"sM",foh:"sP",stewarding:"sF"}, sInSched=l=>{ const sid=sidOf(l.key); return !!sid&&cDays(l.from,l.to).every(d=>sAway(sCell(sid,d))); };
+const cOnRota=()=>SM()?SP().filter(p=>p.key).map(p=>p.key):Object.keys(CAL.week||{}).filter(k=>(CAL.week[k]||[]).some(x=>x)).concat(Object.values(CAL.days||{}).flatMap(o=>Object.keys(o))).filter((k,i,a)=>a.indexOf(k)===i);
 /* the same checks as the server (it checks again on Send) */
 function cProbs(from,to){
   if(!from||!to) return []; if(to<from) return [{code:"order",msg:"The last day is before the first day."}];
@@ -1237,16 +1243,22 @@ function cProbs(from,to){
   if(from<CAL.earliest) P.push({code:"soon",msg:`Too soon. Apply at least 2 weeks ahead: the earliest day is ${cNice(CAL.earliest)}.`});
   if(days.length>CAL.rules.max) P.push({code:"long",msg:`That is ${days.length} days. The most is 3 days in a row. For longer leave, ask Alfred: he adds it for you.`});
   days.forEach(d=>{ if(CAL.hols[d]) P.push({code:"ph",date:d,msg:`${cNice(d)} is a public holiday (${CAL.hols[d]}). No leave on public holidays.`}); });
-  days.forEach(d=>{ const o=L.find(l=>l.key!==me&&l.from<=d&&l.to>=d); if(o) P.push({code:"taken",date:d,msg:`${cNice(d)} is taken: ${o.name} ${o.status==="approved"?"is on leave":"has applied"}. Only one person can be on leave each day.`}); });
+  const sm=SM(), my=sm?sidOf(me):"";
+  days.forEach(d=>{ const o=L.find(l=>l.key!==me&&l.from<=d&&l.to>=d); if(o){ P.push({code:"taken",date:d,msg:`${cNice(d)} is taken: ${o.name} ${o.status==="approved"?"is on leave":"has applied"}. Only one person can be on leave each day.`}); return; }
+    if(sm){ const sp=SP().find(q=>q.sid!==my&&sAway(sCell(q.sid,d))); if(sp) P.push({code:"taken",date:d,msg:`${cNice(d)} is taken: ${sNm(sp)} is away (${sCell(sp.sid,d)} in the schedule). Only one person can be on leave each day.`}); } });
+  if(sm) days.forEach(d=>{ if(new Date(d+"T00:00:00Z").getUTCDay()===1) P.push({code:"monday",date:d,msg:`${cNice(d)} is a Monday. Nobody is off on a Monday.`}); });
+  if(sm&&my) days.forEach(d=>{ const p0=SP().find(q=>q.sid===my)||{}; if(!sMorn(sCell(my,d))||!/kitchen/i.test(p0.station||"")) return;
+    const n=SP().filter(q=>q.sid!==my&&/kitchen/i.test(q.station||"")&&sMorn(sCell(q.sid,d))&&!L.some(l=>q.key&&l.key===q.key&&l.from<=d&&l.to>=d)).length;
+    if(n<2) P.push({code:"kitchen",date:d,msg:`On ${cNice(d)} the kitchen morning (07) would have only ${n} ${n===1?"person":"people"}. It needs 2.`}); });
   days.forEach(d=>{ if(mine.some(l=>l.from<=d&&l.to>=d)) P.push({code:"mine",date:d,msg:`You already have leave on ${cNice(d)}.`}); });
   if(!P.some(p=>p.code==="long"||p.code==="mine")){ let a=from,b=to,more=true; while(more){ more=false; mine.forEach(l=>{ if(l.to===cAdd(a,-1)){a=l.from;more=true;} if(l.from===cAdd(b,1)){b=l.to;more=true;} }); }
     const run=cDays(a,b).length; if(run>CAL.rules.max) P.push({code:"run",msg:`With your other leave that makes ${run} days in a row (${cNice(a)} – ${cNice(b)}). The most is 3. For longer leave, ask Alfred.`}); }
-  if(days.length&&days.every(d=>cShift(me,d)==="O")) P.push({code:"off",msg:`You are already off ${days.length===1?"that day":"those days"}. No leave needed.`});
+  if(days.length&&(sm?my&&days.every(d=>sOff(sCell(my,d))):days.every(d=>cShift(me,d)==="O"))) P.push({code:"off",msg:`You are already off ${days.length===1?"that day":"those days"}. No leave needed.`});
   return P; }
 /* the nearest free dates of the same length (at most 3), from the first allowed day */
 function cSuggest(from,to){ const n=Math.min(CAL.rules.max,Math.max(1,cDays(from,to).length)); let s=from<CAL.earliest?CAL.earliest:from;
   for(let i=0;i<150;i++,s=cAdd(s,1)){ const e=cAdd(s,n-1); if(!cProbs(s,e).length) return [s,e]; } return null; }
-const cStatus=l=>l.expired?["mute","Not decided in time"]:l.status==="team"?["warn",`Waiting for team · ${l.agree} of ${CAL.rules.votes}`]:l.status==="ready"?["gold","Team agreed · ask Alfred"]:l.status==="approved"?["ok",l.kind==="mc"?"MC":"Approved ✓"]:l.status==="rejected"?["bad","Not approved"]:["mute","Cancelled"];
+const cStatus=l=>l.expired?["mute","Not decided in time"]:l.status==="team"?["warn",`Waiting for team · ${l.agree} of ${CAL.rules.votes}`]:l.status==="ready"?["gold","Team agreed · ask Alfred"]:l.status==="approved"?["ok",l.kind==="mc"?"MC":SM()&&sidOf(l.key)?(sInSched(l)?"Approved ✓ · in the schedule":"Approved ✓ · not yet in the schedule"):"Approved ✓"]:l.status==="rejected"?["bad","Not approved"]:["mute","Cancelled"];
 const cPill=l=>{ const [c,t]=cStatus(l); return `<span class="cpill ${c}">${esc(t)}</span>`; };
 const cVotes=l=>(l.votes||[]).length?`<div class="hint">${l.votes.map(v=>v.ok?`✓ ${esc(v.name)}`:`✗ ${esc(v.name)}: ${esc(v.why)}`).join(" · ")}</div>`:"";
 function cTitle(l){ return `${l.mine?"Your leave":esc(l.name)} · ${esc(cRange(l.from,l.to))} <span class="hint">(${l.days} day${l.days===1?"":"s"})</span>`; }
@@ -1267,37 +1279,59 @@ function vCal(){
       return `<div class="card lvc"><div><b>${esc(l.name)}</b> asks for leave <b>${esc(cRange(l.from,l.to))}</b></div><div class="hint">Reason: ${esc(l.reason)} · ${l.agree} of ${C.rules.votes} agreed</div>
       <div class="c2b"><button class="cb ok" type="button" data-cyes="${esc(l.id)}" aria-pressed="${!!(my&&my.ok)}">${my&&my.ok?"✓ You agreed":"Agree"}</button><button class="cb ghost" type="button" data-cno="${esc(l.id)}" aria-pressed="${!!(my&&!my.ok)}">${my&&!my.ok?"✗ You said not OK":"Not OK"}</button></div></div>`; }).join(""); }
   /* you today */
-  if(cOnRota().includes(me)||C.leave.some(l=>l.mine&&cOn(l))){ const say=d=>{ const lv=cLeaveOn(d).find(l=>l.key===me); return lv?(lv.status==="approved"?(lv.kind==="mc"?"MC":"on leave"):"leave (waiting)"):CSL[cShift(me,d)]||"no shift"; };
+  if(C.sched&&!C.sched.ok) h+=`<div class="cprob">${C.canPlan?esc(C.sched.err||"The Work Schedule sheet could not be read.")+" Check the link in Schedule link &amp; names.":"The work schedule can't be shown right now. Try again later."}</div>`;
+  if(cOnRota().includes(me)||C.leave.some(l=>l.mine&&cOn(l))){ const say=d=>{ const lv=cLeaveOn(d).find(l=>l.key===me); if(lv&&!(SM()&&sAway(sCell(sidOf(me),d)))) return lv.status==="approved"?(lv.kind==="mc"?"MC":"on leave"):"leave (waiting)"; return SM()?(sCell(sidOf(me),d)||"not in the schedule"):(CSL[cShift(me,d)]||"no shift"); };
     h+=`<div class="card cme"><span class="eb">You</span><div><b>Today:</b> ${esc(say(t))} · <b>Tomorrow:</b> ${esc(say(cAdd(t,1)))}</div></div>`; }
-  h+=`<div class="seg" style="--n:2" role="group" aria-label="View"><button type="button" data-cview="week" aria-pressed="${CALV==="week"}">Week</button><button type="button" data-cview="month" aria-pressed="${CALV==="month"}">Month</button></div>`;
+  h+=`<div class="seg" style="--n:2" role="group" aria-label="View"><button type="button" data-cview="month" aria-pressed="${CALV==="month"}">Month</button><button type="button" data-cview="week" aria-pressed="${CALV==="week"}">Week schedule</button></div>`;
   h+=CALV==="week"?cWeekView():cMonthView();
   if(C.canApply) h+=`<button class="cb full" type="button" data-capplyopen="1">Apply for leave</button>`;
   const mineL=C.leave.filter(l=>l.mine&&(l.to>=cAdd(t,-31))).sort((a,b)=>a.from<b.from?1:-1);
   if(mineL.length) h+=`<div class="lh"><b>My leave</b><span></span></div><div class="card">${mineL.map(l=>`<div class="lvr"><div>${esc(cRange(l.from,l.to))} ${cPill(l)}</div><div class="hint">${esc(l.reason)}${l.added?` · added by ${esc(l.added.by)}`:""}${l.decided&&l.decided.note?` · ${esc(l.decided.note)}`:""}</div>${cVotes(l)}
     ${l.status==="ready"&&!l.expired?`<div class="cnext">Next: come and ask Alfred to approve it.</div>`:""}${cOn(l)&&l.from>t&&!C.viewAs?`<button class="cb ghost sm" type="button" data-ccancel="${esc(l.id)}">Cancel this leave</button>`:""}</div>`).join("")}</div>`;
-  if(C.canPlan) h+=`<div class="c2b"><button class="cb ghost" type="button" data-cplan="1">Plan normal week</button><button class="cb ghost" type="button" data-caddopen="">Add leave or MC</button></div>`;
-  h+=`<div class="card crules"><span class="eb">Leave rules</span><ul><li>Apply at least <b>2 weeks</b> ahead, with a reason.</li><li>At most <b>3 days</b> in a row.</li><li>No leave on <b>public holidays</b>.</li><li>Only <b>1 person</b> on leave each day.</li><li><b>2 teammates</b> agree in the app, then <b>ask Alfred</b> to approve. Never approved by itself.</li><li>Longer leave or MC: Alfred adds it.</li></ul></div>`;
+  if(C.canPlan) h+=C.sched?`<div class="c2b"><button class="cb ghost" type="button" data-cevopen="">＋ Event or activity</button><button class="cb ghost" type="button" data-csched="1">Schedule link &amp; names</button></div>`:`<div class="c2b"><button class="cb ghost" type="button" data-cplan="1">Plan normal week</button><button class="cb ghost" type="button" data-caddopen="">Add leave or MC</button></div>`;
+  h+=`<div class="card crules"><span class="eb">Leave rules</span><ul><li>Apply at least <b>2 weeks</b> ahead, with a reason.</li><li>At most <b>3 days</b> in a row.</li><li>No leave on <b>public holidays</b>.</li><li>Only <b>1 person</b> on leave each day.</li>${C.sched?`<li>No leave on a <b>Monday</b>; the kitchen morning keeps <b>2 people</b>.</li>`:""}<li><b>2 teammates</b> agree in the app, then <b>ask Alfred</b> to approve. Never approved by itself.</li><li>${C.sched?"Shifts, longer leave and MC are in Alfred's work schedule.":"Longer leave or MC: Alfred adds it."}</li></ul></div>`;
   return h+`</div>`; }
 function cDayLines(d){ const C=CAL, me=C.me, by={M:[],P:[],F:[],O:[]}, lv=cLeaveOn(d), away=lv.map(l=>l.key);
+  if(SM()){ const st={}, order=[], off=[], aw=[], nmS=p=>p.key&&p.key===me?`<b>${esc(sNm(p))}</b>`:esc(sNm(p));
+    SP().forEach(p=>{ const c=sCell(p.sid,d), l=p.key?lv.find(x=>x.key===p.key):null;
+      if(sAway(c)){ aw.push(`${nmS(p)} (${esc(c)})`); return; }
+      if(l){ aw.push(`${nmS(p)} (${l.status==="approved"?"approved, not yet in the schedule":"waiting"})`); return; }
+      if(!c||c==="-") return; if(sOff(c)){ off.push(nmS(p)); return; }
+      const s=p.station||"Team"; if(!st[s]){ st[s]=[]; order.push(s); } st[s].push(`${nmS(p)} <small class="tm">${esc(c)}</small>`); });
+    lv.filter(l=>!SP().some(p=>p.key&&p.key===l.key)).forEach(l=>aw.push(`${l.key===me?`<b>${esc(l.name)}</b>`:esc(l.name)} (${l.status==="approved"?(l.kind==="mc"?"MC":"leave"):"waiting"})`));
+    const out=order.map(s=>`<span class="sl ${STC[s.toLowerCase()]||"sT"}"><i>${esc(s)}</i> ${st[s].join(", ")}</span>`);
+    if(off.length) out.push(`<span class="sl sO"><i>Off</i> ${off.join(", ")}</span>`); if(aw.length) out.push(`<span class="sl sL"><i>Away</i> ${aw.join(", ")}</span>`); return out; }
   cOnRota().forEach(k=>{ const s=cShift(k,d); if(s&&!away.includes(k)) by[s].push(k); });
   const nm=k=>k===me?`<b>${esc(cName(k))}</b>`:esc(cName(k));
   const out=["M","P","F","O"].filter(s=>by[s].length).map(s=>`<span class="sl s${s}"><i>${CSL[s]}</i> ${by[s].map(nm).join(", ")}</span>`);
   if(lv.length) out.push(`<span class="sl sL"><i>Leave</i> ${lv.map(l=>`${nm(l.key)}${l.status==="approved"?(l.kind==="mc"?" (MC)":""):" (waiting)"}`).join(", ")}</span>`);
   return out; }
-function cWeekView(){ const C=CAL, t=C.today, a=CALW, b=cAdd(a,6), cur=cMonday(t)===a, any=cOnRota().length;
+function cWeekView(){ const C=CAL, t=C.today, a=CALW, b=cAdd(a,6), cur=cMonday(t)===a, any=SM()?SP().length:cOnRota().length;
   return `<div class="card cwk"><div class="cmh"><button type="button" data-cwk="-7" aria-label="Last week">‹</button><b>${esc(cNice(a).slice(4))} – ${esc(cNice(b).slice(4))}</b><button type="button" data-cwk="7" aria-label="Next week">›</button></div>
     ${cur?"":`<button class="clink" type="button" data-cwk="0">Back to this week</button>`}
     ${cDays(a,b).map(d=>{ const L=cDayLines(d), ph=C.hols[d];
-      return `<button type="button" class="cday ${d===t?"tod":""} ${d<t?"past":""}" data-cday="${d}"><span class="cdn"><b>${esc(cNice(d).slice(0,3))}</b><span>${+d.slice(8)}</span></span><span class="cdl">${ph?`<span class="sl sH"><i>Public holiday</i> ${esc(ph)}</span>`:""}${L.join("")||(!any?`<span class="hint">No shifts planned yet</span>`:`<span class="hint">—</span>`)}</span></button>`; }).join("")}</div>`; }
-function cMonthView(){ const C=CAL, t=C.today, me=C.me, y=+CALM.slice(0,4), m=+CALM.slice(5,7), f=CALM+"-01", start=cMonday(f), onR=cOnRota().includes(me);
+      const ev=cEvOn(d);
+      return `<button type="button" class="cday ${d===t?"tod":""} ${d<t?"past":""}" data-cday="${d}"><span class="cdn"><b>${esc(cNice(d).slice(0,3))}</b><span>${+d.slice(8)}</span></span><span class="cdl">${ph?`<span class="sl sH"><i>Public holiday</i> ${esc(ph)}</span>`:""}${ev.map(e=>`<span class="sl sE"><i>Event</i> ${esc(e.title)}${e.note?` <small class="tm">${esc(e.note)}</small>`:""}</span>`).join("")}${L.join("")||(!any?`<span class="hint">No shifts planned yet</span>`:`<span class="hint">${SM()&&!Object.keys((C.sched.cells||{})[d]||{}).length?"Not in the schedule yet":"—"}</span>`)}</span></button>`; }).join("")}</div>`; }
+function cMonthView(){ const C=CAL, t=C.today, me=C.me, y=+CALM.slice(0,4), m=+CALM.slice(5,7), f=CALM+"-01", start=cMonday(f), onR=cOnRota().includes(me), msid=SM()?sidOf(me):"";
   let cells=""; for(let i=0;i<42;i++){ const d=cAdd(start,i); if(i>=35&&d.slice(0,7)!==CALM) break;
     if(d.slice(0,7)!==CALM){ cells+=`<span class="dc out" aria-hidden="true"></span>`; continue; }
-    const ph=C.hols[d], lv=cLeaveOn(d), s=onR?cShift(me,d):"";
-    cells+=`<button type="button" class="dc ${d===t?"tod":""} ${d<t?"past":""} ${ph?"ph":""}" data-cday="${d}" aria-label="${esc(cNice(d))}${ph?", public holiday":""}${lv.length?", "+lv.map(l=>l.name).join(", ")+" on leave":""}"><span class="n">${+d.slice(8)}</span>${ph?`<span class="tg ph">PH</span>`:""}${lv.slice(0,2).map(l=>`<span class="tg ${l.status==="approved"?"lv":"wt"}">${esc(String(l.name).slice(0,5))}</span>`).join("")}${s&&!lv.some(l=>l.key===me)?`<span class="tg my">${CSS1[s]}</span>`:""}</button>`; }
+    const ph=C.hols[d], lv=cLeaveOn(d), mc=msid?sCell(msid,d):"", s=msid?(mc?(sAway(mc)?mc.split(" ")[0]:sOff(mc)?"Off":mc.split(/[–—-]/)[0].trim()):""):onR?CSS1[cShift(me,d)]||"":"";
+    const sa=SM()?SP().filter(p=>sAway(sCell(p.sid,d))&&!(p.key&&lv.some(l=>l.key===p.key))).map(p=>({name:sNm(p),status:"approved",key:p.key})):[], lv2=lv.concat(sa);
+    cells+=`<button type="button" class="dc ${d===t?"tod":""} ${d<t?"past":""} ${ph?"ph":""}" data-cday="${d}" aria-label="${esc(cNice(d))}${ph?", public holiday":""}${lv2.length?", "+lv2.map(l=>l.name).join(", ")+" away":""}"><span class="n">${+d.slice(8)}</span>${ph?`<span class="tg ph">PH</span>`:""}${cEvOn(d).length?`<span class="tg ev">${esc(String(cEvOn(d)[0].title).slice(0,6))}</span>`:""}${lv2.slice(0,2).map(l=>`<span class="tg ${l.status==="approved"?"lv":"wt"}">${esc(String(l.name).slice(0,5))}</span>`).join("")}${s&&!lv.some(l=>l.key===me)?`<span class="tg my">${esc(s)}</span>`:""}</button>`; }
   const pm=m===1?(y-1)+"-12":y+"-"+String(m-1).padStart(2,"0"), nm=m===12?(y+1)+"-01":y+"-"+String(m+1).padStart(2,"0");
   return `<div class="card cal"><div class="cmh"><button type="button" data-cmon="${pm}" aria-label="Last month">‹</button><b>${CMONL[m-1]} ${y}</b><button type="button" data-cmon="${nm}" aria-label="Next month">›</button></div>
     <div class="cgr">${["M","T","W","T","F","S","S"].map(x=>`<span class="wd">${x}</span>`).join("")}${cells}</div>
-    <div class="clg"><span><i class="tg ph">PH</i> public holiday</span><span><i class="tg lv">Name</i> on leave</span><span><i class="tg wt">Name</i> waiting</span>${onR?`<span><i class="tg my">M</i> your shift</span>`:""}</div></div>`; }
+    <div class="clg"><span><i class="tg ev">Event</i> event</span><span><i class="tg ph">PH</i> public holiday</span><span><i class="tg lv">Name</i> on leave</span><span><i class="tg wt">Name</i> waiting</span>${onR||msid?`<span><i class="tg my">${msid?"07":"M"}</i> your shift</span>`:""}</div></div>${cAgenda()}`; }
+/* the month as a list under the grid: public holidays, events, leave and who is away in the schedule */
+function cAgenda(){ const C=CAL, me=C.me, f=CALM+"-01", days=[]; for(let d=f;d.slice(0,7)===CALM;d=cAdd(d,1)) days.push(d);
+  const nm=(k,n)=>k&&k===me?`<b>${esc(n)}</b>`:esc(n);
+  const rows=days.map(d=>{ const it=[]; if(C.hols[d]) it.push(`<span class="sl sH"><i>Public holiday</i> ${esc(C.hols[d])}</span>`);
+    cEvOn(d).forEach(e=>it.push(`<span class="sl sE"><i>Event</i> ${esc(e.title)}${e.note?` <small class="tm">${esc(e.note)}</small>`:""}</span>`));
+    const aw=[]; cLeaveOn(d).forEach(l=>{ const sid=SM()?sidOf(l.key):"", c=sid?sCell(sid,d):""; if(sid&&sAway(c)) return; aw.push(`${nm(l.key,l.name)} (${l.status==="approved"?(l.kind==="mc"?"MC":SM()&&sid?"approved, not yet in the schedule":"leave"):"waiting"})`); });
+    if(SM()) SP().forEach(p=>{ const c=sCell(p.sid,d); if(sAway(c)) aw.push(`${nm(p.key,sNm(p))} (${esc(c)})`); });
+    if(aw.length) it.push(`<span class="sl sL"><i>Away</i> ${aw.join(", ")}</span>`);
+    return it.length?`<button type="button" class="cday ${d===C.today?"tod":""} ${d<C.today?"past":""}" data-cday="${d}"><span class="cdn"><b>${esc(cNice(d).slice(0,3))}</b><span>${+d.slice(8)}</span></span><span class="cdl">${it.join("")}</span></button>`:""; }).join("");
+  return `<div class="card cwk"><div class="spr" style="padding:4px 4px 6px"><b style="font:700 18px var(--display)">This month</b><span class="hint">holidays · events · leave</span></div>${rows||`<p class="hint" style="margin:6px 4px 10px">Nothing this month yet.</p>`}</div>`; }
 /* ---- sheets ---- */
 function cSheet(){ let el=document.getElementById("calsh"); if(!CSH){ if(el) el.remove(); return; } if(!el){ el=document.createElement("div"); el.id="calsh"; document.body.appendChild(el); }
   const S2=CSH, C=CAL, x=`<button class="cb sm ghost" type="button" data-cclose="1">Close</button>`, hd=t=>`<div class="spr"><div class="ptitle">${t}</div>${x}</div>`; let b="";
@@ -1315,10 +1349,22 @@ function cSheet(){ let el=document.getElementById("calsh"); if(!CSH){ if(el) el.
       <label class="f">Or write why<input data-cf="why" maxlength="200" value="${esc(S2.why)}" placeholder="Why?"></label><p class="err" id="cst" style="margin:0"></p>
       <button class="cb full" type="button" data-cwhysend="1">${S2.k==="no"?"Send: not OK":"Send: not approved"}</button>`; }
   else if(S2.k==="day"){ const d=S2.d, ph=C.hols[d], L=cDayLines(d), ppl=C.people.filter(p=>!p.owner||cOnRota().includes(p.key));
-    b=hd(esc(cNice(d)))+(ph?`<div class="sl sH"><i>Public holiday</i> ${esc(ph)}</div>`:"")+`<div class="cdl">${L.join("")||`<span class="hint">Nobody planned this day.</span>`}</div>`
-      +(C.canPlan?`<div class="lh"><b>Change this day</b><span>only ${esc(cNice(d))}</span></div><div class="card">${ppl.map(p=>{ const nw=(C.week[p.key]||[])[cDow(d)]||"", o=(C.days[d]||{})[p.key]||"";
+    b=hd(esc(cNice(d)))+(ph?`<div class="sl sH"><i>Public holiday</i> ${esc(ph)}</div>`:"")+cEvOn(d).map(e=>`<div class="spr"><span class="sl sE"><i>Event</i> ${esc(e.title)}${e.from!==e.to?` <small class="tm">${esc(cRange(e.from,e.to))}</small>`:""}${e.note?` <small class="tm">${esc(e.note)}</small>`:""}</span>${C.canPlan?`<button class="cb ghost sm" type="button" data-cevdel="${esc(e.id)}">Remove</button>`:""}</div>`).join("")+(C.canPlan?`<button class="cb ghost full" type="button" data-cevopen="${d}">＋ Add an event or activity on this day</button>`:"")+`<div class="cdl">${L.join("")||`<span class="hint">Nobody planned this day.</span>`}</div>`
+      +(SM()?`<p class="hint" style="margin:0">Shifts come from the work schedule${C.canPlan?` — <a href="https://docs.google.com/spreadsheets/d/${esc(C.sched.fileId)}/edit" target="_blank" rel="noopener">open it to change them</a>`:""}.</p>`:C.canPlan?`<div class="lh"><b>Change this day</b><span>only ${esc(cNice(d))}</span></div><div class="card">${ppl.map(p=>{ const nw=(C.week[p.key]||[])[cDow(d)]||"", o=(C.days[d]||{})[p.key]||"";
         return `<label class="crow"><span>${esc(p.name)}</span><select data-cdayset="${esc(p.key)}" data-d="${d}"><option value="" ${!o?"selected":""}>Normal (${esc(CSL[nw]||"none")})</option>${["M","P","F","O"].map(s=>`<option value="${s}" ${o===s?"selected":""}>${CSL[s]}</option>`).join("")}</select></label>`; }).join("")}</div>
       <button class="cb ghost full" type="button" data-caddopen="${d}">Add leave or MC on this day</button>`:""); }
+  else if(S2.k==="ev"){ b=hd("Event or activity")+`<p class="hint" style="margin:0">Everyone sees it on the calendar (e.g. team meeting, training, deep cleaning, staff outing).</p>
+      <label class="f">What<input data-cf="title" maxlength="80" value="${esc(S2.title)}" placeholder="e.g. Team meeting"></label>
+      <div class="g2"><label class="f">First day<input type="date" data-cf="from" value="${esc(S2.from)}"></label><label class="f">Last day<input type="date" data-cf="to" value="${esc(S2.to)}"></label></div>
+      <label class="f">Time or note (optional)<input data-cf="note" maxlength="200" value="${esc(S2.note)}" placeholder="e.g. 3 pm at HQ"></label>
+      <p class="err" id="cst" style="margin:0"></p><button class="cb full" type="button" data-cevsave="1">Put on the calendar</button>`; }
+  else if(S2.k==="sched"){ const Sd=C.sched||{}, ppl=C.people.filter(p=>!p.owner).sort((a,b)=>a.name.localeCompare(b.name));
+    b=hd("Schedule link &amp; names")+`<p class="hint" style="margin:0">The calendar reads your Work Schedule sheet (shifts, OFF, MC, AL…). The app never writes it: approved leave goes to the <b>Leave requests</b> tab of the back-office sheet, and you type it into the schedule (PH credit first, then AL).</p>
+      ${Sd.ok?`<div class="cok">✓ ${esc(Sd.title||"Work Schedule")} · ${(Sd.months||[]).map(x=>CMON[+x.slice(5)-1]+" "+x.slice(0,4)).join(", ")} · ${(Sd.people||[]).length} people (Alfred and Joscelyn left out)</div>`:`<div class="cprob">${esc(Sd.err||"Not connected.")}</div>`}
+      <label class="f">Work Schedule sheet (link)<input data-cf="link" value="${esc(S2.link)}" placeholder="https://docs.google.com/spreadsheets/d/…"></label>
+      <button class="cb ghost full" type="button" data-cschedlink="1">Save the link</button>
+      ${Sd.ok?`<div class="lh"><b>Who is who</b><span>schedule → app login</span></div><div class="card">${(Sd.people||[]).map(p=>`<label class="crow"><span>${esc(p.full||p.name)}<small class="hint" style="display:block">${esc(p.station||"")}</small></span>${(()=>{ const cur=(Sd.alias||{})[p.sid]||""; return `<select data-csid="${esc(p.sid)}"><option value="" ${!cur?"selected":""}>${p.key&&!cur?"Auto: "+esc(cName(p.key)):"Auto (no match)"}</option><option value="-" ${cur==="-"?"selected":""}>Not in the app</option>${ppl.map(q=>`<option value="${esc(q.key)}" ${cur===q.key?"selected":""}>${esc(q.name)}</option>`).join("")}</select>`; })()}</label>`).join("")}</div>
+      <button class="cb full" type="button" data-cschednames="1">Save who is who</button>`:""}<p class="err" id="cst" style="margin:0"></p>`; }
   else if(S2.k==="plan"){ const ppl=C.people.slice().sort((a,b)=>(a.owner-b.owner)||a.name.localeCompare(b.name));
     if(!S2.who) b=hd("Normal week")+`<p class="hint" style="margin:0">Each person's usual week. It repeats every week; change single days by tapping a day.</p><div class="card">${ppl.map(p=>{ const w=C.week[p.key]||[];
         return `<button type="button" class="crow cbtn" data-cplanwho="${esc(p.key)}"><span>${esc(p.name)}</span><span class="wl">${[0,1,2,3,4,5,6].map(i=>`<i class="s${w[i]||"x"}">${w[i]?CSS1[w[i]].charAt(0):"·"}</i>`).join("")}</span></button>`; }).join("")}</div><p class="hint" style="margin:0">M Morning · P Production · F Full day · O Off · · not planned</p>`;
@@ -1344,7 +1390,7 @@ document.addEventListener("input",e=>{ const t=e.target; if(!CSH||!t.dataset||!t
   if(CSH.k==="apply"){ if(t.dataset.cf==="from"&&t.value&&(!CSH.to||CSH.to<t.value)){ CSH.to=t.value; const o=document.querySelector('[data-cf="to"]'); if(o) o.value=t.value; }
     if(t.dataset.cf==="reason") document.querySelectorAll("[data-creason]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.creason===t.value))); cRefreshApply(); }
   if((CSH.k==="no"||CSH.k==="rej")&&t.dataset.cf==="why") document.querySelectorAll("[data-cwhy]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.cwhy===t.value)));
-  if(CSH.k==="add"&&t.dataset.cf==="from"&&t.value&&(!CSH.to||CSH.to<t.value)){ CSH.to=t.value; const o=document.querySelector('[data-cf="to"]'); if(o) o.value=t.value; } });
+  if((CSH.k==="add"||CSH.k==="ev")&&t.dataset.cf==="from"&&t.value&&(!CSH.to||CSH.to<t.value)){ CSH.to=t.value; const o=document.querySelector('[data-cf="to"]'); if(o) o.value=t.value; } });
 document.addEventListener("change",async e=>{ const t=e.target; if(!t.matches) return;
   if(t.matches("[data-cf]")&&CSH&&t.tagName==="SELECT"){ CSH[t.dataset.cf]=t.value; return; }
   if(t.matches("[data-cdayset]")){ t.disabled=true; try{ CAL=await CA.run("calDaySet",S.t,t.dataset.d,t.dataset.cdayset,t.value); toast(t.value?`${cName(t.dataset.cdayset)}: ${CSL[t.value]} on ${cNice(t.dataset.d)}`:"Back to the normal week"); render(); cSheet(); }catch(x){ toast(x.message); t.disabled=false; } } });
@@ -1371,6 +1417,15 @@ document.addEventListener("click",async e=>{ const t=e.target&&e.target.closest?
   const cc=g("[data-ccancel]"); if(cc&&!cc.disabled){ if(cc.dataset.sure!=="1"){ cc.dataset.sure="1"; cc.textContent="Tap again to cancel it"; setTimeout(()=>{ if(cc.isConnected){ cc.dataset.sure=""; cc.textContent="Cancel this leave"; } },4000); return; }
     cc.disabled=true; try{ await CA.run("calLeaveCancel",S.t,cc.dataset.ccancel); toast("Cancelled. The day is free again."); await cReload(); }catch(x){ toast(x.message); cc.disabled=false; } return; }
   if(g("[data-cplan]")){ CSH={k:"plan",who:"",w:[]}; cSheet(); return; }
+  const eo=g("[data-cevopen]"); if(eo){ const d=eo.dataset.cevopen||""; CSH={k:"ev",title:"",from:d,to:d,note:""}; cSheet(); return; }
+  const es=g("[data-cevsave]"); if(es&&!es.disabled&&CSH){ if(String(CSH.title||"").trim().length<2){ cSt("Write what the event or activity is."); return; } if(!CSH.from){ cSt("Pick the first day."); return; } es.disabled=true;
+    try{ CAL=await CA.run("calEventAdd",S.t,{title:CSH.title.trim(),from:CSH.from,to:CSH.to||CSH.from,note:(CSH.note||"").trim()}); toast("On the calendar."); CSH=null; cSheet(); render(); }catch(x){ cSt(x.message); es.disabled=false; } return; }
+  const ed=g("[data-cevdel]"); if(ed&&!ed.disabled){ if(ed.dataset.sure!=="1"){ ed.dataset.sure="1"; ed.textContent="Tap again"; setTimeout(()=>{ if(ed.isConnected){ ed.dataset.sure=""; ed.textContent="Remove"; } },4000); return; }
+    ed.disabled=true; try{ CAL=await CA.run("calEventDel",S.t,ed.dataset.cevdel); toast("Removed."); render(); cSheet(); }catch(x){ toast(x.message); ed.disabled=false; } return; }
+  if(g("[data-csched]")){ const Sd=CAL.sched||{}; CSH={k:"sched",link:Sd.fileId?"https://docs.google.com/spreadsheets/d/"+Sd.fileId+"/edit":"",al:{}}; cSheet(); return; }
+  const sl=g("[data-cschedlink]"); if(sl&&!sl.disabled&&CSH){ sl.disabled=true; try{ CAL=await CA.run("calSchedSet",S.t,{fileId:CSH.link||""}); toast(CAL.sched&&CAL.sched.ok?"Connected ✓":"Saved, but the sheet could not be read."); render(); cSheet(); }catch(x){ cSt(x.message); sl.disabled=false; } return; }
+  const sn=g("[data-cschednames]"); if(sn&&!sn.disabled&&CSH){ const al={}; document.querySelectorAll("[data-csid]").forEach(x=>{ al[x.dataset.csid]=x.value; }); sn.disabled=true;
+    try{ CAL=await CA.run("calSchedSet",S.t,{alias:al}); CSH.al={}; toast("Saved."); render(); cSheet(); }catch(x){ cSt(x.message); sn.disabled=false; } return; }
   const pw=g("[data-cplanwho]"); if(pw&&CSH){ CSH.who=pw.dataset.cplanwho; CSH.w=(CAL.week[CSH.who]||["","","","","","",""]).slice(); cSheet(); return; }
   const wset=g("[data-cwset]"); if(wset&&CSH){ CSH.w[+wset.dataset.cwset]=wset.dataset.v; cSheet(); return; }
   const wsv=g("[data-cwsave]"); if(wsv&&!wsv.disabled&&CSH){ wsv.disabled=true; try{ CAL=await CA.run("calRotaSave",S.t,CSH.who,CSH.w.map(x=>x||"")); toast(`Saved ${cName(CSH.who)}'s normal week.`); CSH.who=""; render(); cSheet(); }catch(x){ cSt(x.message); wsv.disabled=false; } return; }
@@ -1805,4 +1860,4 @@ Home › Today is the team's to-do list: every part of both reports is its own l
 <li>Prep list FIFO (since 8 Oct 2026, Alfred: "5 green: 2 go to orders, 3 stay at HQ to sell, both outlets get blue … all this will be the require number, and the system will auto count the need to make"): every place box — Order, HQ, each outlet — is what that place REQUIRES for the day (the HQ box = what the display needs in total, suggested from its counter minimum / sales). The display's cakes are allocated oldest first: 1. online orders take any cake still within its life on pickup day; 2. the outlets (faster seller first) take dots that may still travel (made today/yesterday, 2+ days of life left); 3. HQ keeps what is left that is still sellable and the kitchen makes the rest of what the display needs. To make = everything that must be baked fresh (still editable). Dots show their DAY ("● Wed"), the colour name is in the tooltip. Whole cakes: while any is left on the display, at most 2 more are made.</li>
 <li>Online orders card (since 8 Oct 2026): one card per order — Order (Orderla's number when it has one + code · form), Time (slot · day · pick up / delivery · place), Name, Items (→ our cakes), Status (confirmed/pending · paid/unpaid · total).</li>
 </ul></template>
-<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.79</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
+<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.81</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
