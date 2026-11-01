@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.77", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><style>.panel:has([data-act="freshGo"]),.panel:has([data-act="freshPrev"]),.panel:has([data-act="scanSample"]),.panel:has([data-act="clearSample2"]),[data-act="bkCleanAsk"],[data-act="bkClean"]{display:none!important}</style><title>PLAY · Chaleur · Outlet closing</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
+<html lang="en"><head><meta charset="utf-8"><script>(function(){var P="play:";["getItem","setItem","removeItem"].forEach(function(m){var o=Storage.prototype[m];Storage.prototype[m]=function(k){var a=[].slice.call(arguments);a[0]=P+k;return o.apply(this,a);};});})();</script><script>window.CA_BUILD={"mode": "play", "ver": "22.80", "api": "https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec"};</script><style>.mver{text-align:center;font-size:11.5px;letter-spacing:.04em;padding:8px 0 2px;font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--faint,#a09194)}.mver{color:#b45309;font-weight:600}</style><style>#ca-playbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#fbbf24;color:#78350f;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 14px;font:600 13px/1.3 var(--body,Jost,system-ui,sans-serif);letter-spacing:.06em;box-shadow:0 1px 0 rgba(0,0,0,.08)}#ca-playbar .ca-playnote{font-weight:500;letter-spacing:0;opacity:.85}.ca-vabar{top:var(--playh,0px)}.si{top:var(--playh,0px)!important}@media(max-width:480px){#ca-playbar .ca-playnote{display:none}}@media print{#ca-playbar{display:none!important}}</style><style>.panel:has([data-act="freshGo"]),.panel:has([data-act="freshPrev"]),.panel:has([data-act="scanSample"]),.panel:has([data-act="clearSample2"]),[data-act="bkCleanAsk"],[data-act="bkClean"]{display:none!important}</style><title>PLAY · Chaleur · Outlet closing</title><meta name="theme-color" content="#d97706"><meta name="apple-mobile-web-app-title" content="Chaleur PLAY"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><script>
 /* Chaleur API bridge: talks to the Google backend anonymously, so it works in any browser */
 (function(){var API="https://script.google.com/macros/s/AKfycbxVo4z8kH9lX5GKEhvJtBXeH2EzLXOYpbgy_L8ORY3M7TwfSJmweCzs4XdzDTWetK063Q/exec";
 function call(fn,args,ok,fail){var ac=typeof AbortController!=="undefined"?new AbortController():null,tm=null,done=function(){if(tm)clearTimeout(tm);};
@@ -506,7 +506,7 @@ ICON["Kitchen"]=ICON["Kitchen HQ"]; ICON["Outlets"]=ICON["Outlet Delivery"]; ICO
       <div id="mres">${menuBody()}</div>
       <div class="mf"><button type="button" class="cb ink" data-help="ask">? Ask / Report</button><button type="button" class="cb ghost" data-ca-logout="1">Log out</button></div>
       <div class="mlinks">${/^index\.html/.test(here())?"":`<a class="lnk" href="index.html">‹ Home</a>`}${mc?`<button type="button" class="lnk" data-help="mine">My reports (${mc} open)</button>`:""}</div>
-      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.77</div></div></div>`; }
+      <div class="mwho">${chip(s)}</div><div class="mver">Playground · v22.80</div></div></div>`; }
   function menuOpen(area){ const s=get(); if(!s) return; if(area&&AREAS.includes(area)) MOPEN=area; MON=true; MQ=""; drawMenu(); if(!MINE){ run("feedbackMine",s.t).then(r=>{ MINE=r||[]; if(MON) drawMenu(); }).catch(()=>{ MINE=[]; }); } }
   function menuClose(){ if(!MON) return; MON=false; MQ=""; drawMenu(); }
   document.addEventListener("input",e=>{ if(e.target&&e.target.id==="msq"&&e.target.closest("#camenu")){ MQ=e.target.value; const r=document.querySelector("#camenu #mres"); if(r) r.innerHTML=menuBody(); } });
@@ -824,6 +824,21 @@ th:first-child,td:first-child{text-align:left}td{padding:8px 4px;border-bottom:1
 .cal .future{opacity:.45}.cal .ok{background:var(--ok-bg)}.cal .late{background:var(--warn-bg)}.cal .miss{background:var(--bad-bg);cursor:pointer;color:var(--bad-tx)}.cal .caught{background:var(--soft)}.cal .cur{box-shadow:0 0 0 2px var(--accent)}
 .calk{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--muted)}
 .mq{padding:12px;margin:0}.mq .nm{font-weight:700;margin-bottom:2px}
+/* v22.80 My reports */
+.rep{gap:12px}.rephd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.replist{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.reprow{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:12px 14px;border:0;border-bottom:1px solid var(--line);background:var(--paper);text-align:left;font:inherit;color:var(--ink);min-height:58px;cursor:pointer}
+.reprow:last-child{border-bottom:0}.reprow:active{background:var(--soft)}
+.reprow .rw b{display:block;font-size:15.5px}.reprow .rw small{display:block;font-size:12.5px;color:var(--muted)}
+.reprow .rs{display:flex;flex-direction:column;align-items:flex-end;font-size:12.5px;color:var(--muted)}.reprow .rs b{color:var(--ink);font-size:14px}
+.reprow .go{font-size:22px;color:var(--accent);font-weight:700}
+.rh{font:700 24px/1.1 var(--display);margin:0;color:var(--accent)}
+.rm{border-collapse:collapse;font-size:14px}.rm td{padding:3px 12px 3px 0;vertical-align:top}.rm td:first-child{color:var(--muted)}
+.rtw{overflow-x:auto}.rt{border-collapse:collapse;width:100%;font-size:14px}.rt th,.rt td{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left}.rt th{font-size:12px;color:var(--muted);font-weight:600}.rt .r{text-align:right}.rt tfoot td{border-bottom:0}
+.rd{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.rd i{width:12px;height:12px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.15)}
+.rl{margin:4px 0 0;padding-left:18px;font-size:14px}
+.rph{display:grid;grid-template-columns:1fr 1fr;gap:10px}.rph figure{margin:0}.rph img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}.rph figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+@media print{body.prrep>*:not(#sheet){display:none!important}body.prrep #sheet .sheet{position:static;background:none;display:block}body.prrep #sheet .box{max-height:none;overflow:visible;border-radius:0;max-width:none;padding:0}body.prrep .noprint{display:none!important}body.prrep{background:#fff}}
 </style></head><body>
 <div class="w" id="app"><div class="empty"><span class="spin"></span> Loading…</div></div>
 <div class="foot" id="bar" hidden><div class="in"><div class="st" id="status"></div><button class="cb big full" id="next" type="button">Send tonight's count</button></div></div>
@@ -882,7 +897,7 @@ async function load(){
   if(!INFO.stock.length&&!(ex&&(ex.lines||[]).length)) (INFO.carries||[]).forEach(p=>{ if(!SHOWN.includes(p)) SHOWN.push(p); });
   if(ex){ ex.lines.forEach(l=>{add(l.productId,l.colour); const r=ROWS[K(l.productId,l.colour)], w0=(+l.w||0)-(+l.wn||0); r.w=w0>0?String(w0):""; r.b=l.b?String(l.b):"";}); if(!NOTE) NOTE=ex.note||""; } /* v22.71: the box holds only the waste found at closing; the day's waste is added by the server */
   DRAFTED=loadDraft(ex);
-  render();
+  render(); repHash();
 }
 
 const DK=()=>"chaleur.draft."+KEY+"."+DATE;
@@ -1053,8 +1068,8 @@ function calHtml(){ const C=(INFO&&INFO.cal)||[]; if(!C.length) return ""; const
   const lab={ok:"✓",late:"⏰",caught:"↪",miss:"✕",closed:"–",open:"·",pre:"",future:""}, tip={ok:"sent",late:"sent late",caught:"covered by a later count",miss:"not sent",closed:"closed",open:"tonight",pre:"before the start",future:"coming"};
   const nMiss=C.filter(x=>x.st==="miss").length;
   return `<details class="card" style="margin-top:12px;padding:12px" ${nMiss?"open":""} id="cal"><summary style="cursor:pointer;font-weight:700">Last week and this week ${nMiss?`<span class="pill" style="background:var(--bad-bg);color:var(--bad-tx)">${nMiss} not sent</span>`:`<span class="pill" style="background:var(--ok-bg);color:var(--ok-tx)">all in</span>`}</summary>
-    <div class="cal" style="margin-top:10px">${C.map(x=>{ const can=x.st==="miss"&&x.d>=minD&&x.d!==DATE; return `<button type="button" class="${x.st}${x.d===DATE?" cur":""}" ${can?`data-cal="${x.d}"`:`tabindex="-1"`} title="${esc(niceDate(x.d)+": "+tip[x.st]+(x.cov?" ("+niceDate(x.cov)+")":"")+(x.by?" · "+x.by:""))}" aria-label="${esc(niceDate(x.d)+": "+tip[x.st])}"><span>${WD[new Date(x.d+"T00:00:00").getDay()]}</span><b>${+x.d.slice(8)}</b><span>${lab[x.st]}</span></button>`; }).join("")}</div>
-    <div class="calk" style="margin-top:8px"><span>✓ sent</span><span>⏰ late</span><span>↪ covered by a later count</span><span>✕ not sent — tap to send it</span><span>– closed</span></div></details>`; }
+    <div class="cal" style="margin-top:10px">${C.map(x=>{ const can=x.st==="miss"&&x.d>=minD&&x.d!==DATE; return `<button type="button" class="${x.st}${x.d===DATE?" cur":""}" ${can?`data-cal="${x.d}"`:(x.st==="ok"||x.st==="late")?`data-rep="${x.d}"`:`tabindex="-1"`} title="${esc(niceDate(x.d)+": "+tip[x.st]+(x.cov?" ("+niceDate(x.cov)+")":"")+(x.by?" · "+x.by:""))}" aria-label="${esc(niceDate(x.d)+": "+tip[x.st])}"><span>${WD[new Date(x.d+"T00:00:00").getDay()]}</span><b>${+x.d.slice(8)}</b><span>${lab[x.st]}</span></button>`; }).join("")}</div>
+    <div class="calk" style="margin-top:8px"><span>✓ sent — tap to see it</span><span>⏰ late</span><span>↪ covered by a later count</span><span>✕ not sent — tap to send it</span><span>– closed</span></div></details>`; }
 function catchHtml(){ const M=(INFO&&INFO.missed)||[]; if(!M.length) return ""; const n=M.length, minD=backFrom();
   return `<div class="card stack" style="margin-top:12px;border:2px solid var(--warn)" id="catchup"><h3 style="font:700 20px var(--display);margin:0">${n===1?"1 night":n+" nights"} without a count: ${M.map(x=>esc(niceDate(x))).join(", ")}</h3>
     <label class="opt"><input type="radio" name="cover" value="cover" ${COVER==="cover"?"checked":""}><span><b>This count covers ${n===1?"it":"them"}</b> (catch-up). Count what you have now as usual. For the sales report, take the POS report <b>from ${esc(niceDate(M[0]))} to ${esc(niceDate(DATE))}</b> — one report for the period, or one photo a day.</span></label>
@@ -1116,7 +1131,7 @@ function render(){
     <label class="f">Your name<input id="who" value="${esc(WHO)}" placeholder="e.g. Aina" autocomplete="name"></label></div>
     <div class="banner ${DATE<calToday()?"warn":"info"}" id="nightsay" style="margin:0">You are sending the closing count for <b>${esc(niceDate(DATE))}${DATE===isoAdd(calToday(),-1)?" (last night)":DATE===calToday()?" (tonight)":" (late)"}</b>. Not the right night? Change the date above.</div>
   </div>
-  <div style="margin-top:12px">${wnBtn()}</div>${calHtml()}${catchHtml()}
+  <div style="margin-top:12px">${wnBtn()}</div>${calHtml()}${repBtn()}${catchHtml()}
   ${ex?`<div class="banner ${ex.locked?"warn":"info"}" style="margin-top:12px">${ex.locked?"This week is already billed. Your changes will be sent to the office to review.":`A report for this day was already sent${ex.by?` by <b>${esc(ex.by)}</b>`:""}${ex.at?` at ${esc(new Date(ex.at).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}))}`:""}. Fix anything below and send again — the new report replaces the old one.`}</div>`:""}
   ${DRAFTED?`<div class="banner info" style="margin-top:12px">We kept the counts and photos you hadn't sent yet.</div>`:""}
   <section class="sec">
@@ -1247,6 +1262,46 @@ const DECL_DEFAULT="I confirm that this closing count — waste, cakes left and 
 function aggregate(lines){const by={};lines.forEach(l=>{const x=by[l.productId]||(by[l.productId]={productId:l.productId,waste:0,balance:0});x.waste+=l.w;x.balance+=l.b;});return Object.values(by);}
 
 function restoreBar(){$("#bar .in").innerHTML=`<div class="st" id="status"></div><button class="cb big full" id="next" type="button">Send tonight's count</button>`;$("#next").onclick=review;}
+/* ---- v22.80 My reports (Alfred 1 Nov: "where can we have this report easily being open and view too in the app" → "A list of report that is like
+   this."): the outlet's own closing reports of the last 8 weeks, each like the PDF, inside this page — no Google Drive, no access request. ---- */
+let REP=null, REPH=true;
+const repTm=iso=>{ try{ return iso?new Date(iso).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Asia/Kuala_Lumpur"}):""; }catch(e){ return ""; } };
+const repAt=iso=>{ try{ return iso?new Date(iso).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Asia/Kuala_Lumpur"}).replace(",",""):""; }catch(e){ return ""; } };
+function repBtn(){ return `<button class="cb ghost full" type="button" data-reps="1" style="margin-top:12px">📄 My reports <small style="font-weight:500;color:var(--muted)">· last 8 weeks</small></button>`; }
+async function repOpen(date){ const list=REP&&REP.list||null; REP={list,cur:date||"",data:null,photos:{},err:"",ph:false}; repDraw();
+  try{ if(!REP.list) REP.list=await run("closingReports",KEY); if(date) REP.data=await run("closingReport",KEY,date); }catch(e){ REP.err=(e&&e.message)||"Could not load. Check your internet and try again."; } repDraw(); }
+function repView(R){ const T=R.lines.reduce((a,l)=>({w:a.w+l.w,b:a.b+l.b}),{w:0,b:0}), o=R.outlet||{};
+  if(R.late) return `<h2 class="rh">Closing report — ${esc(o.name||"")}</h2><div class="banner info" style="margin:0">${esc(niceDate(R.date))}: sent after the week was billed${R.by?` by ${esc(R.by)}`:""}. Chaleur has it — ask Chaleur if you need the details.</div>`;
+  return `<h2 class="rh">Closing report — ${esc(o.name||"")}</h2><div class="hint" style="margin-top:-6px">Chaleur Atelier Patisserie · Larkin, Johor Bahru</div>
+    <table class="rm"><tr><td>Report ID</td><td><b>${esc(R.id||"—")}</b></td></tr><tr><td>Night</td><td>${esc(niceDate(R.date))}</td></tr><tr><td>Counted by</td><td>${esc(R.by||"—")}</td></tr><tr><td>Sent</td><td>${esc(repAt(R.at)||"—")}</td></tr></table>
+    ${R.changed?`<div class="banner warn" style="margin:0">Corrected by ${esc(R.changed.by)}${R.changed.reason?`: ${esc(R.changed.reason)}`:""}. The numbers below are the corrected ones.</div>`:""}
+    ${R.office?`<div class="banner info" style="margin:0">Entered by Chaleur from your message.</div>`:""}
+    ${(R.covers||[]).length?`<div class="banner info" style="margin:0">This count also covers ${R.covers.map(d=>esc(niceDate(d))).join(", ")} (no count was sent those nights).</div>`:""}
+    <div class="rtw"><table class="rt"><thead><tr><th>Cake</th><th>Dot</th><th>Made on</th><th class="r">Waste</th><th class="r">Left</th></tr></thead><tbody>${R.lines.map(l=>`<tr><td>${esc(l.name)}</td><td><span class="rd"><i style="background:${esc(colHex(l.colour))}"></i>${esc(capw(l.colour))}</span></td><td>${esc(l.made)}</td><td class="r">${l.w||""}</td><td class="r">${l.b||""}</td></tr>`).join("")||`<tr><td colspan="5" class="hint">Nothing counted.</td></tr>`}</tbody>
+      <tfoot><tr><td colspan="3"><b>Total</b></td><td class="r"><b>${T.w}</b></td><td class="r"><b>${T.b}</b></td></tr></tfoot></table></div>
+    ${R.wasteNow.length?`<div><b>Waste during the day</b> <span class="hint">(already in the waste above)</span><ul class="rl">${R.wasteNow.map(e=>`<li>${e.qty} × ${esc(e.name)} ${esc(capw(e.colour))} · ${esc(e.reason)}${e.by?` · ${esc(e.by)}`:""}</li>`).join("")}</ul></div>`:""}
+    ${R.sold?`<div><b>Sold</b> <span class="hint">(read from your sales photo)</span><div>${R.sold.length?R.sold.map(s=>`${esc(s.name)} ${s.qty}`).join(" · "):"None of our cakes"}</div></div>`:""}
+    ${R.note?`<div><b>Your note</b><div style="white-space:pre-wrap">${esc(R.note)}</div></div>`:""}
+    ${R.photos.length?(REP.ph?`<div class="rph">${R.photos.map(p=>`<figure>${REP.photos[p.id]?`<img src="${REP.photos[p.id]}" alt="${esc(p.label)}">`:REP.photos[p.id]===false?`<div class="hint">Could not load.</div>`:`<div class="empty"><span class="spin"></span></div>`}<figcaption>${esc(p.label)}</figcaption></figure>`).join("")}</div>`
+      :`<button class="cb ghost full noprint" type="button" data-repph="1">Show the photos (${R.photos.length})</button>`):""}
+    <button class="cb ghost full noprint" type="button" data-repprint="1">🖨 Print or save as PDF</button>`; }
+function repDraw(){ const box=$("#sheet"); if(!box) return; if(!REP){ box.innerHTML=""; return; } let b="";
+  if(REP.err) b=`<div class="banner warn" style="margin:0">${esc(REP.err)}</div>`;
+  else if(REP.cur) b=REP.data?repView(REP.data):`<div class="empty"><span class="spin"></span> Loading the report…</div>`;
+  else if(!REP.list) b=`<div class="empty"><span class="spin"></span> Loading your reports…</div>`;
+  else { const L=REP.list.reports||[];
+    b=`<p class="hint" style="margin:0">Every closing count ${esc((REP.list.outlet||{}).name||"your outlet")} sent in the last ${REP.list.weeks||8} weeks. Tap one to see it.</p>`+(L.length?`<div class="replist">${L.map(r=>`<button type="button" class="reprow" data-rep="${esc(r.date)}"><span class="rw"><b>${esc(niceDate(r.date))}</b><small>${r.late?"sent after the bill":`by ${esc(r.by||"—")}${r.at?` · ${esc(repTm(r.at))}`:""}`}${r.office?" · entered by Chaleur":""}${r.changed?" · corrected by Chaleur":""}${(r.covers||[]).length?` · also covers ${r.covers.map(d=>esc(niceDate(d))).join(", ")}`:""}</small></span>${r.late?"":`<span class="rs"><span>Waste <b>${r.waste}</b></span><span>Left <b>${r.left}</b></span></span>`}<span class="go" aria-hidden="true">›</span></button>`).join("")}</div>`:`<div class="empty">No closing reports in the last ${REP.list.weeks||8} weeks.</div>`); }
+  box.innerHTML=`<div class="sheet" data-repclose="1"><div class="box stack rep" role="dialog" aria-label="${REP.cur?"Closing report":"My reports"}"><div class="rephd noprint">${REP.cur?`<button class="cb ghost sm" type="button" data-replist="1">‹ All reports</button>`:`<div class="ptitle" style="font-size:24px;margin:0">My reports</div>`}<button class="cb ghost sm" type="button" data-repclose="1">Close</button></div>${b}</div></div>`; }
+async function repPhotos(){ if(!REP||!REP.data) return; REP.ph=true; repDraw(); const R=REP.data;
+  for(const p of R.photos){ if(!REP||REP.data!==R) return; if(REP.photos[p.id]) continue; try{ REP.photos[p.id]=await run("closingPhoto",KEY,R.date,p.id); }catch(e){ REP.photos[p.id]=false; } if(REP&&REP.data===R) repDraw(); } }
+document.addEventListener("click",e=>{ const t=e.target&&e.target.closest?e.target:null; if(!t) return; const g=s=>t.closest(s);
+  const cl=g("[data-repclose]"); if(cl&&(cl.tagName==="BUTTON"||e.target===cl)){ REP=null; repDraw(); try{ if(/^#rep|^#reports/.test(location.hash)) history.replaceState(null,"",location.pathname+location.search); }catch(x){} return; }
+  if(g("[data-reps]")){ repOpen(""); return; }
+  const r=g("[data-rep]"); if(r){ repOpen(r.dataset.rep); return; }
+  if(g("[data-replist]")&&REP){ REP.cur=""; REP.data=null; REP.ph=false; if(!REP.list) repOpen(""); else repDraw(); return; }
+  if(g("[data-repph]")){ repPhotos(); return; }
+  if(g("[data-repprint]")){ document.body.classList.add("prrep"); const off=()=>{ document.body.classList.remove("prrep"); window.removeEventListener("afterprint",off); }; window.addEventListener("afterprint",off); setTimeout(()=>{ try{ window.print(); }catch(x){} setTimeout(off,1500); },50); return; } });
+function repHash(){ if(!REPH) return; REPH=false; const m=/^#rep=(\d{4}-\d{2}-\d{2})$/.exec(location.hash||""); if(m) repOpen(m[1]); else if(location.hash==="#reports") repOpen(""); }
 async function send(d){
   if(SENDING) return; SENDING=true; $("#send").disabled=true; $("#edit").disabled=true; status("Sending report and photos… keep this page open.");
   try{
@@ -1258,6 +1313,7 @@ async function send(d){
       <p style="margin:0" class="hint">Thank you, ${esc(d.who)}${r.mode==="replaced"?"":n>1?" and the "+esc(INFO.outlet.name)+" team":""}. Ref <b style="font-family:var(--mono);color:var(--ink)">${esc(r.id)}</b></p>
       <div class="dr" aria-hidden="true">${COL().map(c=>`<i style="background:${esc(c.hex)}"></i>`).join("")}</div>
       ${wa?`<a class="cb ok full" href="${wa}" target="_blank" rel="noopener">Send summary to Chaleur on WhatsApp</a>`:""}
+      <button class="cb ghost full" type="button" data-rep="${esc(DATE)}">📄 See this report</button>
       <button class="cb ghost full" type="button" data-act="again">Edit this report</button>
       <p class="hint">Made a mistake? Tap "Edit this report", fix it and send again. The newest report is the one that counts.</p></div><div style="margin-top:12px">${wnBtn()}</div><div class="card" id="remcard" style="margin-top:12px" hidden></div>`; remFill();
     PH={sales:[],display:null,waste:null};
@@ -1335,4 +1391,4 @@ document.getElementById("next").onclick=review;
 load().then(()=>{ setTimeout(rgAuto,300); setTimeout(tourMaybeStart,400); }); /* v22.59b: the reminders guide first; the guide tour waits while it is open */
 if(typeof CA!=="undefined") CA.helper({noReport:true,auth:()=>KEY&&INFO&&INFO.outlet?"o:"+KEY:"",page:()=>"Outlet closing form",hello:"Hi! Ask me anything about the closing form, for example: “What do I do with a cake past its shelf life?” or “What does the colour dot mean?”"});
 </script>
-<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.77</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
+<script>(function(){function go(){if(document.getElementById("ca-playbar"))return;var d=document.createElement("div");d.id="ca-playbar";d.setAttribute("role","status");d.innerHTML='<span>🧪 PLAYGROUND · v22.80</span><span class="ca-playnote">test copy · same data as live</span>';document.body.prepend(d);function fit(){var h=d.offsetHeight,v=document.getElementById("ca-vastrip");document.documentElement.style.setProperty("--playh",h+"px");document.documentElement.style.setProperty("--vah",(h+(v?v.offsetHeight:0))+"px");}fit();window.addEventListener("resize",fit);new MutationObserver(fit).observe(document.body,{childList:true});}if(document.body)go();else document.addEventListener("DOMContentLoaded",go);})();</script></body></html>
