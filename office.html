@@ -3163,7 +3163,7 @@ const rcSideTag=sd=>`<span class="rcside ${sd==="beku"?"beku":"ca"}" title="${es
 const rcSideTags=a=>a.map(rcSideTag).join("");
 const rcSideBrand=sd=>sd==="all"?"":(rcBrands().find(b=>sd==="beku"?/beku/i.test(b):/chaleur|^ca$/i.test(b))||"");
 function rcSideChips(what){ const cur=rcSide(), br=rcSideBrand(cur), R=S.rcp||{};
-  const say=cur==="all"?`Every ${what}. <b>CA</b> = Chaleur Atelier · <b>Beku</b> = B2B (the cakes in range B2B).`
+  const say=cur==="all"?`All ${what}. <b>CA</b> = Chaleur Atelier · <b>Beku</b> = B2B (the cakes in range B2B).`
     :`${cur==="beku"?"Beku (B2B)":"Chaleur Atelier"} ${what} only${what==="recipes"?` — the recipes its live and Q4 cakes use${cur==="ca"?" (and recipes no cake uses yet)":""}`:br?`. Names${R.money?" and prices":""} as sold under <b>${esc(br)}</b> where there is one — the kitchen code and recipe name are under it`:""}.`;
   return `<div class="rcbrand noprint"><div class="rcchips" role="group" aria-label="Chaleur Atelier or Beku">${RC_SIDES.map(([v,t])=>`<button class="rcchip" data-rc="side:${v}" aria-pressed="${cur===v}">${t}</button>`).join("")}</div><p class="small muted" style="margin:4px 0 0">${say}</p></div>`; }
 const rcCakeRow=p=>`<button class="rcrow rcprow" data-rc="p:${esc(p.id)}">${rcPic(p)}<span class="rcn"><b>${esc(p.name||p.id)}</b><span class="small muted">${p.build.length} component${p.build.length===1?"":"s"}${p.unitG?` · ${rcF(p.unitG)} g`:""}</span></span>${rcStat(p.status)}<span class="rcgo" aria-hidden="true">›</span></button>`;
